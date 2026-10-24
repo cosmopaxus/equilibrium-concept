@@ -12,11 +12,15 @@
 <meta property="og:image" content="https://cosmopaxus.github.io/equilibrium-concept/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Equilibrium concept overview: the name over a purple gradient with the four-element orb">
+<meta property="og:image:alt" content="Equilibrium concept overview: the name and the gold Equilibrium mark on night navy">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cosmopaxus.github.io/equilibrium-concept/og-image.jpg">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#15122E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Jost:wght@400&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
 /* Layout: one concept per framed "plate", like folios in an academy prospectus. Prints one plate per page. */
 :root{
@@ -63,17 +67,27 @@ a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius
 .take b{color:var(--ink)}
 
 /* Cover */
-.cover{background:linear-gradient(165deg,var(--sky1),var(--sky2) 70%,#8C6BC4);color:#FBF6EC;border:0;min-height:320px;align-content:center;gap:16px}
+.cover{background:radial-gradient(42% 70% at 82% 50%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:0;min-height:340px;align-content:center;gap:16px}
 .cover .eyebrow{color:#F3D88E}
-.cover h1{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1;letter-spacing:.06em}
+.cover h1{font-size:clamp(2.2rem,6.4vw,4rem);line-height:1;letter-spacing:.14em;font-weight:600}
+.lockup{display:grid;gap:10px}
+.balance{font-family:"Jost","Nunito",system-ui,sans-serif;font-size:clamp(.72rem,1.6vw,.86rem);letter-spacing:.34em;text-transform:uppercase;color:#B9B5CF}
 .cover .tag{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:36ch;color:#E9E3FA}
 .cover .motto{font-size:.95rem;color:#D9D0F5;font-style:italic}
 .cover .row{display:flex;flex-wrap:wrap;gap:10px}
 .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.88rem}
 .cover .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#FBF6EC}
-.orb{position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:min(40%,320px);opacity:.95;pointer-events:none}
-@media(max-width:700px){.orb{position:static;transform:none;width:150px;justify-self:center;order:-1}}
-.cover > *:not(.orb){position:relative;max-width:560px}
+.mark{position:absolute;right:clamp(8px,4vw,48px);top:50%;width:min(38%,330px);aspect-ratio:1;transform:translateY(-50%);pointer-events:none;color:#C8A25A}
+.mark svg{display:block;width:100%;height:100%;overflow:visible}
+.mark .dash{fill:none;stroke:currentColor;stroke-width:.6;stroke-dasharray:2 2;stroke-opacity:.6}
+.mark mask .dr{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .thin{fill:none;stroke:currentColor;stroke-width:.6;stroke-opacity:.85;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .form{fill:currentColor;fill-opacity:.2;stroke:currentColor;stroke-width:.9;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .needle{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .dot{fill:currentColor;transform-box:fill-box;transform-origin:center}
+.mark .ring{transform-box:view-box;transform-origin:50% 50%}
+@media(max-width:700px){.mark{position:relative;right:auto;top:auto;transform:none;width:200px;justify-self:center;order:-1}.cover{background:radial-gradient(60% 34% at 50% 16%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A)}}
+.cover > *:not(.mark){position:relative;max-width:560px}
 
 /* Section links */
 .toc{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start}
@@ -194,7 +208,27 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   .toc{display:none}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
-@media (prefers-reduced-motion:no-preference){ .orb .breath{animation:breath 7s ease-in-out infinite;transform-origin:200px 200px} @keyframes breath{50%{transform:scale(1.04)}} }
+@media (prefers-reduced-motion:no-preference){
+  @keyframes mk-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  @keyframes mk-fill{from{fill-opacity:0}to{fill-opacity:.2}}
+  @keyframes mk-pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+  @keyframes mk-sway{0%{transform:rotate(0)}25%{transform:rotate(6deg)}55%{transform:rotate(-3.5deg)}80%{transform:rotate(1.4deg)}100%{transform:rotate(0)}}
+  @keyframes mk-rock{0%{transform:rotate(0)}12.5%{transform:rotate(5deg)}37.5%{transform:rotate(-7deg)}62.5%{transform:rotate(6deg)}87.5%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
+  @keyframes mk-rock-m{0%{transform:translateY(-50%) rotate(0)}12.5%{transform:translateY(-50%) rotate(5deg)}37.5%{transform:translateY(-50%) rotate(-7deg)}62.5%{transform:translateY(-50%) rotate(6deg)}87.5%{transform:translateY(-50%) rotate(-3deg)}100%{transform:translateY(-50%) rotate(0)}}
+  .mark mask .dr,.mark .thin,.mark .needle{animation:mk-draw var(--d,1s) cubic-bezier(.65,0,.35,1) var(--t,0s) both}
+  .mark .form{animation:mk-draw .8s cubic-bezier(.65,0,.35,1) var(--t,0s) both,mk-fill .7s ease-out var(--tf,0s) both}
+  .mark .dot{animation:mk-pop .45s cubic-bezier(.34,1.56,.64,1) var(--t,0s) both}
+  .mark .d0{--t:.1s;--d:1.2s}.mark .d1{--t:.3s;--d:.9s}.mark .d2{--t:.4s;--d:.9s}.mark .d3{--t:1.2s;--d:1s}.mark .d4{--t:1.35s;--d:1s}
+  .mark .p0{--t:.15s}.mark .p1{--t:.23s}.mark .p2{--t:.31s}.mark .p3{--t:.39s}
+  .mark .t0{--t:.9s;--d:1s}.mark .t1{--t:1.8s;--d:.6s}.mark .t2{--t:1.9s;--d:.6s}
+  .mark .needle{--t:2.4s;--d:.7s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+  .mark .ctr{--t:3s}
+  .mark .f0{--t:3.3s;--tf:3.7s}.mark .f1{--t:3.4s;--tf:3.8s}.mark .f2{--t:3.7s;--tf:4s}.mark .f3{--t:3.8s;--tf:4.1s}
+  .mark .ring{animation:mk-sway 1.8s ease-in-out 4.4s both}
+  .mark{animation:mk-rock-m 8s ease-in-out 6.3s both}
+  .mark.again{animation:mk-rock-m 8s ease-in-out both}
+  @media(max-width:700px){.mark{animation-name:mk-rock}.mark.again{animation-name:mk-rock}}
+}
 </style>
 </head>
 <body>
@@ -248,20 +282,41 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
 
 <!-- Cover -->
 <section class="plate cover" aria-label="Cover">
-  <svg class="orb" viewBox="0 0 400 400" aria-hidden="true">
-    <defs><radialGradient id="glow"><stop offset="0" stop-color="#F3D88E" stop-opacity=".55"/><stop offset="1" stop-color="#F3D88E" stop-opacity="0"/></radialGradient></defs>
-    <circle cx="200" cy="200" r="190" fill="url(#glow)"/>
-    <g class="breath" style="mix-blend-mode:screen">
-      <ellipse cx="200" cy="130" rx="62" ry="82" fill="#D85A30" opacity=".85"/>
-      <ellipse cx="270" cy="200" rx="82" ry="62" fill="#378ADD" opacity=".85"/>
-      <ellipse cx="200" cy="270" rx="62" ry="82" fill="#1D9E75" opacity=".85"/>
-      <ellipse cx="130" cy="200" rx="82" ry="62" fill="#BA7517" opacity=".85"/>
-    </g>
-    <circle cx="200" cy="200" r="150" fill="none" stroke="#E8C46B" stroke-width="2" stroke-dasharray="6 7"/>
-    <circle cx="200" cy="200" r="172" fill="none" stroke="#E8C46B" stroke-width="1" opacity=".5"/>
-  </svg>
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="-6 -6 212 212">
+      <defs>
+        <clipPath id="mk-clip"><circle cx="100" cy="100" r="99.5"/></clipPath>
+        <mask id="mk-m0" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d0" cx="100" cy="100" r="94" pathLength="1" transform="rotate(-90 100 100)"/></mask>
+        <mask id="mk-m1" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><line class="dr d1" x1="100" y1="0" x2="100" y2="200" pathLength="1"/></mask>
+        <mask id="mk-m2" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><line class="dr d2" x1="0" y1="100" x2="200" y2="100" pathLength="1"/></mask>
+        <mask id="mk-m3" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d3" cx="106.87" cy="125.65" r="88.56" pathLength="1" transform="rotate(200 106.87 125.65)"/></mask>
+        <mask id="mk-m4" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d4" cx="93.13" cy="74.35" r="88.56" pathLength="1" transform="rotate(20 93.13 74.35)"/></mask>
+      </defs>
+      <circle class="dash" cx="100" cy="100" r="94" mask="url(#mk-m0)"/>
+      <g clip-path="url(#mk-clip)">
+        <line class="dash" x1="100" y1="0" x2="100" y2="200" mask="url(#mk-m1)"/>
+        <line class="dash" x1="0" y1="100" x2="200" y2="100" mask="url(#mk-m2)"/>
+      </g>
+      <circle class="dot p0" cx="100" cy="6" r="4"/><circle class="dot p1" cx="194" cy="100" r="4"/><circle class="dot p2" cx="100" cy="194" r="4"/><circle class="dot p3" cx="6" cy="100" r="4"/>
+      <g class="ring">
+        <g clip-path="url(#mk-clip)">
+          <circle class="dash" cx="106.87" cy="125.65" r="88.56" mask="url(#mk-m3)"/>
+          <circle class="dash" cx="93.13" cy="74.35" r="88.56" mask="url(#mk-m4)"/>
+        </g>
+        <circle class="thin t0" cx="100" cy="100" r="80" pathLength="1" transform="rotate(-160 100 100)"/>
+        <circle class="thin t1" cx="78.75" cy="105.70" r="22" pathLength="1" transform="rotate(195 78.75 105.70)"/>
+        <circle class="thin t2" cx="121.25" cy="94.30" r="22" pathLength="1" transform="rotate(15 121.25 94.30)"/>
+        <path class="form f0" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z" pathLength="1"/>
+        <path class="form f1" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z" pathLength="1" transform="rotate(180 100 100)"/>
+        <path class="form f2" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z" pathLength="1"/>
+        <path class="form f3" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z" pathLength="1" transform="rotate(180 100 100)"/>
+        <line class="needle" x1="3.41" y1="125.88" x2="196.59" y2="74.12" pathLength="1"/>
+        <circle class="dot ctr" cx="100" cy="100" r="4"/>
+      </g>
+    </svg>
+  </div>
   <p class="eyebrow">ǝvōke · Be Well · concept overview · October 2026</p>
-  <h1>EQUILIBRIUM</h1>
+  <div class="lockup"><h1>EQUILIBRIUM</h1><p class="balance">Balance in motion</p></div>
   <p class="tag">A daily practice app that helps you keep a real practice, see what changes, and add your experience to psychedelic wellness research.</p>
   <p class="motto">Duolingo for inner work: practice off screen, grow on screen.</p>
   <div class="row">
@@ -730,5 +785,14 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
 </footer>
 
 </main>
+<script>
+(function(){
+  var m=document.querySelector('.mark'),c=document.querySelector('.cover');
+  if(!m||!c||!window.matchMedia||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var ready=false;setTimeout(function(){ready=true},14300);
+  function again(){if(!ready)return;ready=false;m.classList.remove('again');void m.offsetWidth;m.classList.add('again');setTimeout(function(){ready=true},8000)}
+  c.addEventListener('pointerenter',again);c.addEventListener('click',again);
+})();
+</script>
 </body>
 </html>
