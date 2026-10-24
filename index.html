@@ -56,6 +56,7 @@ h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:.0
 h2{font-size:clamp(1.3rem,3vw,1.75rem);line-height:1.15}
 h3{font-size:1.05rem;line-height:1.25}
 p{margin:0}
+p,li{text-wrap:pretty}
 a{color:var(--indigo)}
 a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius:6px}
 .plate{background:var(--plate);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.6vw,26px);display:grid;gap:14px;position:relative;overflow:hidden;scroll-margin-top:16px;min-width:0}
@@ -67,17 +68,18 @@ a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius
 .take b{color:var(--ink)}
 
 /* Cover */
-.cover{background:radial-gradient(42% 70% at 82% 50%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:0;min-height:340px;align-content:center;gap:16px}
+.cover{background:radial-gradient(42% 70% at 82% 50%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:0;display:block;container-type:inline-size}
+.cover > *:not(.mark){margin-top:16px}.cover > .eyebrow{margin-top:0}
 .cover .eyebrow{color:#F3D88E}
-.cover h1{font-size:clamp(2.2rem,6.4vw,4rem);line-height:1;letter-spacing:.14em;font-weight:600}
-.lockup{display:grid;gap:10px}
-.balance{font-family:"Jost","Nunito",system-ui,sans-serif;font-size:clamp(.72rem,1.6vw,.86rem);letter-spacing:.34em;text-transform:uppercase;color:#B9B5CF}
-.cover .tag{font-size:clamp(1.05rem,2.4vw,1.3rem);max-width:36ch;color:#E9E3FA}
-.cover .motto{font-size:.95rem;color:#D9D0F5;font-style:italic}
-.cover .row{display:flex;flex-wrap:wrap;gap:10px}
+.cover h1{font-size:clamp(2rem,6.2cqi,4rem);line-height:1;letter-spacing:.14em;font-weight:600}
+.lockup h1{margin-bottom:10px}
+.balance{font-family:"Jost","Nunito",system-ui,sans-serif;font-size:clamp(.72rem,1.7cqi,.86rem);letter-spacing:.34em;text-transform:uppercase;color:#B9B5CF}
+.cover .tag{font-size:clamp(1.05rem,2.5cqi,1.3rem);max-width:36ch;text-wrap:pretty;color:#E9E3FA}
+.cover .motto{text-wrap:pretty;font-size:.95rem;color:#D9D0F5;font-style:italic}
+.cover .row{margin-bottom:-10px;font-size:0}.cover .row .pill{margin:0 10px 10px 0}
 .pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.88rem}
 .cover .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#FBF6EC}
-.mark{position:absolute;right:clamp(8px,4vw,48px);top:50%;width:min(38%,330px);aspect-ratio:1;transform:translateY(-50%);pointer-events:none;color:#C8A25A}
+.mark{float:right;position:relative;width:min(34cqi,330px);aspect-ratio:1;margin:0 clamp(0px,2cqi,22px) 6px 0;shape-outside:circle(50%) border-box;shape-margin:clamp(8px,2cqi,18px);pointer-events:none;color:#C8A25A}
 .mark svg{display:block;width:100%;height:100%;overflow:visible}
 .mark .dash{fill:none;stroke:currentColor;stroke-width:.6;stroke-dasharray:2 2;stroke-opacity:.6}
 .mark mask .dr{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:1 1;stroke-dashoffset:0}
@@ -86,7 +88,7 @@ a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius
 .mark .needle{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:0}
 .mark .dot{fill:currentColor;transform-box:fill-box;transform-origin:center}
 .mark .ring{transform-box:view-box;transform-origin:50% 50%}
-@media(max-width:700px){.mark{position:relative;right:auto;top:auto;transform:none;width:200px;justify-self:center;order:-1}.cover{background:radial-gradient(60% 34% at 50% 16%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A)}}
+@media(max-width:560px){.mark{float:none;width:min(200px,60cqi);margin:0 auto 4px}.cover{background:radial-gradient(60% 34% at 50% 16%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A)}}
 .cover > *:not(.mark){position:relative;max-width:560px}
 
 /* Section links */
@@ -214,7 +216,6 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   @keyframes mk-pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
   @keyframes mk-sway{0%{transform:rotate(0)}25%{transform:rotate(6deg)}55%{transform:rotate(-3.5deg)}80%{transform:rotate(1.4deg)}100%{transform:rotate(0)}}
   @keyframes mk-rock{0%{transform:rotate(0)}12.5%{transform:rotate(5deg)}37.5%{transform:rotate(-7deg)}62.5%{transform:rotate(6deg)}87.5%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
-  @keyframes mk-rock-m{0%{transform:translateY(-50%) rotate(0)}12.5%{transform:translateY(-50%) rotate(5deg)}37.5%{transform:translateY(-50%) rotate(-7deg)}62.5%{transform:translateY(-50%) rotate(6deg)}87.5%{transform:translateY(-50%) rotate(-3deg)}100%{transform:translateY(-50%) rotate(0)}}
   .mark mask .dr,.mark .thin,.mark .needle{animation:mk-draw var(--d,1s) cubic-bezier(.65,0,.35,1) var(--t,0s) both}
   .mark .form{animation:mk-draw .8s cubic-bezier(.65,0,.35,1) var(--t,0s) both,mk-fill .7s ease-out var(--tf,0s) both}
   .mark .dot{animation:mk-pop .45s cubic-bezier(.34,1.56,.64,1) var(--t,0s) both}
@@ -225,9 +226,8 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   .mark .ctr{--t:3s}
   .mark .f0{--t:3.3s;--tf:3.7s}.mark .f1{--t:3.4s;--tf:3.8s}.mark .f2{--t:3.7s;--tf:4s}.mark .f3{--t:3.8s;--tf:4.1s}
   .mark .ring{animation:mk-sway 1.8s ease-in-out 4.4s both}
-  .mark{animation:mk-rock-m 8s ease-in-out 6.3s both}
-  .mark.again{animation:mk-rock-m 8s ease-in-out both}
-  @media(max-width:700px){.mark{animation-name:mk-rock}.mark.again{animation-name:mk-rock}}
+  .mark{animation:mk-rock 8s ease-in-out 6.3s both}
+  .mark.again{animation:mk-rock 8s ease-in-out both}
 }
 </style>
 </head>
