@@ -209,6 +209,38 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
 .prow{display:flex;gap:4px}.prow>*{flex:1}
 
 .foot{text-align:center;color:var(--muted);font-size:.86rem;display:grid;gap:4px}
+.foot a{font-weight:700}
+
+/* Invest or collaborate: gold buttons on night, the same night as the cover */
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border-radius:999px;padding:11px 22px;font-weight:800;font-size:1.02rem;line-height:1.2;text-decoration:none;background:#E8C46B;color:#15122E;border:2px solid #E8C46B;cursor:pointer;font-family:var(--body)}
+.cta-btn:hover{background:#F3D88E;border-color:#F3D88E}
+.cta-btn:focus-visible{outline:3px solid #FBF6EC;outline-offset:3px}
+.cta-btn svg{flex:none;width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cta-btn.ghost{background:transparent;color:#FBF6EC;border-color:rgba(232,196,107,.75)}
+.cta-btn.ghost:hover{background:rgba(232,196,107,.16)}
+.cover .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.toc a.toc-cta{background:#E8C46B;border-color:#C8A25A;color:#15122E}
+.toc a.toc-cta span{color:#15122E}
+.toc a.toc-cta:hover{background:#F3D88E}
+.connect{background:radial-gradient(40% 80% at 90% 10%,rgba(200,162,90,.18),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:2px solid #C8A25A;gap:18px}
+.connect .eyebrow{color:#F3D88E}
+.connect h2{font-size:clamp(1.8rem,4.6vw,2.7rem);color:#FBF6EC}
+.connect .lede{color:#E2DBF6;font-size:1.05rem}
+.ways{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.way{border-radius:14px;padding:18px;display:grid;gap:12px;align-content:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);min-width:0}
+.way h3{font-family:var(--body);font-weight:800;font-size:1.2rem;letter-spacing:0;color:#FBF6EC;display:flex;gap:10px;align-items:center}
+.way .ic{background:#E8C46B}.way .ic svg{stroke:#15122E}
+.way p,.way li{color:#E2DBF6;font-size:.95rem;line-height:1.45}
+.way ul{margin:0;padding-left:20px;display:grid;gap:3px}
+.way .cta-btn{justify-self:start}
+.mailrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#E2DBF6;font-size:.95rem;border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
+.mailrow b{font-size:1.05rem;color:#FBF6EC;letter-spacing:.01em;overflow-wrap:anywhere}
+.mailrow .cta-btn{min-height:40px;padding:7px 16px;font-size:.92rem}
+.float-cta{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 6px 20px rgba(13,11,34,.38);border-color:#C8A25A;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.float-cta.show{opacity:1;visibility:visible;transform:none}
+@media (prefers-reduced-motion:reduce){.float-cta{transition:none}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media print{.float-cta,.cover .cta-row,.mailrow .cta-btn{display:none}}
 @media print{
   body{background:#fff;padding:0}
   .stack{gap:0;max-width:none}
@@ -282,6 +314,8 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   <symbol id="i-keyhole" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M10.5 12.5L9 20h6l-1.5-7.5"/></symbol>
   <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4"/></symbol>
 </svg>
 
 <main class="stack">
@@ -330,6 +364,9 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
     <span class="pill">No ads, no trackers</span>
     <span class="pill">Research only</span>
   </div>
+  <div class="cta-row">
+    <a class="cta-btn" href="#connect">Invest or collaborate <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
 </section>
 
 <nav class="toc" aria-label="Sections">
@@ -348,6 +385,7 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   <a href="#free"><span>13</span>Free vs Academy</a>
   <a href="#status"><span>14</span>What's ready</a>
   <a href="states/"><span>→</span>State fit</a>
+  <a href="#connect" class="toc-cta"><span>15</span>Invest · Collaborate</a>
 </nav>
 
 <!-- 01 · Mission -->
@@ -795,13 +833,61 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   <div class="card warn"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><h3>Before members' data is studied</h3><p>An independent ethics review (IRB) · a privacy policy and research consent reviewed by counsel · a clinical read of the safety wording · the integration scales' source wording · the Academy membership price.</p></div></div>
 </section>
 
+<!-- 15 · Invest or collaborate -->
+<section class="plate connect" id="connect" aria-labelledby="h-connect">
+  <div class="head"><p class="eyebrow">15 · Get involved</p><h2 id="h-connect">Invest or collaborate</h2></div>
+  <p class="lede">Equilibrium is a working app with a research engine inside it. We're looking for people who want to help take it from a small alpha to a real research platform. Write to us and we'll send the full picture and set up a demo.</p>
+  <div class="ways">
+    <div class="way">
+      <h3><span class="ic"><svg><use href="#i-sprout"/></svg></span>Investors and funders</h3>
+      <p>Angel investors, grant makers and donors who want long-term, real-world evidence for the psychedelic wellness movement, built on trust.</p>
+      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20investing%20or%20funding&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20talk%20about%20investing%20in%20or%20funding%20Equilibrium.%0A%0AName%3A%0AOrganization%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about investing or funding</a>
+    </div>
+    <div class="way">
+      <h3><span class="ic"><svg><use href="#i-users"/></svg></span>Collaborators and partners</h3>
+      <ul>
+        <li>Researchers and universities</li>
+        <li>Clinicians, therapists and coaches</li>
+        <li>Psychedelic societies, facilitators and wellness groups</li>
+        <li>Developers and designers</li>
+      </ul>
+      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20collaboration&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20collaborate.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AHow%20I%27d%20like%20to%20help%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about collaborating</a>
+    </div>
+  </div>
+  <div class="mailrow">
+    <span>Or write directly:</span>
+    <b>cosmo@evokemagic.org</b>
+    <button class="cta-btn ghost" type="button" data-copy="cosmo@evokemagic.org"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy address</button>
+    <span class="copied" role="status" aria-live="polite"></span>
+  </div>
+</section>
+
 <footer class="foot">
   <span>Equilibrium by ǝvōke · Be Well Ministry · living concept overview, updated October 24, 2026.</span>
+  <span>Investors and collaborators: <a href="#connect">get in touch</a> · cosmo@evokemagic.org</span>
   <span>Consent, privacy and ministry wording are drafts under legal review. Findings are patterns, not proof. Equilibrium is not medical care.</span>
 </footer>
 
 </main>
+<a class="cta-btn float-cta" href="#connect"><svg aria-hidden="true"><use href="#i-mail"/></svg>Invest · Collaborate</a>
 <script>
+(function(){
+  var btn=document.querySelector('[data-copy]'),say=document.querySelector('.copied');
+  if(btn)btn.addEventListener('click',function(){
+    var t=btn.getAttribute('data-copy');
+    function done(ok){if(say)say.textContent=ok?'Copied':'Select the address above to copy it'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){done(true)},function(){done(false)})}else{done(false)}
+  });
+  var f=document.querySelector('.float-cta'),cv=document.querySelector('.cover'),cn=document.getElementById('connect');
+  if(!f)return;
+  if(!cv||!cn||!('IntersectionObserver' in window)){f.classList.add('show');return}
+  var coverIn=true,connectIn=false;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.target===cv)coverIn=e.isIntersecting;else connectIn=e.isIntersecting});
+    f.classList.toggle('show',!coverIn&&!connectIn);
+  });
+  io.observe(cv);io.observe(cn);
+})();
 (function(){
   var m=document.querySelector('.mark'),c=document.querySelector('.cover');
   if(!m||!c||!window.matchMedia||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
