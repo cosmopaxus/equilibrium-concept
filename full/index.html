@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Equilibrium Full Concept</title>
+<title>Inside Equilibrium</title>
 <meta name="description" content="Equilibrium by ǝvōke: a free daily practice app that helps people keep a real practice, see what changes, and add their experience to psychedelic wellness research.">
 <meta property="og:title" content="Equilibrium · concept overview">
 <meta property="og:description" content="A daily practice app that helps you keep a real practice, see what changes, and add your experience to psychedelic wellness research.">
@@ -284,6 +284,48 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   .mark{animation:mk-rock 8s ease-in-out 6.3s both}
   .mark.again{animation:mk-rock 8s ease-in-out both}
 }
+/* Inside the app: home's bands around the detail plates */
+body{padding-left:0;padding-right:0;padding-top:0}
+.ihero{background:radial-gradient(circle at 80% 30%,rgba(143,81,205,.5) 0,rgba(97,46,158,.2) 26%,transparent 50%),linear-gradient(145deg,#150B30 0%,#2A1154 48%,#51277E 100%);color:#FBF6EC;padding:72px max(20px,calc((100% - 1040px)/2)) 64px}
+.ihero-in{max-width:1040px;margin:0 auto;display:grid;gap:16px}
+.ihero .eyebrow{color:#F3D88E;letter-spacing:.18em}
+.ihero h1{font-family:var(--display);font-weight:500;font-size:clamp(40px,6vw,72px);line-height:1.04;letter-spacing:.02em}
+.ihero h1 em{font-style:normal;color:#E8C46B}
+.ihero .lead{font-size:clamp(16px,1.6vw,19px);color:#EEE6FA;max-width:680px}
+.chapnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chapnav a{display:inline-flex;gap:8px;align-items:center;text-decoration:none;color:#FBF6EC;border:1px solid rgba(232,218,250,.4);border-radius:999px;padding:7px 14px;font-weight:700;font-size:.9rem;background:rgba(255,255,255,.05)}
+.chapnav a span{color:#F3D88E;font-weight:800}
+.chapnav a:hover{border-color:#E8C46B}
+.ihero .back{color:#D8C9E6;font-weight:700;font-size:.92rem}
+.chap{padding:64px max(16px,calc((100% - 1040px)/2));scroll-margin-top:60px}
+.chap:nth-of-type(even){background:linear-gradient(var(--indigo-t),color-mix(in srgb,var(--bg) 70%,var(--indigo-t)))}
+.chap-head{max-width:1040px;margin:0 auto 24px;display:grid;gap:6px}
+.chap-n{font-family:var(--display);color:var(--indigo);font-size:.95rem;letter-spacing:.1em}
+.chap-head h2{font-size:clamp(28px,4vw,46px);font-weight:600}
+.chap-lead{color:var(--muted);font-size:1.05rem;max-width:66ch}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.shots figure{margin:0;display:grid;gap:6px}
+.shots img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #3A2A5C;box-shadow:0 12px 30px rgba(30,12,60,.2)}
+.shots figcaption{font-size:.84rem;color:var(--muted)}.shots figcaption b{display:block;color:var(--ink)}
+.calc{display:grid;gap:14px;max-width:640px}
+.calc label{display:grid;gap:6px;font-weight:700}
+.calc output{font-family:var(--display);color:var(--indigo);font-size:1.1rem;justify-self:start}
+.calc input[type=range]{width:100%;accent-color:#7A3E9D}
+.calc .tap{display:flex;gap:10px;align-items:center;font-weight:600;color:var(--muted)}
+.calc-out{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.calc-out div{background:var(--indigo-t);border-radius:12px;padding:12px;display:grid}
+.calc-out b{font-family:var(--display);font-size:1.8rem;color:var(--indigo)}
+.calc-out span{font-size:.84rem;color:var(--muted)}
+.icta{text-align:center;padding:64px 20px;background:radial-gradient(circle at 20% 10%,rgba(128,68,187,.48),transparent 35%),linear-gradient(145deg,#170D31,#32145F 58%,#4D2278);color:#fff;display:grid;gap:18px;justify-items:center}
+.icta h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,44px)}
+.icta .cta-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.eqfoot{display:flex;justify-content:space-between;gap:30px;align-items:center;padding:28px max(20px,calc((100% - 1040px)/2));background:#12082A;color:#fff}
+.eqfoot .brand{display:flex;gap:10px;align-items:center}
+.eqfoot b{display:block;font-family:var(--display);font-weight:600;letter-spacing:.16em;font-size:14px}
+.eqfoot small{display:block;font-size:11px;color:#B9B5CF;margin-top:2px}
+.eqfoot p{max-width:620px;color:#9A90AE;font-size:12.5px;text-align:right}
+.eqbar{margin-inline:0 !important}
+@media(max-width:720px){.shots{grid-template-columns:1fr 1fr}.eqfoot{flex-direction:column;align-items:flex-start}.eqfoot p{text-align:left}.calc-out b{font-size:1.4rem}}
 </style>
 </head>
 <body>
@@ -335,263 +377,45 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4"/></symbol>
 </svg>
 
+
 <header class="eqbar">
   <a class="brand" href="../" aria-label="Equilibrium home"><img src="../icon.svg" alt="" width="34" height="34"><span><b>EQUILIBRIUM</b><small>Balance in motion</small></span></a>
-  <nav aria-label="Site"><a href="../#lock">The model</a><a href="../#why">Why now</a><a href="../#app">The app</a><a href="../states/">State fit</a><a href="./" aria-current="page">Full concept</a><a class="go" href="#connect">Get involved</a></nav>
+  <nav aria-label="Site"><a href="../#lock">The model</a><a href="../#why">Why now</a><a href="../#app">The app</a><a href="../states/">State fit</a><a href="./" aria-current="page">Full concept</a><a class="go" href="../#connect">Get involved</a></nav>
 </header>
-<main class="stack" style="margin-top:20px">
-
-<!-- Cover -->
-<section class="plate cover" aria-label="Cover">
-  <div class="mark" aria-hidden="true">
-    <svg viewBox="-6 -6 212 212">
-      <defs>
-        <clipPath id="mk-clip"><circle cx="100" cy="100" r="99.5"/></clipPath>
-        <mask id="mk-m0" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d0" cx="100" cy="100" r="94" pathLength="1" transform="rotate(-90 100 100)"/></mask>
-        <mask id="mk-m1" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><line class="dr d1" x1="100" y1="0" x2="100" y2="200" pathLength="1"/></mask>
-        <mask id="mk-m2" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><line class="dr d2" x1="0" y1="100" x2="200" y2="100" pathLength="1"/></mask>
-        <mask id="mk-m3" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d3" cx="106.87" cy="125.65" r="88.56" pathLength="1" transform="rotate(200 106.87 125.65)"/></mask>
-        <mask id="mk-m4" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d4" cx="93.13" cy="74.35" r="88.56" pathLength="1" transform="rotate(20 93.13 74.35)"/></mask>
-      </defs>
-      <circle class="dash" cx="100" cy="100" r="94" mask="url(#mk-m0)"/>
-      <g clip-path="url(#mk-clip)">
-        <line class="dash" x1="100" y1="0" x2="100" y2="200" mask="url(#mk-m1)"/>
-        <line class="dash" x1="0" y1="100" x2="200" y2="100" mask="url(#mk-m2)"/>
-      </g>
-      <circle class="dot p0" cx="100" cy="6" r="4"/><circle class="dot p1" cx="194" cy="100" r="4"/><circle class="dot p2" cx="100" cy="194" r="4"/><circle class="dot p3" cx="6" cy="100" r="4"/>
-      <g class="ring">
-        <g clip-path="url(#mk-clip)">
-          <circle class="dash" cx="106.87" cy="125.65" r="88.56" mask="url(#mk-m3)"/>
-          <circle class="dash" cx="93.13" cy="74.35" r="88.56" mask="url(#mk-m4)"/>
-        </g>
-        <circle class="thin t0" cx="100" cy="100" r="80" pathLength="1" transform="rotate(-160 100 100)"/>
-        <circle class="thin t1" cx="78.75" cy="105.70" r="22" pathLength="1" transform="rotate(195 78.75 105.70)"/>
-        <circle class="thin t2" cx="121.25" cy="94.30" r="22" pathLength="1" transform="rotate(15 121.25 94.30)"/>
-        <path class="form f0" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z" pathLength="1"/>
-        <path class="form f1" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z" pathLength="1" transform="rotate(180 100 100)"/>
-        <path class="form f2" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z" pathLength="1"/>
-        <path class="form f3" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z" pathLength="1" transform="rotate(180 100 100)"/>
-        <line class="needle" x1="3.41" y1="125.88" x2="196.59" y2="74.12" pathLength="1"/>
-        <circle class="dot ctr" cx="100" cy="100" r="4"/>
-      </g>
-    </svg>
-  </div>
-  <p class="eyebrow">ǝvōke · Be Well · full concept · October 2026</p>
-  <div class="lockup"><h1>EQUILIBRIUM</h1><p class="balance">Balance in motion</p></div>
-  <p class="tag">A daily practice app that helps you keep a real practice, see what changes, and add your experience to psychedelic wellness research.</p>
-  <p class="motto">Duolingo for inner work: practice off screen, grow on screen.</p>
-  <div class="row">
-    <span class="pill">Free to members</span>
-    <span class="pill">No ads, no trackers</span>
-    <span class="pill">Research only</span>
-  </div>
-  <div class="cta-row">
-    <a class="cta-btn" href="#connect">Invest or collaborate <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    <a class="cta-btn ghost" href="../">The short overview</a>
+<section class="ihero" aria-labelledby="h-inside">
+  <div class="ihero-in">
+    <p class="eyebrow">Inside the app · the full concept</p>
+    <h1 id="h-inside">How Equilibrium <em>works.</em></h1>
+    <p class="lead">The overview shows why it matters. This is the detail: a member's first 90 days, the research methods, the two modes, the rewards and the roadmap.</p>
+    <nav class="chapnav" aria-label="Chapters">
+      <a href="#journey"><span>1</span>First 90 days</a><a href="#methods"><span>2</span>Research methods</a><a href="#modes"><span>3</span>Simple + Advanced</a><a href="#rewards"><span>4</span>Rewards</a><a href="#people"><span>5</span>People + principles</a><a href="#roadmap"><span>6</span>Roadmap + model</a>
+    </nav>
+    <a class="back" href="../">← Back to the overview</a>
   </div>
 </section>
-
-<nav class="toc" aria-label="Sections">
-  <div class="toc-links">
-    <a href="#mission"><span>01</span>Mission</a>
-    <a href="#jobs"><span>02</span>Five jobs</a>
-    <a href="#who"><span>03</span>Who it's for</a>
-    <a href="#measures"><span>04</span>What it measures</a>
-    <a href="#pillars"><span>05</span>Pillars</a>
-    <a href="#layers"><span>06</span>Layers</a>
-    <a href="#modes"><span>07</span>Two modes</a>
-    <a href="#day"><span>08</span>A day</a>
-    <a href="#principles"><span>09</span>Principles</a>
-    <a href="#borrow"><span>10</span>Inspiration</a>
-    <a href="#rewards"><span>11</span>Rewards</a>
-    <a href="#trust"><span>12</span>Trust and data</a>
-    <a href="#free"><span>13</span>Free vs Academy</a>
-    <a href="#status"><span>14</span>What's ready</a>
-  </div>
-  <div class="toc-pins">
-    <a href="../states/" class="toc-state"><svg aria-hidden="true"><use href="#i-map"/></svg>State fit</a>
-    <a href="#connect" class="toc-cta"><span>15</span>Invest · Collaborate</a>
-  </div>
-</nav>
-
-<!-- State fit · feature -->
-<section class="plate feature" id="state-fit" aria-labelledby="h-statefit">
-  <div class="head"><p class="eyebrow">State fit brief</p><h2 id="h-statefit">Where Equilibrium fits, state by state</h2></div>
-  <p class="lede">Which legalizing and decriminalizing states would gain most from long-term, real-world data on practice and plant medicine, and why New Mexico comes first.</p>
-  <div class="cards c3">
-    <a class="card good" href="../states/#newmexico"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>New Mexico first</h3><p>Its new psilocybin program hasn't set what it measures yet.</p></div></a>
-    <a class="card proc" href="../states/#board"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>The state fit board</h3><p>States scored on six things, from legal access to timing.</p></div></a>
-    <a class="card rule" href="../states/#lock"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>The combination lock</h3><p>For some people the dials have to line up. How the app finds which ones.</p></div></a>
-  </div>
-  <a class="feature-btn" href="../states/">Open the State Fit brief <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-</section>
-
-<!-- 01 · Mission -->
-<section class="plate" id="mission" aria-labelledby="h-mission">
-  <div class="head"><p class="eyebrow">01 · Why it exists</p><h2 id="h-mission">Mission</h2></div>
-  <div class="mission">
-    <p class="eyebrow">Mission</p>
-    <p class="m">Real-world research for the entheogen and psychedelic wellness movement, from members who keep a real practice.</p>
-    <p class="e">Ethos: help people keep a real practice, and show whether it's changing them.</p>
-  </div>
-  <div class="cards c2">
-    <div class="card neut"><div class="ic"><svg><use href="#i-question"/></svg></div><div><h3>The problem</h3><p>Consistency is the hard part of any self-work, and no one can yet show what actually helps.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>The answer</h3><p>Make showing up rewarding, then measure before and after, so members and the movement can see the real effect.</p></div></div>
-  </div>
-  <h3 class="sub">The daily loop</h3>
+<main>
+<section class="chap" id="journey" aria-labelledby="h-journey">
+  <div class="chap-head"><p class="chap-n">Chapter 1</p><p class="eyebrow">A member's journey</p><h2 id="h-journey">A member's first 90 days</h2><p class="chap-lead">What a member actually does, day by day, and what the app shows back.</p></div>
+  <div class="stack">
+<section class="plate" aria-labelledby="h-90">
+  <div class="head"><p class="eyebrow">The first 90 days</p><h2 id="h-90">From first open to real change</h2></div>
   <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Practice</h3><p>Off screen: sit, breathe, walk, study, dose if opted in.</p></div>
-    <div class="step"><span class="n">2</span><h3>Reflect + check in</h3><p>One line about the session, 30 seconds in the evening.</p></div>
-    <div class="step"><span class="n">3</span><h3>Character grows</h3><p>Light, element stars, garden, rank.</p></div>
-    <div class="step final"><span class="n">4</span><h3>Real change shows</h3><p>Starting point vs now, for you and for research.</p></div>
+    <div class="step plain"><span class="n">1</span><h3>Day 1</h3><p>Name, age range, an optional safety check and a 5-minute starting point. Opens in Simple mode on Today.</p></div>
+    <div class="step"><span class="n">2</span><h3>Days 2–13</h3><p>A few timed minutes, then a 30-second evening check-in. Practice levels start at 3 minutes.</p></div>
+    <div class="step"><span class="n">3</span><h3>Day 14</h3><p>Then vs now opens: her start beside her recent weeks.</p></div>
+    <div class="step"><span class="n">4</span><h3>Weeks 3–8</h3><p>The Compass wakes after 3 check-ins in a week and starts pointing; the teacher offers longer practices.</p></div>
+    <div class="step final"><span class="n">✓</span><h3>Month 3</h3><p>A rank invitation after real practice; weekly scales show change from her own start.</p></div>
   </div>
-  <div class="take"><p>A timed practice plus the evening check-in is <b>a day that counts.</b></p></div>
+  <div class="shots">
+    <figure><a href="../img/alpha-compass.jpg" target="_blank" rel="noopener"><img src="../img/alpha-compass.jpg" alt="The Compass in the working alpha." width="760" height="893" loading="lazy"></a><figcaption><b>Compass</b>This week's pull</figcaption></figure>
+    <figure><a href="../img/alpha-compass-over-time.jpg" target="_blank" rel="noopener"><img src="../img/alpha-compass-over-time.jpg" alt="Compass over time in the working alpha." width="760" height="1193" loading="lazy"></a><figcaption><b>Compass over time</b>8 weeks, week by week</figcaption></figure>
+    <figure><a href="../img/alpha-then-vs-now.jpg" target="_blank" rel="noopener"><img src="../img/alpha-then-vs-now.jpg" alt="Then vs now in the working alpha." width="760" height="1343" loading="lazy"></a><figcaption><b>Then vs now</b>Start beside recent weeks</figcaption></figure>
+  </div>
+  <p class="lede" style="font-size:.86rem">Real screens from the working alpha, with a test member and test history.</p>
 </section>
 
-<!-- 02 · Five jobs -->
-<section class="plate" id="jobs" aria-labelledby="h-jobs">
-  <div class="head"><p class="eyebrow">02 · What it does</p><h2 id="h-jobs">Five jobs, one app</h2></div>
-  <div class="cards">
-    <div class="card proc"><div class="ic"><svg><use href="#i-play"/></svg></div><div><h3>1 · Practice</h3><p>A few minutes a day: guided sessions, breath, stillness.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-check"/></svg></div><div><h3>2 · Track</h3><p>Goals, steps, wins, check-ins, dose log. See then vs now.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>3 · Learn</h3><p>The Path and the Academy, plus safe-use education.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>4 · Belong</h3><p>A clear way into the Be Well Ministry: covenant, Safety Screening, consent. Community later.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>5 · Contribute</h3><p>De-identified data for the movement. A clear yes to share, off any time. It goes to research only.</p></div></div>
-  </div>
-  <div class="card rule"><div class="ic"><svg><use href="#i-link"/></svg></div><div><h3>Why it's one app</h3><p>The steps that welcome someone into the ministry are the same steps that keep them safe: informed consent, a safety screening and safe-use education. Practice and tracking build the research.</p></div></div>
-</section>
-
-<!-- 03 · Who it's for -->
-<section class="plate" id="who" aria-labelledby="h-who">
-  <div class="head"><p class="eyebrow">03 · Who it's for</p><h2 id="h-who">Citizen scientists of the psychedelic wellness movement</h2>
-  <p class="lede">Adults who use entheogens, want to, or are curious. People who practice without dosing are welcome, and they're the comparison group.</p></div>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Why they come</h3><p>To help entheogen and psychedelic wellness research.</p></div>
-    <div class="step"><span class="n">2</span><h3>Why they stay</h3><p>A practice and integration that improve their lives.</p></div>
-    <div class="step final"><span class="n">3</span><h3>What it builds</h3><p>Months of data that show what actually works.</p></div>
-  </div>
-  <div class="cards c3">
-    <div class="card good"><div class="ic"><svg><use href="#i-drop"/></svg></div><div><h3>Adults who use entheogens</h3><p>Micro, macro or ceremony. A private dose log and protocol rhythm. They choose their own amount; the app never suggests one.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-compass"/></svg></div><div><h3>Adults who want to, or are curious</h3><p>They start with the practice and turn dosing on when they're ready, with safe-use education close by.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Practice-only adults</h3><p>Welcome as they are. They're the comparison group: is it the dose, or the practice?</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>Sincere seekers</h3><p>Advanced mode and the Academy: halls of teaching in many traditions, from the jhanas and Hermetic training to Jungian depth work and parts work.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Be Well Ministry members</h3><p>The Hall of Spirit: covenant, Safety Screening, consent; Psychedelic Studies later. Adults only.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-lock"/></svg></div><div><h3>Under 18</h3><p>Reflection mode: practice, goals, journal. No dosing tools, no Hall, never in research, data stays on the device.</p></div></div>
-  </div>
-  <div class="card warn"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Why non-dosers matter</h3><p>If only people who dose join, the research can't tell what comes from dosing and what comes from showing up every day.</p></div></div>
-</section>
-
-<!-- 04 · What it measures -->
-<section class="plate" id="measures" aria-labelledby="h-measures">
-  <div class="head"><p class="eyebrow">04 · The research</p><h2 id="h-measures">What it measures, and why it's different</h2>
-  <p class="lede">Equilibrium follows each member for months to see which mix of daily practices, with or without plant medicines, goes with real change. Because it counts the people who don't respond too, it can show what works for whom, not just on average.</p></div>
-  <div class="cards c2">
-    <div class="card good"><div class="ic"><svg><use href="#i-moon"/></svg></div><div><h3>Every evening</h3><p>Mood, energy, stress, focus, sleep, pressure and resource, on 0–100 sliders. Dosed, practiced, worked on a goal.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-calendar"/></svg></div><div><h3>Every week</h3><p>Validated scales (WHO-5, PHQ-2, GAD-2; PSS-4 monthly), side effects with severity, a safety question.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-pulse"/></svg></div><div><h3>Dose and practice days</h3><p>Micro, macro or none, compared with each person's own off days and starting point.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-trophy"/></svg></div><div><h3>Real-life function</h3><p>Goals, steps and wins, as weekly counts.</p></div></div>
-  </div>
-  <h3 class="sub">Different because</h3>
-  <div class="cards c2">
-    <div class="card proc"><div class="ic"><svg><use href="#i-hourglass"/></svg></div><div><h3>Months, not weeks</h3><p>Each person is followed from their starting point for a year and more.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-swap"/></svg></div><div><h3>Each person vs their own start</h3><p>Change is measured against the member's own baseline.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-sparkle"/></svg></div><div><h3>Many practices, not one medicine</h3><p>Breath, stillness, movement, goals, with or without a dose.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>Everyone counts</h3><p>Non-dosers and non-responders are part of the picture.</p></div></div>
-  </div>
-  <h3 class="sub">Structured experience report</h3>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Before</h3><p>Intention, set, setting, mood.</p></div>
-    <div class="step"><span class="n">2</span><h3>The dose</h3><p>Offering, amount and time, from the dose log.</p></div>
-    <div class="step"><span class="n">3</span><h3>The experience</h3><p>Timeline, effects checklist, the member's own story.</p></div>
-    <div class="step"><span class="n">4</span><h3>After</h3><p>Next-day check-in and integration questions.</p></div>
-    <div class="step final"><span class="n">5</span><h3>Follow-ups</h3><p>One week, one month, three months: what changed?</p></div>
-  </div>
-  <div class="take"><p>Every step is structured data. The story itself stays private to the member. Findings are reported as <b>patterns, not proof,</b> until an independent ethics review.</p></div>
-  <a class="card good" href="../states/" style="text-decoration:none;color:inherit"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>Where it fits, state by state</h3><p>Which legalizing and decriminalizing states would gain most from this data, with New Mexico first. <b style="color:var(--indigo)">Open the State Fit brief →</b></p></div></a>
-</section>
-
-<!-- 05 · Pillars -->
-<section class="plate" id="pillars" aria-labelledby="h-pillars">
-  <div class="head"><p class="eyebrow">05 · Four pillars</p><h2 id="h-pillars">Research and integration first</h2>
-  <p class="lede">"Keep a real practice" is Integration; "show whether it's changing them" is Research. Research is the primary objective and how the app is funded; Integration is what members touch every day.</p></div>
-  <div class="cards c2">
-    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>1 · Research <span class="badge">core</span></h3><p>Job: Contribute. Check-ins, validated scales, dose tracking, structured experience reports, integration scales.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>2 · Integration <span class="badge">core</span></h3><p>Jobs: Practice, Track. Guided practice, goals and steps, applying it in real life.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>3 · Education <span class="badge">next</span></h3><p>Job: Learn. The Academy: schools, masters, levels I–IV.</p></div></div>
-    <div class="card neut"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>4 · Community <span class="badge">later</span></h3><p>Job: Belong. The Be Well Ministry now; events, forums, partner groups later.</p></div></div>
-  </div>
-  <h3 class="sub">How it fits together</h3>
-  <div class="fit">
-    <div class="fit-row"><span class="fit-k">Why</span><div class="fit-v"><b>The mission</b><span>Real-world research for the psychedelic wellness movement, from members who keep a real practice.</span></div></div>
-    <div class="fit-row"><span class="fit-k">What</span><div class="fit-v"><b>Four pillars</b><span class="chips"><span class="chip good"><i class="dot"></i>Research · core</span><span class="chip proc"><i class="dot"></i>Integration · core</span><span class="chip rule"><i class="dot"></i>Education · next</span><span class="chip neut"><i class="dot"></i>Community · later</span></span></div></div>
-    <div class="fit-row"><span class="fit-k">How</span><div class="fit-v"><b>Five jobs</b><span class="chips"><span class="chip proc">Practice</span><span class="chip proc">Track</span><span class="chip rule">Learn</span><span class="chip neut">Belong</span><span class="chip good">Contribute</span></span><span class="muted" style="font-size:.86rem">Education adds what you practice. Community adds who you share it with. The daily loop stays the same.</span></div></div>
-    <div class="fit-row"><span class="fit-k">Decide</span><div class="fit-v"><b>Principles and the pillars they guard</b>
-      <ul class="plist">
-        <li>Life is the practice <span class="dots"><i class="dot proc"></i></span></li>
-        <li>One obvious next step <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i><i class="dot neut"></i></span></li>
-        <li>Growth you can see <span class="dots"><i class="dot proc"></i></span></li>
-        <li>Proven, not claimed <span class="dots"><i class="dot proc"></i><i class="dot rule"></i></span></li>
-        <li>Honesty is part of the path <span class="dots"><i class="dot good"></i><i class="dot proc"></i></span></li>
-        <li>Each tradition in its own voice <span class="dots"><i class="dot rule"></i></span></li>
-        <li>Trust is everything <span class="dots"><i class="dot good"></i><i class="dot neut"></i></span></li>
-        <li>Free core, paid depth <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i></span></li>
-        <li>Adults choose, a net is always there <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i><i class="dot neut"></i></span></li>
-        <li>Informed before sacred <span class="dots"><i class="dot neut"></i></span></li>
-      </ul></div></div>
-  </div>
-</section>
-
-<!-- 06 · Layers -->
-<section class="plate" id="layers" aria-labelledby="h-layers">
-  <div class="head"><p class="eyebrow">06 · Structure</p><h2 id="h-layers">Three layers on a science base</h2></div>
-  <div class="cards">
-    <div class="card rule"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>Layer 3 · The Academy <span class="badge">level I free · II+ membership</span></h3><p>Halls of teaching from many traditions, each taught in its own voice by its own master. Levels I–IV, trials. Up to two at a time, like an RPG job system.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>Layer 2 · The Path <span class="badge">free</span></h3><p>Universal main rank: Foundation → Acolyte → Initiate → Adept. Short lessons. Rank rises only by invitation after real practice.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-sun"/></svg></div><div><h3>Layer 1 · The daily loop <span class="badge">free</span></h3><p>Guided session, top 3 goals, dose log (if opted in), evening check-in, journal, wins. A few minutes a day.</p></div></div>
-    <div class="card neut"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Underneath · Citizen science <span class="badge">free · a clear yes</span></h3><p>Check-ins feed a de-identified research copy only after a clear yes. Turning it off takes two steps, any time. Every feature works without sharing.</p></div></div>
-  </div>
-  <h3 class="sub">The Academy's halls of teaching</h3>
-  <div class="cards c3">
-    <div class="card rule"><div class="ic"><svg><use href="#i-orbit"/></svg></div><div><h3>Contemplative <span class="badge">live · I–II</span></h3><p>Mindful breathing and walking, the jhanas, insight (noting), loving-kindness. The suggested first hall.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Hermetic <span class="badge">live · I–II</span></h3><p>Franz Bardon's <i>Initiation into Hermetics</i>: thought control, the soul mirror, conscious breathing, elemental balance.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-keyhole"/></svg></div><div><h3>Depth psychology <span class="badge">planned</span></h3><p>Two strands: Jung's shadow work, dreams, active imagination and archetypes, and parts work, getting to know the different parts of yourself. Parts work may grow into its own hall.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-wind"/></svg></div><div><h3>Body and breath <span class="badge">planned</span></h3><p>Body scan and yoga nidra, slow breathing, qigong and yoga flows, time in nature.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>Psychedelic Studies <span class="badge">planned · Be Well</span></h3><p>A hall inside the Hall of Spirit for adult Be Well members: the history of sacred plant use; set, setting and ceremony; safety and harm reduction; integration; ethics and care for others.</p></div></div>
-    <div class="card neut"><div class="ic"><svg><use href="#i-plus"/></svg></div><div><h3>More halls to come</h3><p>Other traditions of meditation, healing and self-mastery, each with its own master and levels.</p></div></div>
-  </div>
-  <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>The Way <span class="badge">next</span></h3><p>The main path that runs through every hall: each rank samples the basics of every school, and the halls open beside it.</p></div></div>
-  <div class="take"><p>A new member only has to understand the bottom layer. The higher layers reveal themselves as they climb. <b>Simple mode</b> shows the daily loop, the Path and Contemplative I practices; <b>Advanced mode</b> opens the map and the Academy.</p></div>
-</section>
-
-<!-- 07 · Two modes -->
-<section class="plate" id="modes" aria-labelledby="h-modes">
-  <div class="head"><p class="eyebrow">07 · Two modes + app map</p><h2 id="h-modes">Simple first. Advanced when you're ready.</h2>
-  <p class="lede">Everyone starts in Simple: one calm Today screen, no long scrolls. Advanced is free and opt in; it opens the world map and the Academy around the same daily loop.</p></div>
-  <div class="cols">
-    <div class="col good"><h3><span>Simple</span><small>default</small></h3><ul>
-      <li><b>Today</b><small>Opens here. One Begin card (the next Path lesson), then goals, dose log (if opted in) and evening check-in.</small></li>
-      <li><b>Progress</b><small>Path rank and lessons, goals, wins, then vs now, Light and gems, garden. "Go deeper" at the bottom: the Hall of Spirit and Advanced mode.</small></li>
-      <li><b>Journal</b><small>Reflections, check-in notes, experience reports.</small></li>
-    </ul></div>
-    <div class="col rule"><h3><span>Advanced</span><small>opt in, free</small></h3><ul>
-      <li><b>World</b><small>Opens here. Academy map with the Path, school buildings, the garden and the Hall of Spirit. A collapsible Today tray on top.</small></li>
-      <li><b>Character</b><small>Rank bar, element constellations, classes, wins, goals, bag, gems, settings.</small></li>
-      <li><b>Journal</b><small>Everything in Simple, plus Compass and the soul mirror once unlocked.</small></li>
-    </ul></div>
-  </div>
-  <div class="cards c2">
-    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>The Path lives in both</h3><p>Its next lesson fills Today's Begin card; its rank and lessons sit in Progress (Character in Advanced).</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-wind"/></svg></div><div><h3>Breath and stillness from day one</h3><p>Simple's "Other practices" are Contemplative Level I: mindful breathing, listening, body scan, ten quiet minutes, the mindful walk, three thanks.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-arrow"/></svg></div><div><h3>Practice carries in</h3><p>Shelf practice is saved now. If you later join Contemplative, it counts toward Level I. Joining stays a choice, by invitation.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Hall of Spirit · Be Well Ministry</h3><p>A wing of the academy for adult members, free to join with an optional donation. Joining is read, screened and agreed to: the covenant, a Safety Screening and informed consent.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-orbit"/></svg></div><div><h3>One journey</h3><p>Everything you record lives in one journey, so nothing gets split or lost, and data is recorded the same way for everyone.</p></div></div>
-    <div class="card warn"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Support on every screen</h3><p>A Support button floats on every screen in both modes, with psychedelic peer support first.</p></div></div>
-  </div>
-</section>
-
-<!-- 08 · A day -->
 <section class="plate" id="day" aria-labelledby="h-day">
-  <div class="head"><p class="eyebrow">08 · Wireframes</p><h2 id="h-day">A day in Equilibrium</h2>
+  <div class="head"><p class="eyebrow">Wireframes</p><h2 id="h-day">A day in Equilibrium</h2>
   <p class="lede">Clean wireframes for structure only. The app itself is flat and simple for now; painted art may come later.</p></div>
   <div class="phones">
 
@@ -701,41 +525,121 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
     </div><figcaption><b>Anytime · Journal</b>What you've lived. Private.</figcaption></figure>
   </div>
 </section>
-
-<!-- 09 · Principles -->
-<section class="plate" id="principles" aria-labelledby="h-principles">
-  <div class="head"><p class="eyebrow">09 · How we decide</p><h2 id="h-principles">Ten principles</h2></div>
+  </div>
+</section>
+<section class="chap" id="methods" aria-labelledby="h-methods">
+  <div class="chap-head"><p class="chap-n">Chapter 2</p><p class="eyebrow">Research methods</p><h2 id="h-methods">How the evidence is collected</h2><p class="chap-lead">Every measure, every scale, and the rules that keep it private.</p></div>
+  <div class="stack">
+<section class="plate" id="measures" aria-labelledby="h-measures">
+  <div class="head"><p class="eyebrow">The research</p><h2 id="h-measures">What it measures, and why it's different</h2>
+  <p class="lede">Equilibrium follows each member for months to see which mix of daily practices, with or without plant medicines, goes with real change. Because it counts the people who don't respond too, it can show what works for whom, not just on average.</p></div>
   <div class="cards c2">
-    <div class="card proc"><div class="ic"><svg><use href="#i-door"/></svg></div><div><h3>Life is the practice</h3><p>The screen is a doorway. The real work happens off it.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-arrow"/></svg></div><div><h3>One obvious next step</h3><p>Open the app, see today. Never a cluttered screen.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>Growth you can see</h3><p>Stars, garden, rank. Positive only, never shaming.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>Proven, not claimed</h3><p>Doors open by invitation after real practice. Nothing automatic.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Honesty is part of the path</h3><p>Light runs on honor. Gems need proof.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-star"/></svg></div><div><h3>Each tradition in its own voice</h3><p>Hermetic is disciplined, Contemplative is warm. No watering down.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><h3>Trust is everything</h3><p>Private by default. No ads, no trackers. Research is de-identified and goes to research only.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-gift"/></svg></div><div><h3>Free core, paid depth</h3><p>Daily loop, Path and research free forever. Academy depth by membership.</p></div></div>
-    <div class="card warn"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Adults choose, a net is always there</h3><p>Consenting adults set their path; Support is one tap away.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Informed before sacred <span class="badge">new</span></h3><p>Every step into the ministry is read, screened and agreed to. That's what keeps members safe, and it's what keeps the ministry strong.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-moon"/></svg></div><div><h3>Every evening</h3><p>Mood, energy, stress, focus, sleep, pressure and resource, on 0–100 sliders. Dosed, practiced, worked on a goal.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-calendar"/></svg></div><div><h3>Every week</h3><p>Validated scales (WHO-5, PHQ-2, GAD-2; PSS-4 monthly), side effects with severity, a safety question.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-pulse"/></svg></div><div><h3>Dose and practice days</h3><p>Micro, macro or none, compared with each person's own off days and starting point.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-trophy"/></svg></div><div><h3>Real-life function</h3><p>Goals, steps and wins, as weekly counts.</p></div></div>
+  </div>
+  <h3 class="sub">Different because</h3>
+  <div class="cards c2">
+    <div class="card proc"><div class="ic"><svg><use href="#i-hourglass"/></svg></div><div><h3>Months, not weeks</h3><p>Each person is followed from their starting point for a year and more.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-swap"/></svg></div><div><h3>Each person vs their own start</h3><p>Change is measured against the member's own baseline.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-sparkle"/></svg></div><div><h3>Many practices, not one medicine</h3><p>Breath, stillness, movement, goals, with or without a dose.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>Everyone counts</h3><p>Non-dosers and non-responders are part of the picture.</p></div></div>
+  </div>
+  <h3 class="sub">Structured experience report</h3>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Before</h3><p>Intention, set, setting, mood.</p></div>
+    <div class="step"><span class="n">2</span><h3>The dose</h3><p>Offering, amount and time, from the dose log.</p></div>
+    <div class="step"><span class="n">3</span><h3>The experience</h3><p>Timeline, effects checklist, the member's own story.</p></div>
+    <div class="step"><span class="n">4</span><h3>After</h3><p>Next-day check-in and integration questions.</p></div>
+    <div class="step final"><span class="n">5</span><h3>Follow-ups</h3><p>One week, one month, three months: what changed?</p></div>
+  </div>
+  <div class="take"><p>Every step is structured data. The story itself stays private to the member. Findings are reported as <b>patterns, not proof,</b> until an independent ethics review.</p></div>
+  <a class="card good" href="../states/" style="text-decoration:none;color:inherit"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>Where it fits, state by state</h3><p>Which legalizing and decriminalizing states would gain most from this data, with New Mexico first. <b style="color:var(--indigo)">Open the State Fit brief →</b></p></div></a>
+</section>
+<section class="plate" id="trust" aria-labelledby="h-trust">
+  <div class="head"><p class="eyebrow">Trust is everything</p><h2 id="h-trust">Three data tiers, plus a guide you choose</h2></div>
+  <div class="tiers"><table>
+    <thead><tr><th style="background:transparent"></th><th style="background:var(--good)">Personal vault</th><th style="background:var(--proc)">Citizen science</th><th style="background:var(--rule)">Research studies</th><th style="background:var(--neutral)">Guide connection</th></tr></thead>
+    <tbody>
+      <tr><th>What</th><td class="good">Everything, synced across devices</td><td class="proc">De-identified everyday readings</td><td class="rule">Deeper questionnaires</td><td class="neut">What the person shares</td></tr>
+      <tr><th>Who sees it</th><td class="good">Only the person</td><td class="proc">ǝvōke research team and research partners</td><td class="rule">Team and partners named per study</td><td class="neut">Only the chosen guide</td></tr>
+      <tr><th>Name attached</th><td class="good">Yes, their account</td><td class="proc">No</td><td class="rule">No</td><td class="neut">Yes, by choice</td></tr>
+      <tr><th>How you join</th><td class="good">Automatic</td><td class="proc">A clear yes; off any time</td><td class="rule">A yes to each study</td><td class="neut">Invite, revoke any time</td></tr>
+    </tbody>
+  </table></div>
+  <div class="promise">
+    <span>Your journal is private to you.</span>
+    <span>Anything you share for research has no name, email or account attached.</span>
+    <span>Your research data goes only to research: universities, health organizations and research partners, under agreements that forbid trying to identify anyone.</span>
+    <span>It is never sold or licensed to advertisers, insurers, employers, data brokers or law enforcement, and we publish who receives it.</span>
+    <small>Draft wording, under legal review.</small>
+  </div>
+  <div class="cards c3">
+    <div class="card good"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>Groups of 10 or more</h3><p>Every shared number covers at least 10 people. Smaller groups say "not enough yet."</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-scissors"/></svg></div><div><h3>Readings only</h3><p>Research copies keep readings and age ranges: no notes, no journal text, no exact dates, no names.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-file"/></svg></div><div><h3>Research licenses only</h3><p>Row-level data only under a signed data-use agreement with the partner's ethics approval: no re-identifying, no resale.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-ban"/></svg></div><div><h3>No ads, ever</h3><p>No advertising or analytics code in the app.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-lock"/></svg></div><div><h3>Under 18 stays on the device</h3><p>Reflection mode, no sign-in, never in research.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-heartplus"/></svg></div><div><h3>Not medical care</h3><p>No one reviews answers in real time. Support is on every screen.</p></div></div>
   </div>
 </section>
-
-<!-- 10 · Inspiration -->
-<section class="plate" id="borrow" aria-labelledby="h-borrow">
-  <div class="head"><p class="eyebrow">10 · Inspiration</p><h2 id="h-borrow">What we borrow from proven apps and games</h2></div>
-  <div class="cards c4">
-    <div class="card proc"><div class="ic">D</div><div><h3>Duolingo → the Path</h3><p>One clear path, bite-size lessons, always one next tap.</p></div></div>
-    <div class="card proc"><div class="ic">H</div><div><h3>Habitica → Character</h3><p>Real habits become XP on a character sheet.</p></div></div>
-    <div class="card good"><div class="ic">F</div><div><h3>Finch → tone</h3><p>A gentle companion that never shames a missed day.</p></div></div>
-    <div class="card good"><div class="ic">S</div><div><h3>Stardew Valley → rhythm</h3><p>Short cozy days, seasons, a garden that pauses instead of a streak that breaks.</p></div></div>
-    <div class="card rule"><div class="ic">H</div><div><h3>Hades → home and masters</h3><p>A hub you return to; characters who notice your progress.</p></div></div>
-    <div class="card rule"><div class="ic">S</div><div><h3>Skyrim → elements</h3><p>Skills grow by use, shown as four constellations.</p></div></div>
-    <div class="card rule"><div class="ic">FF</div><div><h3>Final Fantasy jobs → schools</h3><p>Pick a class, level it, switch, keep what you learned.</p></div></div>
   </div>
 </section>
-
-<!-- 11 · Rewards -->
+<section class="chap" id="modes" aria-labelledby="h-modes">
+  <div class="chap-head"><p class="chap-n">Chapter 3</p><p class="eyebrow">Simple and Advanced</p><h2 id="h-modes">Two modes, one daily loop</h2><p class="chap-lead">Simple keeps it calm; Advanced opens the Path and the Academy.</p></div>
+  <div class="stack">
+<section class="plate" id="modes" aria-labelledby="h-modes">
+  <div class="head"><p class="eyebrow">Two modes + app map</p><h2 id="h-modes">Simple first. Advanced when you're ready.</h2>
+  <p class="lede">Everyone starts in Simple: one calm Today screen, no long scrolls. Advanced is free and opt in; it opens the world map and the Academy around the same daily loop.</p></div>
+  <div class="cols">
+    <div class="col good"><h3><span>Simple</span><small>default</small></h3><ul>
+      <li><b>Today</b><small>Opens here. One Begin card (the next Path lesson), then goals, dose log (if opted in) and evening check-in.</small></li>
+      <li><b>Progress</b><small>Path rank and lessons, goals, wins, then vs now, Light and gems, garden. "Go deeper" at the bottom: the Hall of Spirit and Advanced mode.</small></li>
+      <li><b>Journal</b><small>Reflections, check-in notes, experience reports.</small></li>
+    </ul></div>
+    <div class="col rule"><h3><span>Advanced</span><small>opt in, free</small></h3><ul>
+      <li><b>World</b><small>Opens here. Academy map with the Path, school buildings, the garden and the Hall of Spirit. A collapsible Today tray on top.</small></li>
+      <li><b>Character</b><small>Rank bar, element constellations, classes, wins, goals, bag, gems, settings.</small></li>
+      <li><b>Journal</b><small>Everything in Simple, plus Compass and the soul mirror once unlocked.</small></li>
+    </ul></div>
+  </div>
+  <div class="cards c2">
+    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>The Path lives in both</h3><p>Its next lesson fills Today's Begin card; its rank and lessons sit in Progress (Character in Advanced).</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-wind"/></svg></div><div><h3>Breath and stillness from day one</h3><p>Simple's "Other practices" are Contemplative Level I: mindful breathing, listening, body scan, ten quiet minutes, the mindful walk, three thanks.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-arrow"/></svg></div><div><h3>Practice carries in</h3><p>Shelf practice is saved now. If you later join Contemplative, it counts toward Level I. Joining stays a choice, by invitation.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Hall of Spirit · Be Well Ministry</h3><p>A wing of the academy for adult members, free to join with an optional donation. Joining is read, screened and agreed to: the covenant, a Safety Screening and informed consent.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-orbit"/></svg></div><div><h3>One journey</h3><p>Everything you record lives in one journey, so nothing gets split or lost, and data is recorded the same way for everyone.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Support on every screen</h3><p>A Support button floats on every screen in both modes, with psychedelic peer support first.</p></div></div>
+  </div>
+</section>
+<section class="plate" id="layers" aria-labelledby="h-layers">
+  <div class="head"><p class="eyebrow">Structure</p><h2 id="h-layers">Three layers on a science base</h2></div>
+  <div class="cards">
+    <div class="card rule"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>Layer 3 · The Academy <span class="badge">level I free · II+ membership</span></h3><p>Halls of teaching from many traditions, each taught in its own voice by its own master. Levels I–IV, trials. Up to two at a time, like an RPG job system.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>Layer 2 · The Path <span class="badge">free</span></h3><p>Universal main rank: Foundation → Acolyte → Initiate → Adept. Short lessons. Rank rises only by invitation after real practice.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-sun"/></svg></div><div><h3>Layer 1 · The daily loop <span class="badge">free</span></h3><p>Guided session, top 3 goals, dose log (if opted in), evening check-in, journal, wins. A few minutes a day.</p></div></div>
+    <div class="card neut"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Underneath · Citizen science <span class="badge">free · a clear yes</span></h3><p>Check-ins feed a de-identified research copy only after a clear yes. Turning it off takes two steps, any time. Every feature works without sharing.</p></div></div>
+  </div>
+  <h3 class="sub">The Academy's halls of teaching</h3>
+  <div class="cards c3">
+    <div class="card rule"><div class="ic"><svg><use href="#i-orbit"/></svg></div><div><h3>Contemplative <span class="badge">live · I–II</span></h3><p>Mindful breathing and walking, the jhanas, insight (noting), loving-kindness. The suggested first hall.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Hermetic <span class="badge">live · I–II</span></h3><p>Franz Bardon's <i>Initiation into Hermetics</i>: thought control, the soul mirror, conscious breathing, elemental balance.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-keyhole"/></svg></div><div><h3>Depth psychology <span class="badge">planned</span></h3><p>Two strands: Jung's shadow work, dreams, active imagination and archetypes, and parts work, getting to know the different parts of yourself. Parts work may grow into its own hall.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-wind"/></svg></div><div><h3>Body and breath <span class="badge">planned</span></h3><p>Body scan and yoga nidra, slow breathing, qigong and yoga flows, time in nature.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>Psychedelic Studies <span class="badge">planned · Be Well</span></h3><p>A hall inside the Hall of Spirit for adult Be Well members: the history of sacred plant use; set, setting and ceremony; safety and harm reduction; integration; ethics and care for others.</p></div></div>
+    <div class="card neut"><div class="ic"><svg><use href="#i-plus"/></svg></div><div><h3>More halls to come</h3><p>Other traditions of meditation, healing and self-mastery, each with its own master and levels.</p></div></div>
+  </div>
+  <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>The Way <span class="badge">next</span></h3><p>The main path that runs through every hall: each rank samples the basics of every school, and the halls open beside it.</p></div></div>
+  <div class="take"><p>A new member only has to understand the bottom layer. The higher layers reveal themselves as they climb. <b>Simple mode</b> shows the daily loop, the Path and Contemplative I practices; <b>Advanced mode</b> opens the map and the Academy.</p></div>
+</section>
+  </div>
+</section>
+<section class="chap" id="rewards" aria-labelledby="h-rewards">
+  <div class="chap-head"><p class="chap-n">Chapter 4</p><p class="eyebrow">Rewards</p><h2 id="h-rewards">Rewards that keep the data clean</h2><p class="chap-lead">Rewards for showing up, never for the answers.</p></div>
+  <div class="stack">
 <section class="plate" id="rewards" aria-labelledby="h-rewards">
-  <div class="head"><p class="eyebrow">11 · Rewards</p><h2 id="h-rewards">Two currencies: honor and proof</h2></div>
+  <div class="head"><p class="eyebrow">Rewards</p><h2 id="h-rewards">Two currencies: honor and proof</h2></div>
   <div class="cols">
     <div class="col proc"><h3><span>✦ Light (XP)</span><small>never redeemable</small></h3><ul>
       <li><b>Honor system</b><small>Every session (+20), a full-sentence line (+10), notes, finished steps and goals.</small></li>
@@ -769,66 +673,85 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
     <div class="step bad"><span class="n">✕</span><h3>Earns</h3><p>Light only · 0 gems.</p></div>
   </div>
 </section>
+<section class="plate" aria-labelledby="h-calc">
+  <div class="head"><p class="eyebrow">Try it</p><h2 id="h-calc">One week of rewards</h2></div>
+  <p class="lede">Move the sliders to see what a week earns. Light runs on honor; gems need proof.</p>
+  <div class="calc">
+    <label>Timed sessions with an evening check-in <output id="c-days">5</output><input type="range" id="c-d" min="0" max="7" value="5" step="1"></label>
+    <label>Full-sentence reflections <output id="c-lines">3</output><input type="range" id="c-l" min="0" max="7" value="3" step="1"></label>
+    <label class="tap"><input type="checkbox" id="c-t"> Tapper: taps everything, 0-second timers, "ok" notes</label>
+    <div class="calc-out"><div><b id="c-light">130</b><span>Light</span></div><div><b id="c-gems">15</b><span>gems</span></div><div><b id="c-steady">Yes</b><span>steady-week bonus</span></div></div>
+  </div>
+</section>
 
-<!-- 12 · Trust -->
-<section class="plate" id="trust" aria-labelledby="h-trust">
-  <div class="head"><p class="eyebrow">12 · Trust is everything</p><h2 id="h-trust">Three data tiers, plus a guide you choose</h2></div>
-  <div class="tiers"><table>
-    <thead><tr><th style="background:transparent"></th><th style="background:var(--good)">Personal vault</th><th style="background:var(--proc)">Citizen science</th><th style="background:var(--rule)">Research studies</th><th style="background:var(--neutral)">Guide connection</th></tr></thead>
-    <tbody>
-      <tr><th>What</th><td class="good">Everything, synced across devices</td><td class="proc">De-identified everyday readings</td><td class="rule">Deeper questionnaires</td><td class="neut">What the person shares</td></tr>
-      <tr><th>Who sees it</th><td class="good">Only the person</td><td class="proc">ǝvōke research team and research partners</td><td class="rule">Team and partners named per study</td><td class="neut">Only the chosen guide</td></tr>
-      <tr><th>Name attached</th><td class="good">Yes, their account</td><td class="proc">No</td><td class="rule">No</td><td class="neut">Yes, by choice</td></tr>
-      <tr><th>How you join</th><td class="good">Automatic</td><td class="proc">A clear yes; off any time</td><td class="rule">A yes to each study</td><td class="neut">Invite, revoke any time</td></tr>
-    </tbody>
-  </table></div>
-  <div class="promise">
-    <span>Your journal is private to you.</span>
-    <span>Anything you share for research has no name, email or account attached.</span>
-    <span>Your research data goes only to research: universities, health organizations and research partners, under agreements that forbid trying to identify anyone.</span>
-    <span>It is never sold or licensed to advertisers, insurers, employers, data brokers or law enforcement, and we publish who receives it.</span>
-    <small>Draft wording, under legal review.</small>
+  </div>
+</section>
+<section class="chap" id="people" aria-labelledby="h-people">
+  <div class="chap-head"><p class="chap-n">Chapter 5</p><p class="eyebrow">People and principles</p><h2 id="h-people">Who it's for, and how we decide</h2><p class="chap-lead">Citizen scientists, practitioners and the principles that guide every choice.</p></div>
+  <div class="stack">
+<section class="plate" id="who" aria-labelledby="h-who">
+  <div class="head"><p class="eyebrow">Who it's for</p><h2 id="h-who">Citizen scientists of the psychedelic wellness movement</h2>
+  <p class="lede">Adults who use entheogens, want to, or are curious. People who practice without dosing are welcome, and they're the comparison group.</p></div>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Why they come</h3><p>To help entheogen and psychedelic wellness research.</p></div>
+    <div class="step"><span class="n">2</span><h3>Why they stay</h3><p>A practice and integration that improve their lives.</p></div>
+    <div class="step final"><span class="n">3</span><h3>What it builds</h3><p>Months of data that show what actually works.</p></div>
   </div>
   <div class="cards c3">
-    <div class="card good"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>Groups of 10 or more</h3><p>Every shared number covers at least 10 people. Smaller groups say "not enough yet."</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-scissors"/></svg></div><div><h3>Readings only</h3><p>Research copies keep readings and age ranges: no notes, no journal text, no exact dates, no names.</p></div></div>
-    <div class="card rule"><div class="ic"><svg><use href="#i-file"/></svg></div><div><h3>Research licenses only</h3><p>Row-level data only under a signed data-use agreement with the partner's ethics approval: no re-identifying, no resale.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-ban"/></svg></div><div><h3>No ads, ever</h3><p>No advertising or analytics code in the app.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-lock"/></svg></div><div><h3>Under 18 stays on the device</h3><p>Reflection mode, no sign-in, never in research.</p></div></div>
-    <div class="card warn"><div class="ic"><svg><use href="#i-heartplus"/></svg></div><div><h3>Not medical care</h3><p>No one reviews answers in real time. Support is on every screen.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-drop"/></svg></div><div><h3>Adults who use entheogens</h3><p>Micro, macro or ceremony. A private dose log and protocol rhythm. They choose their own amount; the app never suggests one.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-compass"/></svg></div><div><h3>Adults who want to, or are curious</h3><p>They start with the practice and turn dosing on when they're ready, with safe-use education close by.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Practice-only adults</h3><p>Welcome as they are. They're the comparison group: is it the dose, or the practice?</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>Sincere seekers</h3><p>Advanced mode and the Academy: halls of teaching in many traditions, from the jhanas and Hermetic training to Jungian depth work and parts work.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Be Well Ministry members</h3><p>The Hall of Spirit: covenant, Safety Screening, consent; Psychedelic Studies later. Adults only.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-lock"/></svg></div><div><h3>Under 18</h3><p>Reflection mode: practice, goals, journal. No dosing tools, no Hall, never in research, data stays on the device.</p></div></div>
   </div>
+  <div class="card warn"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Why non-dosers matter</h3><p>If only people who dose join, the research can't tell what comes from dosing and what comes from showing up every day.</p></div></div>
 </section>
-
-<!-- 13 · Free vs Academy -->
-<section class="plate" id="free" aria-labelledby="h-free">
-  <div class="head"><p class="eyebrow">13 · Sustainability</p><h2 id="h-free">Free core, paid depth</h2></div>
-  <div class="cols">
-    <div class="col good"><h3><span>Always free</span></h3><ul>
-      <li><b>The daily loop</b><small>Sessions, check-ins, goals, dose log, journal.</small></li>
-      <li><b>The full Path</b><small>Foundation → Adept.</small></li>
-      <li><b>Character, Light, gems, garden</b></li>
-      <li><b>Citizen science and Support</b></li>
-      <li><b>Level I of every school</b><small>Try every class before paying.</small></li>
-      <li><b>Advanced mode</b><small>The map and the Academy are free to open; only levels II+ need membership.</small></li>
-      <li><b>Be Well Ministry membership</b><small>Free to join, with an optional donation. Opens the Hall of Spirit.</small></li>
-    </ul></div>
-    <div class="col rule"><h3><span>Academy membership</span></h3><ul>
-      <li><b>Levels II and up, every school</b><small>One membership, sold through Be Well and the web. Separate from Be Well Ministry membership.</small></li>
-      <li><b>A real teacher</b><small>Voiced lessons from each school's master.</small></li>
-      <li><b>A real curriculum</b><small>Every hall taught in its own tradition, levels I–IV: the jhanas in Contemplative, Bardon in Hermetic, Jung and parts work in Depth psychology.</small></li>
-      <li><b>Earned proof</b><small>Trials and seals that mean something.</small></li>
-      <li><b>Others on the path</b><small>Circles, cohorts, partner perks (later).</small></li>
-    </ul></div>
+<section class="plate" id="jobs" aria-labelledby="h-jobs">
+  <div class="head"><p class="eyebrow">What it does</p><h2 id="h-jobs">Five jobs, one app</h2></div>
+  <div class="cards">
+    <div class="card proc"><div class="ic"><svg><use href="#i-play"/></svg></div><div><h3>1 · Practice</h3><p>A few minutes a day: guided sessions, breath, stillness.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-check"/></svg></div><div><h3>2 · Track</h3><p>Goals, steps, wins, check-ins, dose log. See then vs now.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>3 · Learn</h3><p>The Path and the Academy, plus safe-use education.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>4 · Belong</h3><p>A clear way into the Be Well Ministry: covenant, Safety Screening, consent. Community later.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>5 · Contribute</h3><p>De-identified data for the movement. A clear yes to share, off any time. It goes to research only.</p></div></div>
   </div>
+  <div class="card rule"><div class="ic"><svg><use href="#i-link"/></svg></div><div><h3>Why it's one app</h3><p>The steps that welcome someone into the ministry are the same steps that keep them safe: informed consent, a safety screening and safe-use education. Practice and tracking build the research.</p></div></div>
+</section>
+<section class="plate" id="principles" aria-labelledby="h-principles">
+  <div class="head"><p class="eyebrow">How we decide</p><h2 id="h-principles">Ten principles</h2></div>
   <div class="cards c2">
-    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Research keeps it free</h3><p>De-identified research data, licensed to research and health partners only, free or for a fee. Fees keep the app free; they never pay members or add gems.</p></div></div>
-    <div class="card warn"><div class="ic"><svg><use href="#i-gem"/></svg></div><div><h3>Gems never buy practice or levels</h3><p>Paying opens the doors. Walking through them is still earned.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-door"/></svg></div><div><h3>Life is the practice</h3><p>The screen is a doorway. The real work happens off it.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-arrow"/></svg></div><div><h3>One obvious next step</h3><p>Open the app, see today. Never a cluttered screen.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>Growth you can see</h3><p>Stars, garden, rank. Positive only, never shaming.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>Proven, not claimed</h3><p>Doors open by invitation after real practice. Nothing automatic.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Honesty is part of the path</h3><p>Light runs on honor. Gems need proof.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-star"/></svg></div><div><h3>Each tradition in its own voice</h3><p>Hermetic is disciplined, Contemplative is warm. No watering down.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><h3>Trust is everything</h3><p>Private by default. No ads, no trackers. Research is de-identified and goes to research only.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-gift"/></svg></div><div><h3>Free core, paid depth</h3><p>Daily loop, Path and research free forever. Academy depth by membership.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Adults choose, a net is always there</h3><p>Consenting adults set their path; Support is one tap away.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Informed before sacred <span class="badge">new</span></h3><p>Every step into the ministry is read, screened and agreed to. That's what keeps members safe, and it's what keeps the ministry strong.</p></div></div>
   </div>
 </section>
-
-<!-- 14 · Status -->
+<section class="plate" id="borrow" aria-labelledby="h-borrow">
+  <div class="head"><p class="eyebrow">Inspiration</p><h2 id="h-borrow">What we borrow from proven apps and games</h2></div>
+  <div class="cards c4">
+    <div class="card proc"><div class="ic">D</div><div><h3>Duolingo → the Path</h3><p>One clear path, bite-size lessons, always one next tap.</p></div></div>
+    <div class="card proc"><div class="ic">H</div><div><h3>Habitica → Character</h3><p>Real habits become XP on a character sheet.</p></div></div>
+    <div class="card good"><div class="ic">F</div><div><h3>Finch → tone</h3><p>A gentle companion that never shames a missed day.</p></div></div>
+    <div class="card good"><div class="ic">S</div><div><h3>Stardew Valley → rhythm</h3><p>Short cozy days, seasons, a garden that pauses instead of a streak that breaks.</p></div></div>
+    <div class="card rule"><div class="ic">H</div><div><h3>Hades → home and masters</h3><p>A hub you return to; characters who notice your progress.</p></div></div>
+    <div class="card rule"><div class="ic">S</div><div><h3>Skyrim → elements</h3><p>Skills grow by use, shown as four constellations.</p></div></div>
+    <div class="card rule"><div class="ic">FF</div><div><h3>Final Fantasy jobs → schools</h3><p>Pick a class, level it, switch, keep what you learned.</p></div></div>
+  </div>
+</section>
+  </div>
+</section>
+<section class="chap" id="roadmap" aria-labelledby="h-roadmap">
+  <div class="chap-head"><p class="chap-n">Chapter 6</p><p class="eyebrow">Roadmap and model</p><h2 id="h-roadmap">What's built, what's next, how it stays free</h2><p class="chap-lead">Where the app stands today and how the work is funded.</p></div>
+  <div class="stack">
 <section class="plate" id="status" aria-labelledby="h-status">
-  <div class="head"><p class="eyebrow">14 · Where it stands</p><h2 id="h-status">What's ready, October 2026</h2></div>
+  <div class="head"><p class="eyebrow">Where it stands</p><h2 id="h-status">What's ready, October 2026</h2></div>
   <div class="col good">
     <h3><span>Just added</span><small>October 26 · Release 4.5.1</small></h3>
     <ul>
@@ -876,53 +799,78 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   </div>
   <div class="card warn"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><h3>Before members' data is studied</h3><p>An independent ethics review (IRB) · a privacy policy and research consent reviewed by counsel · a clinical read of the safety wording · the integration scales' source wording · the Academy membership price.</p></div></div>
 </section>
-
-<!-- 15 · Invest or collaborate -->
-<section class="plate connect" id="connect" aria-labelledby="h-connect">
-  <div class="head"><p class="eyebrow">15 · Get involved</p><h2 id="h-connect">Invest or collaborate</h2></div>
-  <p class="lede">Equilibrium is a working app with a research engine inside it. We're looking for angel investors, funders and collaborators to help take it from a small alpha to a real research platform. Write to us and we'll send the full picture and set up a demo.</p>
-  <div class="ways">
-    <div class="way way-lead">
-      <h3><span class="ic"><svg><use href="#i-sprout"/></svg></span>Angel investors</h3>
-      <p>Back a working product early: a daily practice habit with a research engine inside it, built for the psychedelic wellness movement. Write for the deck and a demo.</p>
-      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20angel%20investment&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27m%20interested%20in%20investing.%20Please%20send%20the%20deck.%0A%0AName%3A%0AFirm%20or%20network%20(if%20any)%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about investing</a>
-    </div>
-    <div class="way">
-      <h3><span class="ic"><svg><use href="#i-heart"/></svg></span>Grant makers and donors</h3>
-      <p>Foundations and donors who want long-term, real-world evidence for the psychedelic wellness movement, with open methods.</p>
-      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20research%20funding&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20talk%20about%20funding%20the%20research.%0A%0AName%3A%0AOrganization%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about funding research</a>
-    </div>
-    <div class="way">
-      <h3><span class="ic"><svg><use href="#i-users"/></svg></span>Collaborators and partners</h3>
-      <ul>
-        <li>Researchers and universities</li>
-        <li>Clinicians, therapists and coaches</li>
-        <li>Psychedelic societies, facilitators and wellness groups</li>
-        <li>Developers and designers</li>
-      </ul>
-      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20collaboration&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20collaborate.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AHow%20I%27d%20like%20to%20help%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about collaborating</a>
-    </div>
+<section class="plate" id="free" aria-labelledby="h-free">
+  <div class="head"><p class="eyebrow">Sustainability</p><h2 id="h-free">Free core, paid depth</h2></div>
+  <div class="cols">
+    <div class="col good"><h3><span>Always free</span></h3><ul>
+      <li><b>The daily loop</b><small>Sessions, check-ins, goals, dose log, journal.</small></li>
+      <li><b>The full Path</b><small>Foundation → Adept.</small></li>
+      <li><b>Character, Light, gems, garden</b></li>
+      <li><b>Citizen science and Support</b></li>
+      <li><b>Level I of every school</b><small>Try every class before paying.</small></li>
+      <li><b>Advanced mode</b><small>The map and the Academy are free to open; only levels II+ need membership.</small></li>
+      <li><b>Be Well Ministry membership</b><small>Free to join, with an optional donation. Opens the Hall of Spirit.</small></li>
+    </ul></div>
+    <div class="col rule"><h3><span>Academy membership</span></h3><ul>
+      <li><b>Levels II and up, every school</b><small>One membership, sold through Be Well and the web. Separate from Be Well Ministry membership.</small></li>
+      <li><b>A real teacher</b><small>Voiced lessons from each school's master.</small></li>
+      <li><b>A real curriculum</b><small>Every hall taught in its own tradition, levels I–IV: the jhanas in Contemplative, Bardon in Hermetic, Jung and parts work in Depth psychology.</small></li>
+      <li><b>Earned proof</b><small>Trials and seals that mean something.</small></li>
+      <li><b>Others on the path</b><small>Circles, cohorts, partner perks (later).</small></li>
+    </ul></div>
   </div>
-  <div class="fitrow">
-    <span>See where it fits first:</span>
-    <a class="cta-btn ghost" href="../states/"><svg aria-hidden="true"><use href="#i-map"/></svg>Read the State Fit brief</a>
-  </div>
-  <div class="mailrow">
-    <span>Or write directly:</span>
-    <b>cosmo@evokemagic.org</b>
-    <button class="cta-btn ghost" type="button" data-copy="cosmo@evokemagic.org"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy address</button>
-    <span class="copied" role="status" aria-live="polite"></span>
+  <div class="cards c2">
+    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Research keeps it free</h3><p>De-identified research data, licensed to research and health partners only, free or for a fee. Fees keep the app free; they never pay members or add gems.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-gem"/></svg></div><div><h3>Gems never buy practice or levels</h3><p>Paying opens the doors. Walking through them is still earned.</p></div></div>
   </div>
 </section>
-
-<footer class="foot">
-  <span>Equilibrium by ǝvōke · Be Well Ministry · full concept, updated October 28, 2026.</span>
-  <span>Investors and collaborators: <a href="#connect">get in touch</a> · cosmo@evokemagic.org</span>
-  <span>Consent, privacy and ministry wording are drafts under legal review. Findings are patterns, not proof. Equilibrium is not medical care.</span>
-</footer>
-
+<section class="plate" id="pillars" aria-labelledby="h-pillars">
+  <div class="head"><p class="eyebrow">Four pillars</p><h2 id="h-pillars">Research and integration first</h2>
+  <p class="lede">"Keep a real practice" is Integration; "show whether it's changing them" is Research. Research is the primary objective and how the app is funded; Integration is what members touch every day.</p></div>
+  <div class="cards c2">
+    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>1 · Research <span class="badge">core</span></h3><p>Job: Contribute. Check-ins, validated scales, dose tracking, structured experience reports, integration scales.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>2 · Integration <span class="badge">core</span></h3><p>Jobs: Practice, Track. Guided practice, goals and steps, applying it in real life.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>3 · Education <span class="badge">next</span></h3><p>Job: Learn. The Academy: schools, masters, levels I–IV.</p></div></div>
+    <div class="card neut"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>4 · Community <span class="badge">later</span></h3><p>Job: Belong. The Be Well Ministry now; events, forums, partner groups later.</p></div></div>
+  </div>
+  <h3 class="sub">How it fits together</h3>
+  <div class="fit">
+    <div class="fit-row"><span class="fit-k">Why</span><div class="fit-v"><b>The mission</b><span>Real-world research for the psychedelic wellness movement, from members who keep a real practice.</span></div></div>
+    <div class="fit-row"><span class="fit-k">What</span><div class="fit-v"><b>Four pillars</b><span class="chips"><span class="chip good"><i class="dot"></i>Research · core</span><span class="chip proc"><i class="dot"></i>Integration · core</span><span class="chip rule"><i class="dot"></i>Education · next</span><span class="chip neut"><i class="dot"></i>Community · later</span></span></div></div>
+    <div class="fit-row"><span class="fit-k">How</span><div class="fit-v"><b>Five jobs</b><span class="chips"><span class="chip proc">Practice</span><span class="chip proc">Track</span><span class="chip rule">Learn</span><span class="chip neut">Belong</span><span class="chip good">Contribute</span></span><span class="muted" style="font-size:.86rem">Education adds what you practice. Community adds who you share it with. The daily loop stays the same.</span></div></div>
+    <div class="fit-row"><span class="fit-k">Decide</span><div class="fit-v"><b>Principles and the pillars they guard</b>
+      <ul class="plist">
+        <li>Life is the practice <span class="dots"><i class="dot proc"></i></span></li>
+        <li>One obvious next step <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i><i class="dot neut"></i></span></li>
+        <li>Growth you can see <span class="dots"><i class="dot proc"></i></span></li>
+        <li>Proven, not claimed <span class="dots"><i class="dot proc"></i><i class="dot rule"></i></span></li>
+        <li>Honesty is part of the path <span class="dots"><i class="dot good"></i><i class="dot proc"></i></span></li>
+        <li>Each tradition in its own voice <span class="dots"><i class="dot rule"></i></span></li>
+        <li>Trust is everything <span class="dots"><i class="dot good"></i><i class="dot neut"></i></span></li>
+        <li>Free core, paid depth <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i></span></li>
+        <li>Adults choose, a net is always there <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i><i class="dot neut"></i></span></li>
+        <li>Informed before sacred <span class="dots"><i class="dot neut"></i></span></li>
+      </ul></div></div>
+  </div>
+</section>
+  </div>
+</section>
+<section class="icta">
+  <h2>Seen enough detail?</h2>
+  <div class="cta-row"><a class="cta-btn" href="../#connect">Get involved <svg aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="cta-btn ghost" href="../states/"><svg aria-hidden="true"><use href="#i-map"/></svg>State Fit brief</a></div>
+</section>
 </main>
-<a class="cta-btn float-cta" href="#connect"><svg aria-hidden="true"><use href="#i-mail"/></svg>Invest · Collaborate</a>
+<footer class="eqfoot">
+  <div class="brand"><img src="../icon.svg" alt="" width="30" height="30"><span><b>EQUILIBRIUM</b><small>by ǝvōke · Be Well Ministry</small></span></div>
+  <p>Inside the app · updated October 29, 2026. Findings are patterns, not proof. Equilibrium is not medical care. Consent, privacy and ministry wording are drafts under legal review.</p>
+</footer>
+<script>
+(function(){var d=document.getElementById('c-d'),l=document.getElementById('c-l'),t=document.getElementById('c-t');if(!d)return;
+function u(){var days=+d.value,lines=+l.value,tap=t.checked;d.disabled=l.disabled=tap;document.getElementById('c-days').textContent=tap?7:days;document.getElementById('c-lines').textContent=tap?'7 "ok"':lines;
+var light=tap?(7*20+7*10):(days*20+lines*10);var steady=!tap&&days>=5;var gems=tap?0:Math.min(21,days+Math.min(lines,days*2)+(steady?7:0));
+document.getElementById('c-light').textContent=light;document.getElementById('c-gems').textContent=gems;document.getElementById('c-steady').textContent=steady?'Yes':'No'}
+[d,l,t].forEach(function(x){x.addEventListener('input',u)});u()})();
+</script>
 <script>
 (function(){
   var btn=document.querySelector('[data-copy]'),say=document.querySelector('.copied');

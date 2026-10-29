@@ -247,6 +247,14 @@ h3{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute
 .sfhero .meta{color:#E2D8F2;font-size:1.05rem}
 nav.tabs{top:var(--barh,57px)}
 .page{scroll-margin-top:140px}
+
+.sortbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:4px 0 2px}
+.sortbar span{font-size:.8rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-right:4px}
+.sb{font:inherit;font-size:.85rem;font-weight:700;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.sb.on{background:var(--chrome);border-color:var(--chrome);color:var(--chrome-ink)}
+.sb:focus-visible{outline:3px solid var(--b);outline-offset:2px}
+.board.sorted .tierlab{display:none}
+.brow .dt.hl{outline:3px solid color-mix(in srgb,#E8C46B 70%,transparent);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -285,6 +293,7 @@ nav.tabs{top:var(--barh,57px)}
     <div class="card c-r"><div class="ic">⚠&#xFE0E;</div><div><p class="t">Oregon: the session day only</p><p class="d">Client forms and quarterly center reports; no long-term outcomes. 5,935 clients in 2025.</p></div></div>
     <div class="card c-a"><div class="ic">◐</div><div><p class="t">Colorado: database unfunded</p><p class="d">SB25-297 allows a de-identified outcome database, but only if gifts or grants pay for it.</p></div></div>
     <div class="card c-a"><div class="ic">✚</div><div><p class="t">New Mexico: scope not set</p><p class="d">The law requires data rules and a de-identified annual report. The draft rules don't say what gets measured.</p></div></div>
+    <div class="card c-p"><div class="ic">◉</div><div><p class="t">Macrodose programs, short follow-up</p><p class="d">Oregon, Colorado and New Mexico all center on supervised macrodose sessions. State data stops at or near the session day; the weeks of integration after it go unmeasured.</p></div></div>
     <div class="card c-n"><div class="ic">◒</div><div><p class="t">Everyone else: pilots and task forces</p><p class="d">Small clinical pilots (NJ, CT, UT), research funds (TX, AZ), reports due (MD Oct 2026, MN Jan 2027).</p></div></div>
   </div>
 
@@ -314,6 +323,16 @@ nav.tabs{top:var(--barh,57px)}
     <span class="cc"><b>◷</b> Timing <small>a decision is being made now</small></span>
   </div>
 
+  <div class="sortbar" role="group" aria-label="Sort the board">
+    <span>Sort by</span>
+    <button type="button" class="sb on" data-k="-1" aria-pressed="true">Fit</button>
+    <button type="button" class="sb" data-k="0" aria-pressed="false">◎ Access</button>
+    <button type="button" class="sb" data-k="1" aria-pressed="false">⌂ Home use</button>
+    <button type="button" class="sb" data-k="2" aria-pressed="false">☰ Data gap</button>
+    <button type="button" class="sb" data-k="3" aria-pressed="false">$ Money</button>
+    <button type="button" class="sb" data-k="4" aria-pressed="false">☍ Allies</button>
+    <button type="button" class="sb" data-k="5" aria-pressed="false">◷ Timing</button>
+  </div>
   <div class="board" role="table" aria-label="State scores">
     <div class="brow bh" role="row"><span role="columnheader">State</span><span role="columnheader" title="Access">◎</span><span role="columnheader" title="Home use">⌂</span><span role="columnheader" title="Data gap">☰</span><span role="columnheader" title="Money">$</span><span role="columnheader" title="Allies">☍</span><span role="columnheader" title="Timing">◷</span><span role="columnheader">Fit</span></div>
     <div class="tierlab tg">Tier 1 · start here</div>
@@ -364,6 +383,7 @@ nav.tabs{top:var(--barh,57px)}
 
   <h3>Why New Mexico first</h3>
   <div class="stack">
+    <div class="card c-p"><div class="ic">◉</div><div><p class="t">Supervised macrodose sessions first</p><p class="d">The medical program starts with supervised psilocybin treatment sessions. Equilibrium follows what happens next: the integration weeks and months the program won't see.</p></div></div>
     <div class="card c-g"><div class="ic">◷</div><div><p class="t">The rules are being written now</p><p class="d">A ready model for de-identified, long-term data arrives at the right moment.</p></div></div>
     <div class="card c-g"><div class="ic">$</div><div><p class="t">Money is aimed at research</p><p class="d">A research fund for NM universities and providers, plus $300K for UNM end-of-life research and $630K for treatment equity in the FY27 budget.</p></div></div>
     <div class="card c-g"><div class="ic">☍</div><div><p class="t">A community already engaged</p><p class="d">Leaders of the NM / Santa Fe Psychedelic Society have offered a review and help reaching their community. The state's advocates and UNM's psychedelic research group both sit on the program's advisory board.</p></div></div>
@@ -383,8 +403,69 @@ nav.tabs{top:var(--barh,57px)}
   <p class="src">Sources: <a href="https://www.marijuanamoment.net/proposed-new-mexico-psilocybin-rules-get-pushback-from-lawmakers-and-advocates/" target="_blank" rel="noopener">Marijuana Moment, Oct 14, 2026</a> · <a href="https://sourcenm.com/2026/08/27/new-mexico-psilocybin-program-opens-permitting-applications-for-psychedelic-mushroom-producers/" target="_blank" rel="noopener">Source NM, Aug 27, 2026</a> · <a href="https://sourcenm.com/2026/03/18/treatment-equity-fund-expected-to-widen-psilocybin-program-access-for-low-income-rural-new-mexicans/" target="_blank" rel="noopener">Source NM, Mar 18, 2026</a> · <a href="https://www.foley.com/insights-resources/publications/2025/04/new-mexico-becomes-third-state-us-legalize-access-psilocybin" target="_blank" rel="noopener">Foley (SB 219)</a> · <a href="https://www.nmhealth.org/about/mcpp/mpp/" target="_blank" rel="noopener">NM Department of Health</a> · <a href="https://hsc.unm.edu/medicine/departments/family-community/research/psychedelic_studies/index.html" target="_blank" rel="noopener">UNM psychedelic studies</a></p>
 </section>
 
+<section class="page" id="pilot" data-title="A state pilot" role="tabpanel" hidden>
+  <div class="pagehead"><span class="of">Page 4</span><h2>What a first state pilot could look like</h2>
+  <p class="lede">A starting proposal to shape with a program state, such as New Mexico. Nothing here is agreed with any state yet.</p></div>
+
+  <h3>Where follow-up stops today</h3>
+  <div class="bars">
+    <div class="bar">
+      <div class="lab"><b>State program reports today</b><span class="num">session day + about 3 days</span></div>
+      <div class="track"><div class="fill r" style="width:2%"></div></div>
+    </div>
+    <div class="bar">
+      <div class="lab"><b>With an Equilibrium pilot</b><span class="num">12 months, every evening and every week</span></div>
+      <div class="track"><div class="fill g" style="width:100%"></div></div>
+    </div>
+  </div>
+
+  <h3>Who takes part</h3>
+  <div class="cols cols2">
+    <div class="col">
+      <div class="colhead c-p">Session group</div>
+      <div class="card c-p"><div class="ic">◉</div><div><p class="t">Adults in the state's program</p><p class="d">People with supervised macrodose sessions who choose to join at intake. A clear yes, off any time.</p></div></div>
+    </div>
+    <div class="col">
+      <div class="colhead c-b">Comparison group</div>
+      <div class="card c-b"><div class="ic">◎</div><div><p class="t">Adults who practice without dosing</p><p class="d">Same app, same check-ins. They show what comes from the practice and what comes from the session.</p></div></div>
+    </div>
+  </div>
+
+  <h3>How it runs</h3>
+  <div class="flow">
+    <div class="step"><div class="n">1</div><div><p class="t">Before launch · agree and review</p><p class="d">The state, a university partner and Equilibrium agree on the measures. An independent ethics review (IRB) signs off.</p></div></div>
+    <div class="arrow" aria-hidden="true"></div>
+    <div class="step"><div class="n">2</div><div><p class="t">Session day · the state's own records</p><p class="d">Programs keep collecting what the rules require. Equilibrium starts with a 5-minute starting point.</p></div></div>
+    <div class="arrow" aria-hidden="true"></div>
+    <div class="step"><div class="n">3</div><div><p class="t">Weeks 1–4 · integration</p><p class="d">Daily practice and a 30-second evening check-in. Side effects and a safety question every week.</p></div></div>
+    <div class="arrow" aria-hidden="true"></div>
+    <div class="step"><div class="n">4</div><div><p class="t">Months 1–12 · follow-up</p><p class="d">Weekly validated scales (WHO-5, PHQ-2, GAD-2), function and wins, compared with each person's own start.</p></div></div>
+    <div class="arrow" aria-hidden="true"></div>
+    <div class="step c-g"><div class="n">✓</div><div><p class="t">Every quarter · a report to the state</p><p class="d">De-identified, groups of 10 or more, written to match the state's own reporting duties.</p></div></div>
+  </div>
+
+  <h3>What the state gets, and what it needs to give</h3>
+  <div class="cols cols2">
+    <div class="col">
+      <div class="colhead c-g">The state gets</div>
+      <div class="card c-g"><div class="ic">☰</div><div><p class="t">Outcomes past day 3</p><p class="d">Benefit, side effects and safety signals for a year, not just the session.</p></div></div>
+      <div class="card c-g"><div class="ic">$</div><div><p class="t">No cost to the state</p><p class="d">Funded by research partners and grants, not by the program or its clients.</p></div></div>
+      <div class="card c-g"><div class="ic">⚖&#xFE0E;</div><div><p class="t">Privacy it can defend</p><p class="d">No names in research data, groups of 10+ only, never sold to advertisers or data brokers.</p></div></div>
+    </div>
+    <div class="col">
+      <div class="colhead c-n">The pilot needs</div>
+      <div class="card c-n"><div class="ic">◎</div><div><p class="t">An invitation at intake</p><p class="d">Program operators mention the app; joining stays a free choice.</p></div></div>
+      <div class="card c-n"><div class="ic">☍</div><div><p class="t">A university partner</p><p class="d">For the ethics review and independent analysis.</p></div></div>
+      <div class="card c-n"><div class="ic">✎</div><div><p class="t">A data-use agreement</p><p class="d">What's reported, how often, and who can see it.</p></div></div>
+    </div>
+  </div>
+
+  <div class="card c-a"><div class="ic">⚠&#xFE0E;</div><div><p class="t">What the pilot never does</p><p class="d">It never suggests a dose, never stands in for medical care, and never counts as proof on its own. Findings are patterns until independent analysis says otherwise.</p></div></div>
+</section>
+
+
 <section class="page" id="cooregon" data-title="Colorado &amp; Oregon" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 4</span><h2>Colorado and Oregon</h2>
+  <div class="pagehead"><span class="of">Page 5</span><h2>Colorado and Oregon</h2>
   <p class="lede">The two states with adult-use programs. Each has a data gap Equilibrium can fill.</p></div>
 
   <div class="cols cols2">
@@ -413,7 +494,7 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 <section class="page" id="rising" data-title="Rising states" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 5</span><h2>Rising states and the watch list</h2>
+  <div class="pagehead"><span class="of">Page 6</span><h2>Rising states and the watch list</h2>
   <p class="lede">Each of these has one strong pull. The date says when to look again.</p></div>
 
   <h3>Tier 2 · build next</h3>
@@ -442,7 +523,7 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 <section class="page" id="local" data-title="Local decrim" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 6</span><h2>Local deprioritization</h2>
+  <div class="pagehead"><span class="of">Page 7</span><h2>Local deprioritization</h2>
   <p class="lede">34 cities and counties have made personal use of natural psychedelics a lowest enforcement priority. They cluster in four states.</p></div>
 
   <div class="bars">
@@ -466,108 +547,10 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 
-<section class="page" id="lock" data-title="Combination lock" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 7</span><h2>The combination lock</h2>
-  <p class="lede">For some people no single thing works alone. A set of things has to line up.</p></div>
 
-  <div class="lock" aria-label="Illustration of the combination lock">
-    <div class="lockrow hd"><span>Member</span><span style="text-align:center">Breath</span><span style="text-align:center">Therapy</span><span style="text-align:center">Micro</span><span class="eq"></span><span style="text-align:center">Result</span></div>
-    <div class="lockrow"><span class="who2">Ana</span><span class="dial on">on</span><span class="dial">off</span><span class="dial on">on</span><span class="eq">→</span><span class="res yes">Change</span></div>
-    <div class="lockrow"><span class="who2">Ben</span><span class="dial on">on</span><span class="dial">off</span><span class="dial on">on</span><span class="eq">→</span><span class="res no">No change</span></div>
-    <div class="lockrow"><span class="who2">Ben, later</span><span class="dial on">on</span><span class="dial on">on</span><span class="dial on">on</span><span class="eq">→</span><span class="res yes">Change</span></div>
-    <p class="note">Illustration, not data. Result = 8 weeks later. Same inputs, different people. Ben's lock opened when a second dial turned.</p>
-  </div>
-
-  <h3>Why it needs a smart design · 8 practices × 3 dose states</h3>
-  <div class="bars">
-    <div class="legend"><i></i> Our target: 1,000 members</div>
-    <div class="bar">
-      <div class="lab"><b>Every full combination</b><span class="num">768 combos × 10 people = 7,680</span></div>
-      <div class="track"><div class="fill r" style="width:100%"></div><div class="marker" style="left:13.02%"></div></div>
-      <div class="sub">Out of reach. Most combos would have 0 or 1 person.</div>
-    </div>
-    <div class="bar">
-      <div class="lab"><b>Pairs of practices</b><span class="num">84 cells × 10 people = 840</span></div>
-      <div class="track"><div class="fill g" style="width:10.94%"></div><div class="marker" style="left:13.02%"></div></div>
-      <div class="sub">Within reach at 1,000 members, if people spread evenly. They won't, so start with a short list.</div>
-    </div>
-    <div class="bar">
-      <div class="lab"><b>Each person vs themselves</b><span class="num">1 person × many weeks</span></div>
-      <div class="track"><div class="fill b" style="width:3%"></div><div class="marker" style="left:13.02%"></div></div>
-      <div class="sub">Works at any size: compare a member's own weeks with and without a dial.</div>
-    </div>
-    <p class="note">8 practices: breathwork, meditation, movement, bodywork, energy psychology, therapy or coaching, nutrition, nature. 2⁸ = 256 on/off mixes × 3 (none, micro, macro) = 768. Pairs: 28 × 3 = 84. Equilibrium shows a number only when 10+ people are in it.</p>
-  </div>
-
-  <h3>Three ways to crack it</h3>
-  <div class="flow">
-    <div class="step"><div class="n">1</div><div><p class="t">Each person is their own control</p><p class="d">Compare a member's weeks with combo A and combo B. Equilibrium already does this for practice days and dose days.</p></div></div>
-    <div class="arrow" aria-hidden="true"></div>
-    <div class="step"><div class="n">2</div><div><p class="t">Test a short list first</p><p class="d">Practitioners and partner researchers name 3–5 likely combinations. Write them down before the data comes in.</p></div></div>
-    <div class="arrow" aria-hidden="true"></div>
-    <div class="step"><div class="n">3</div><div><p class="t">Follow the non-responders</p><p class="d">Find members with no change by week 12. See which dial they add before change shows.</p></div></div>
-    <div class="arrow" aria-hidden="true"></div>
-    <div class="step c-g"><div class="n">✓</div><div><p class="t">A map of what works for whom</p><p class="d">Not just whether something works on average.</p></div></div>
-  </div>
-
-  <div class="take"><span class="k">Takeaway</span>
-    <p>Trials can't test every mix, and neither can we. But following each person over months, against their own starting point, gets around the numbers problem.</p>
-    <p>A practitioner short list turns a fishing trip into a real study.</p>
-  </div>
-</section>
-
-<section class="page" id="pitch" data-title="Pitch lines" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 8</span><h2>Pitch lines</h2>
-  <p class="lede">What Equilibrium measures and why it matters to states, in two sentences.</p></div>
-
-  <div class="quote">
-    <div class="lbl">Core line</div>
-    <p>Equilibrium is a free practice app that follows each member for months to see which mix of daily practices, with or without plant medicines, goes with real change. It gives states the long-term, real-world evidence their programs don't collect, de-identified and at no cost to them.</p>
-  </div>
-
-  <div class="card c-g"><div class="ic">✓</div><div><p class="t">Positioning</p><p class="d">A working model of decrim done well: tested products, informed members, long-term evidence.</p></div></div>
-
-  <div class="chips" aria-label="What makes it different">
-    <span class="chip">Months, not weeks</span>
-    <span class="chip">Each person vs their own start</span>
-    <span class="chip">Many practices, not one medicine</span>
-    <span class="chip">Many states, one standard</span>
-    <span class="chip">Non-dosers and non-responders counted</span>
-  </div>
-
-  <h3>Same idea, four audiences</h3>
-  <div class="cols cols2">
-    <div class="aud">
-      <div class="who"><span class="ic" style="background:var(--b)">◎</span> Societies &amp; researchers</div>
-      <p class="line">Trials ask whether a medicine works on average. Equilibrium asks what works for whom, followed for months in real life, across states.</p>
-      <p class="lead">Lead with: non-responders, integration, combinations.</p>
-    </div>
-    <div class="aud">
-      <div class="who"><span class="ic" style="background:var(--p)">⚖&#xFE0E;</span> State legislators &amp; health departments</div>
-      <p class="line">De-identified, long-term data on how adults who microdose or use psychedelics are doing, side effects included, compared with people who practice without them. Groups of 10+ only, at no cost to the state.</p>
-      <p class="lead">Lead with: safety, honest counts, privacy.</p>
-    </div>
-    <div class="aud">
-      <div class="who"><span class="ic" style="background:var(--g)">↗</span> Investors</div>
-      <p class="line">A free daily-practice app building the multi-state, real-world dataset regulators are now asking for. Funded by research licenses, never by selling to advertisers or data brokers.</p>
-      <p class="lead">Lead with: federal tailwind, a dataset no one else has.</p>
-    </div>
-    <div class="aud">
-      <div class="who"><span class="ic" style="background:var(--a)">☰</span> Federal (HHS, FDA)</div>
-      <p class="line">Standardized, real-world evidence from the states, beyond the clinic and beyond 3 months.</p>
-      <p class="lead">Lead with: data standards, the FDA hearing's own topic.</p>
-    </div>
-  </div>
-
-
-  <div class="take"><span class="k">Takeaway</span>
-    <p>One core line, then lead with what each audience needs.</p>
-    <p>For states, the hook is simple: evidence they're asked for and can't afford to collect.</p>
-  </div>
-</section>
 
 <section class="page" id="model" data-title="Decrim model" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 9</span><h2>A model for decrim done well</h2>
+  <div class="pagehead"><span class="of">Page 8</span><h2>A model for decrim done well</h2>
   <p class="lede">Equilibrium plus ǝvōke's testing and production tracking: one chain from tested batch to long-term outcome.</p></div>
 
   <h3>The chain</h3>
@@ -597,7 +580,7 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 <section class="page" id="gaps" data-title="Research gaps" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 10</span><h2>What current research misses</h2>
+  <div class="pagehead"><span class="of">Page 9</span><h2>What current research misses</h2>
   <p class="lede">Six gaps, each with the evidence behind it.</p></div>
 
   <div class="stack">
@@ -617,7 +600,7 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 <section class="page" id="erowid" data-title="Erowid &amp; us" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 11</span><h2>Erowid and Equilibrium</h2>
+  <div class="pagehead"><span class="of">Page 10</span><h2>Erowid and Equilibrium</h2>
   <p class="lede">The same spirit of honest self-reports. Equilibrium adds structure, time and integration.</p></div>
 
   <div class="quote">
@@ -659,7 +642,7 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 <section class="page" id="coverage" data-title="Coverage map" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 12</span><h2>Coverage map</h2>
+  <div class="pagehead"><span class="of">Page 11</span><h2>Coverage map</h2>
   <p class="lede">What Equilibrium covers today, what small changes would add, what's planned but not built yet, and what stays out of scope.</p></div>
 
   <div class="cols cols4">
@@ -711,7 +694,7 @@ nav.tabs{top:var(--barh,57px)}
 </section>
 
 <section class="page" id="guardrails" data-title="Guardrails" role="tabpanel" hidden>
-  <div class="pagehead"><span class="of">Page 13</span><h2>Guardrails a legislature will trust</h2>
+  <div class="pagehead"><span class="of">Page 12</span><h2>Guardrails a legislature will trust</h2>
   <p class="lede">Consent, privacy, safety and data quality. <span class="tg"><b>Built or approved</b></span> · <span class="tb"><b>Add</b></span></p></div>
 
   <div class="grid2">
@@ -833,6 +816,25 @@ nav.tabs{top:var(--barh,57px)}
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(settle);
   window.addEventListener('load', settle);
   window.addEventListener('pageshow', settle);
+})();
+</script>
+<script>
+(function(){
+  var board=document.querySelector('.board');if(!board)return;
+  var orig=Array.prototype.slice.call(board.children);
+  var rows=orig.filter(function(r){return r.classList.contains('brow')&&!r.classList.contains('bh')});
+  rows.forEach(function(r,i){var dots=r.querySelectorAll('.dt');r._v=Array.prototype.map.call(dots,function(d){return d.classList.contains('d2')?2:d.classList.contains('d1')?1:0});r._fit=r._v.reduce(function(a,b){return a+b},0);r._i=i});
+  var head=orig[0];
+  function sort(k){
+    rows.forEach(function(r){r.querySelectorAll('.dt').forEach(function(d,j){d.classList.toggle('hl',j===k)})});
+    if(k<0){board.classList.remove('sorted');orig.forEach(function(n){board.appendChild(n)});return}
+    board.classList.add('sorted');
+    var list=rows.slice().sort(function(a,b){return (b._v[k]-a._v[k])||(b._fit-a._fit)||(a._i-b._i)});
+    board.appendChild(head);list.forEach(function(r){board.appendChild(r)});
+    orig.forEach(function(n){if(n!==head&&list.indexOf(n)<0)board.appendChild(n)});
+  }
+  var bs=document.querySelectorAll('.sb');
+  bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});sort(+b.dataset.k)})});
 })();
 </script>
 </body>
