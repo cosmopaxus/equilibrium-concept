@@ -19,8 +19,8 @@
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#15122E">
+<link rel="stylesheet" href="skin.css">
 <style>
-/* Fonts are served from this site, so a visit makes no outside requests (no ads, no trackers). SIL Open Font License: fonts/OFL-*.txt */
 @font-face{font-family:"Cinzel";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cinzel-500-700.woff2) format("woff2")}
 @font-face{font-family:"Cinzel";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/cinzel-500-700.woff2) format("woff2")}
 @font-face{font-family:"Jost";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jost-400.woff2) format("woff2")}
@@ -28,64 +28,156 @@
 @font-face{font-family:"Nunito";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/nunito-400-800.woff2) format("woff2")}
 @font-face{font-family:"Nunito";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/nunito-400-800.woff2) format("woff2")}
 @font-face{font-family:"Nunito";font-style:normal;font-weight:800;font-display:swap;src:url(fonts/nunito-400-800.woff2) format("woff2")}
-/* Layout: one concept per framed "plate", like folios in an academy prospectus. Prints one plate per page. */
-:root{
-  --bg:#F6F0E4; --plate:#FFFCF5; --ink:#24203A; --muted:#5E5872; --line:#E2D7C2;
-  --indigo:#4B3A8F; --indigo-t:#E8E3F6; --gold:#9A6F1E; --gold-l:#E8C46B; --gold-t:#F6EBCF;
-  --good:#2F7D46; --good-t:#DDF0E2; --proc:#2F62AE; --proc-t:#DCE6F5;
-  --rule:#7A3E9D; --rule-t:#EEE2F5; --warn:#A8670A; --warn-t:#F8EAD0; --risk:#B23E36; --risk-t:#F6DEDB;
-  --neutral:#5B6875; --neutral-t:#E5E8EC;
-  --sky1:#2A2150; --sky2:#5B4A9E;
-  --display:"Cinzel", "Trajan Pro", Georgia, serif;
-  --body:"Nunito", "Segoe UI", system-ui, sans-serif;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#15131F; --plate:#1E1B2B; --ink:#EDE8F7; --muted:#ABA4C0; --line:#3A3550;
-  --indigo:#A898F0; --indigo-t:#2C2650; --gold:#E8C46B; --gold-t:#3A3020;
-  --good:#6FCB88; --good-t:#1C3324; --proc:#80A9EE; --proc-t:#1B2A44;
-  --rule:#C894E6; --rule-t:#33223F; --warn:#EDB25A; --warn-t:#3A2C14; --risk:#EE8F86; --risk-t:#3D211E;
-  --neutral:#A9B4C0; --neutral-t:#272D35;
-  --sky1:#0F0B24; --sky2:#3A2E72; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#15131F; --plate:#1E1B2B; --ink:#EDE8F7; --muted:#ABA4C0; --line:#3A3550;
-  --indigo:#A898F0; --indigo-t:#2C2650; --gold:#E8C46B; --gold-t:#3A3020;
-  --good:#6FCB88; --good-t:#1C3324; --proc:#80A9EE; --proc-t:#1B2A44;
-  --rule:#C894E6; --rule-t:#33223F; --warn:#EDB25A; --warn-t:#3A2C14; --risk:#EE8F86; --risk-t:#3D211E;
-  --neutral:#A9B4C0; --neutral-t:#272D35;
-  --sky1:#0F0B24; --sky2:#3A2E72; color-scheme:dark}
-
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
-.stack{max-width:1040px;margin:0 auto;display:grid;gap:16px}
-h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:.02em}
-h2{font-size:clamp(1.3rem,3vw,1.75rem);line-height:1.15}
-h3{font-size:1.05rem;line-height:1.25}
-p{margin:0}
-p,li{text-wrap:pretty}
-a{color:var(--indigo)}
-a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius:6px}
-.plate{background:var(--plate);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.6vw,26px);display:grid;gap:14px;position:relative;overflow:hidden;scroll-margin-top:16px;min-width:0}
-.eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
-.lede{color:var(--muted);max-width:66ch;font-size:.98rem}
-.head{display:grid;gap:4px}
-.sub{font-family:var(--body);font-weight:800;font-size:1rem;letter-spacing:0;margin-top:2px}
-.take{display:grid;gap:6px;border-top:1px solid var(--line);padding-top:10px;color:var(--muted);max-width:70ch}
-.take b{color:var(--ink)}
+body{margin:0;background:radial-gradient(circle at 12% 32%,rgba(111,67,172,.07),transparent 28%),var(--cream);color:var(--ink);font:16px/1.55 var(--body)}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+a{color:var(--plum)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+svg use{pointer-events:none}
+.btn svg,.textlink svg,.nownext svg{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800;color:var(--gold-d);margin-bottom:16px}
+.center{text-align:center}
+h2{font-family:var(--display);font-weight:600;letter-spacing:.02em;line-height:1.08;font-size:clamp(30px,4.6vw,52px);margin-bottom:18px}
+h2 em,h1 em{font-style:normal;color:var(--plum)}
+.sublead{font-size:18px;color:var(--muted);max-width:720px}
+.sublead.center{margin:0 auto}
+.band{padding:88px max(20px,calc((100% - var(--max))/2))}
+.inner{max-width:var(--max);margin:0 auto}
+.cap{font-size:12.5px;color:var(--muted);margin-top:12px}
 
-/* Cover */
-.cover{background:radial-gradient(42% 70% at 82% 50%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:0;display:block;container-type:inline-size}
-.cover > *:not(.mark){margin-top:16px}.cover > .eyebrow{margin-top:0}
-.cover .eyebrow{color:#F3D88E}
-.cover h1{font-size:clamp(2rem,6.2cqi,4rem);line-height:1;letter-spacing:.14em;font-weight:600}
-.lockup h1{margin-bottom:10px}
-.balance{font-family:"Jost","Nunito",system-ui,sans-serif;font-size:clamp(.72rem,1.7cqi,.86rem);letter-spacing:.34em;text-transform:uppercase;color:#B9B5CF}
-.cover .tag{font-size:clamp(1.05rem,2.5cqi,1.3rem);max-width:36ch;text-wrap:pretty;color:#E9E3FA}
-.cover .motto{text-wrap:pretty;font-size:.95rem;color:#D9D0F5;font-style:italic}
-.cover .row{margin-bottom:-10px;font-size:0}.cover .row .pill{margin:0 10px 10px 0}
-.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.88rem}
-.cover .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#FBF6EC}
-.mark{float:right;position:relative;width:min(34cqi,330px);aspect-ratio:1;margin:0 clamp(0px,2cqi,22px) 6px 0;shape-outside:circle(50%) border-box;shape-margin:clamp(8px,2cqi,18px);pointer-events:none;color:#C8A25A}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:800;text-decoration:none;border:1.5px solid transparent;font-family:var(--body);font-size:16px;cursor:pointer;line-height:1.2}
+.btn.gold{background:linear-gradient(135deg,#F3D88E,#E8C46B);color:#140B2F;box-shadow:0 12px 32px rgba(232,196,107,.16)}
+.btn.gold:hover{background:#F3D88E}
+.btn.ghost{background:rgba(255,255,255,.05);color:#FBF6EC;border-color:rgba(232,218,250,.46)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.sm{min-height:38px;padding:7px 14px;font-size:14px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0}
+.actions.center{justify-content:center}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--glow),var(--night);color:#FBF6EC;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:40px;padding:84px max(20px,calc((100% - var(--max))/2)) 90px}
+.hero .eyebrow{color:var(--gold-l)}
+.hero h1{font-family:var(--display);font-weight:500;letter-spacing:.02em;line-height:1.04;font-size:clamp(44px,6.4vw,82px);margin-bottom:24px}
+.hero h1 em{color:var(--gold)}
+.hero .lead{font-size:clamp(17px,1.6vw,20px);color:#EEE6FA;max-width:620px}
+.proof{display:flex;flex-wrap:wrap;gap:26px;font-size:13px;color:#D0C2DF}
+.proof b{display:flex;align-items:center;gap:7px;color:#fff}
+.live{width:8px;height:8px;border-radius:50%;background:#6FCB88;box-shadow:0 0 0 4px rgba(111,203,136,.18)}
+.hero-mark{position:relative;margin:0 auto;width:100%;max-width:420px;text-align:center;color:#C8A25A}
+.hero-mark::before{content:"";position:absolute;inset:4% 4% 14%;border-radius:50%;background:radial-gradient(circle,rgba(151,84,215,.38),rgba(84,38,138,.16) 46%,transparent 72%);filter:blur(10px)}
+.hero-mark .mark{position:relative;width:100%;aspect-ratio:1}
+.hero-mark figcaption{position:relative;margin-top:16px;font-family:"Jost",var(--body);text-transform:uppercase;letter-spacing:.3em;font-size:11px;color:#D8C9E6}
+
+/* thesis */
+.thesis{background:linear-gradient(var(--lav) 0%,color-mix(in srgb,var(--cream) 60%,transparent) 100%)}
+.thesis .eyebrow,.thesis h2{text-align:center}
+.thesis h2.big{font-size:clamp(24px,3.2vw,40px);max-width:900px;margin:0 auto 44px}
+.vs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
+.vcol{border-radius:18px;padding:20px;border:1px solid var(--c);background:var(--t)}
+.vcol h3{font-weight:800;color:var(--c);margin-bottom:12px;font-size:17px}
+.vcol ul,.tcol ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.vcol li{background:var(--plate);border-radius:12px;padding:10px 14px}
+.vcol li b,.tcol li b{display:block;font-weight:800}
+.vcol li small{display:block;color:var(--muted);font-size:14px}
+.good{--c:var(--good);--t:var(--good-t)}.neut{--c:var(--neutral);--t:var(--neutral-t)}.rule{--c:var(--rule);--t:var(--rule-t)}.proc{--c:var(--proc);--t:var(--proc-t)}
+
+/* lock */
+.lockband{background:linear-gradient(135deg,var(--plate),var(--lav2) 100%)}
+.lockgrid{margin:40px 0 26px;border:1px solid var(--line);border-radius:20px;padding:22px;background:color-mix(in srgb,var(--plate) 88%,transparent);box-shadow:0 20px 50px rgba(67,32,105,.1);overflow-x:auto}
+.lr{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:8px;align-items:center;margin:8px 0;min-width:520px}
+.lr span{padding:12px 6px;border-radius:10px;text-align:center;font-weight:700}
+.lr span:first-child{text-align:left;padding-left:2px;font-weight:800}
+.lr.head span{background:transparent;text-transform:uppercase;font-size:10.5px;letter-spacing:.12em;color:var(--muted);padding:0 6px;font-weight:800}
+.lr .on{background:var(--lav2);color:var(--plum);border:1px solid var(--line)}
+.lr .on2{background:var(--plum);color:var(--plate)}
+.lr .off{background:var(--neutral-t);color:var(--muted)}
+.lr .yes{background:var(--good-t);color:var(--good)}
+.lr .no{background:var(--risk-t);color:var(--risk)}
+.lr.later{padding-top:10px;border-top:1px dashed var(--line)}
+.dials{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:34px}
+.dl{font-family:var(--display);font-size:13px;letter-spacing:.06em;color:var(--plum);margin-right:4px}
+.chip{border:1.5px solid var(--line);background:var(--plate);border-radius:999px;padding:4px 12px;font-weight:700;font-size:14px}
+.chip.g{border-color:color-mix(in srgb,var(--gold) 70%,transparent)}
+.bars{display:grid;gap:8px;max-width:820px;margin-bottom:40px}
+.bt{font-weight:800;font-size:17px;margin-bottom:4px}
+.bar-row{display:grid;grid-template-columns:minmax(0,330px) 1fr;gap:14px;align-items:center;font-size:15px}
+.bar{height:14px;border-radius:999px;background:var(--neutral-t);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;border-radius:999px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.three article{padding:22px;border-radius:18px;background:var(--lav);border:1px solid var(--line)}
+.three article:nth-child(2){background:var(--rule-t)}
+.three span,.flow span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--plate);color:var(--plum);font-weight:800;border:1px solid var(--line)}
+.three h3,.flow h3{font-weight:800;font-size:18px;margin:14px 0 6px}
+.three p,.flow p{color:var(--muted)}
+.nownext{display:flex;gap:14px;align-items:flex-start;margin-top:18px;padding:16px 18px;border-radius:16px;border:1.5px dashed var(--rule);background:var(--plate)}
+.nownext svg{color:var(--rule);margin-top:3px}
+.nownext b{color:var(--rule)}
+
+/* why now */
+.split{display:grid;grid-template-columns:1.35fr .65fr;gap:64px;align-items:center}
+.signals{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0 22px}
+.sig{border-radius:16px;padding:20px;border:1px solid var(--line);background:var(--lav)}
+.sig+.sig{background:var(--lav2)}
+.sig span{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:10.5px;font-weight:800;color:var(--muted)}
+.sig strong{display:block;margin:8px 0 4px;font-family:var(--display);font-size:24px;color:var(--plum)}
+.sig p{color:var(--muted);font-size:15px}
+.gaps{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:12px}
+.gaps li{display:flex;gap:10px;align-items:baseline}
+.gaps .d{flex:none;width:10px;height:10px;border-radius:50%;background:var(--c);transform:translateY(1px)}
+.d.risk{--c:var(--risk)}.d.warn{--c:var(--warn)}.d.neut{--c:var(--neutral)}
+.textlink{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--plum)}
+.nm{background:linear-gradient(145deg,#32165F,#5B2C8C);color:#fff;border-radius:22px;padding:30px;box-shadow:0 24px 60px rgba(68,29,111,.2)}
+.nm .eyebrow{color:var(--gold);margin-bottom:8px}
+.nm h3{font-family:var(--display);font-size:40px;font-weight:600;margin-bottom:10px}
+.nm p{color:#DCD2EA}
+.meter{margin:18px 0}
+.meter span{font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.meter b{display:block;height:7px;margin-top:7px;border-radius:20px;background:linear-gradient(90deg,#E8C46B var(--w),#47386A var(--w))}
+.nm small{color:#B3A8C6}
+
+/* app */
+.appband{background:linear-gradient(var(--lav),color-mix(in srgb,var(--cream) 80%,var(--lav)))}
+.appband h2{margin-bottom:40px}
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:12px;align-items:stretch}
+.flow article{background:var(--plate);border-radius:18px;padding:20px;border:1px solid var(--line)}
+.flow article.fin{background:var(--good-t);border-color:color-mix(in srgb,var(--good) 40%,transparent)}
+.flow article.fin span{color:var(--good)}
+.flow i{align-self:center;color:var(--gold-d);font-size:24px;font-style:normal}
+.guard{text-align:center;color:var(--muted);margin:26px 0 34px}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.tcol{border-radius:18px;padding:18px;background:var(--t);border:1px solid color-mix(in srgb,var(--c) 45%,transparent)}
+.tcol h3{color:var(--c);font-weight:800;font-size:17px;margin-bottom:12px}
+.tcol li{background:var(--plate);border-radius:10px;padding:8px 12px;font-size:15px}
+.tcol li b{color:var(--ink)}
+
+/* connect */
+.connect{background:radial-gradient(circle at 20% 10%,rgba(128,68,187,.48),transparent 35%),linear-gradient(145deg,#170D31,#32145F 58%,#4D2278);color:#fff}
+.connect .eyebrow{color:var(--gold)}
+.connect .sublead{color:#D6CBE3}
+.connect h2{margin-bottom:16px}
+.funds{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+.fund{display:grid;gap:12px;align-content:start;border-radius:20px;padding:26px;background:rgba(39,25,73,.78);border:1px solid #665088}
+.fund.lead{border:2px solid #E8C46B;background:linear-gradient(135deg,rgba(104,53,154,.6),rgba(42,26,76,.85))}
+.fund>span{text-transform:uppercase;letter-spacing:.13em;font-size:11px;font-weight:800;color:#F3D88E}
+.fund h3{font-family:var(--display);font-weight:600;font-size:24px}
+.fund p{color:#CFC4DA;min-height:72px}
+.fund .btn{justify-self:start}
+.closing{text-align:center;padding-top:80px}
+.closing>p{color:#B9ACCB}
+.closing h2{max-width:820px;margin:8px auto 0}
+.mailrow{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;color:#D6CBE3;border-top:1px solid rgba(255,255,255,.15);padding-top:24px;margin-top:8px}
+.mailrow b{color:#fff;font-size:17px;overflow-wrap:anywhere}
+
+/* footer */
+.eqfoot{display:flex;justify-content:space-between;gap:30px;align-items:center;padding:28px max(20px,calc((100% - var(--max))/2));background:#12082A;color:#fff}
+.eqfoot .brand{display:flex;gap:10px;align-items:center}
+.eqfoot b{display:block;font-family:var(--display);font-weight:600;letter-spacing:.16em;font-size:14px}
+.eqfoot small{display:block;font-size:11px;color:#B9B5CF;margin-top:2px}
+.eqfoot p{max-width:620px;color:#9A90AE;font-size:12.5px;text-align:right}
+
+/* mark animation (same as before) */
 .mark svg{display:block;width:100%;height:100%;overflow:visible}
 .mark .dash{fill:none;stroke:currentColor;stroke-width:.6;stroke-dasharray:2 2;stroke-opacity:.6}
 .mark mask .dr{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:1 1;stroke-dashoffset:0}
@@ -94,176 +186,8 @@ a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius
 .mark .needle{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:0}
 .mark .dot{fill:currentColor;transform-box:fill-box;transform-origin:center}
 .mark .ring{transform-box:view-box;transform-origin:50% 50%}
-@media(max-width:560px){.mark{float:none;width:min(200px,60cqi);margin:0 auto 4px}.cover{background:radial-gradient(60% 34% at 50% 16%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A)}}
-.cover > *:not(.mark){position:relative;max-width:560px}
-
-/* Section links */
-.toc{position:sticky;top:0;z-index:15;display:flex;gap:8px;align-items:center;min-width:0;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
-.toc-links{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent);padding-right:24px}
-.toc-links::-webkit-scrollbar{display:none}
-.toc-pins{display:flex;gap:6px;flex:none}
-.toc a{flex:none;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px;text-decoration:none;color:var(--indigo);background:var(--plate);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-weight:700;font-size:.85rem}
-.toc a span{color:var(--gold);font-size:.74rem;font-weight:800;font-variant-numeric:tabular-nums}
-.toc a:hover{border-color:var(--indigo)}
-.toc a svg{width:14px;height:14px;align-self:center;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.toc a.toc-state{background:var(--indigo);border-color:var(--indigo);color:var(--plate)}
-.toc a.toc-state:hover{filter:brightness(1.1)}
-@media(max-width:560px){.toc a.toc-cta{display:none}}
-.plate{scroll-margin-top:72px}
-.feature{border:2px solid var(--indigo);background:var(--indigo-t)}
-.feature .cards a.card{text-decoration:none;color:inherit}
-.feature .cards a.card:hover{filter:brightness(.97)}
-.feature-btn{justify-self:start;display:inline-flex;align-items:center;gap:10px;min-height:46px;border-radius:999px;padding:10px 20px;font-weight:800;text-decoration:none;background:var(--indigo);color:var(--plate)}
-.feature-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.fitrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#E2DBF6;font-size:.95rem}
-
-/* Cards */
-.cards{display:grid;gap:8px}
-.cards.c2{grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr))}
-.cards.c3{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
-.cards.c4{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
-.card{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--t);border:1px solid var(--c);min-width:0}
-.ic{flex:none;width:30px;height:30px;border-radius:9px;background:var(--c);display:grid;place-items:center;color:var(--plate);font-weight:800;font-size:.85rem}
-.ic svg{width:18px;height:18px;stroke:var(--plate);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-family:var(--body);font-weight:800;font-size:.97rem;letter-spacing:0}
-.card p{color:var(--muted);font-size:.9rem;line-height:1.45}
-.card .badge{display:inline-block;margin-left:6px;font-size:.72rem;font-weight:800;padding:1px 8px;border-radius:999px;background:var(--plate);color:var(--c);border:1px solid var(--c);vertical-align:1px;letter-spacing:.02em}
-.good{--c:var(--good);--t:var(--good-t)} .proc{--c:var(--proc);--t:var(--proc-t)} .rule{--c:var(--rule);--t:var(--rule-t)}
-.warn{--c:var(--warn);--t:var(--warn-t)} .risk{--c:var(--risk);--t:var(--risk-t)} .neut{--c:var(--neutral);--t:var(--neutral-t)}
-.gold{--c:var(--gold);--t:var(--gold-t)}
-
-/* Mission */
-.mission{background:var(--good-t);border:1px solid var(--good);border-radius:12px;padding:14px 16px;display:grid;gap:6px}
-.mission .eyebrow{color:var(--good)}
-.mission p.m{font-family:var(--display);font-size:clamp(1.08rem,2.4vw,1.35rem);line-height:1.4;max-width:46ch}
-.mission p.e{color:var(--muted);font-style:italic}
-
-/* Steps */
-.steps{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));align-items:stretch}
-.step{display:grid;grid-template-columns:auto 1fr;column-gap:8px;row-gap:2px;align-content:start;padding:8px 10px;border-radius:10px;background:var(--proc-t);border:1px solid var(--proc);position:relative;margin:4px 14px 4px 0;min-width:0}
-.step .n{width:20px;height:20px;border-radius:50%;background:var(--proc);color:var(--plate);display:grid;place-items:center;font-weight:800;font-size:.7rem;align-self:center}
-.step h3{font-family:var(--body);font-weight:800;font-size:.9rem;letter-spacing:0;align-self:center}
-.step p{grid-column:1/-1;color:var(--muted);font-size:.84rem;line-height:1.4}
-.step::after{content:"→";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--proc);font-weight:800}
-.step:last-child::after{content:none}
-.step.final{background:var(--good-t);border-color:var(--good)} .step.final .n{background:var(--good)}
-.step.bad{background:var(--risk-t);border-color:var(--risk)} .step.bad .n{background:var(--risk)}
-.step.plain{background:var(--neutral-t);border-color:var(--neutral)} .step.plain .n{background:var(--neutral)}
-@media(max-width:620px){.steps{grid-template-columns:1fr}.step{margin:0 0 14px}.step::after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.steps .step:last-child{margin-bottom:0}}
-
-/* Columns */
-.cols{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.col{border-radius:12px;border:1px solid var(--c);background:var(--t);padding:10px;display:grid;gap:6px;align-content:start;min-width:0}
-.col h3{font-family:var(--body);font-weight:800;letter-spacing:0;color:var(--c);display:flex;justify-content:space-between;gap:8px}
-.col h3 small{font-weight:700;color:var(--muted)}
-.col ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
-.col li{background:var(--plate);border-radius:8px;padding:6px 9px;font-size:.88rem;line-height:1.35}
-.col li b{display:block}
-.col li small{display:block;color:var(--muted);font-size:.82rem}
-
-/* How it fits */
-.fit{display:grid;border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.fit-row{display:grid;grid-template-columns:92px minmax(0,1fr);border-bottom:1px solid var(--line)}
-.fit-row:last-child{border-bottom:none}
-.fit-k{padding:10px 12px;font-family:var(--display);font-size:.82rem;letter-spacing:.08em;color:var(--gold);background:var(--gold-t);border-right:1px solid var(--line)}
-.fit-v{padding:9px 12px;display:grid;gap:6px;min-width:0}
-.fit-v b{font-weight:800}
-.chips{display:flex;flex-wrap:wrap;gap:6px}
-.chip{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;padding:3px 10px;border:1.5px solid var(--c);border-radius:999px;background:var(--t);color:var(--ink)}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c)}
-.plist{list-style:none;margin:0;padding:0;display:grid}
-.plist li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
-.plist li:last-child{border-bottom:none}
-.plist .dots{display:inline-flex;gap:4px;align-items:center}
-@media(max-width:520px){.fit-row{grid-template-columns:1fr}.fit-k{border-right:none;border-bottom:1px solid var(--line);padding:8px 14px}}
-
-/* Bars */
-.bars{display:grid;gap:6px}
-.bar-row{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:12px;align-items:center;font-size:.92rem}
-.bar{height:14px;border-radius:999px;background:var(--neutral-t);overflow:hidden;border:1px solid var(--line)}
-.bar i{display:block;height:100%;border-radius:999px}
-@media(max-width:520px){.bar-row{grid-template-columns:1fr;gap:4px}}
-
-/* Tiers table */
-.tiers{overflow-x:auto}
-.tiers table{border-collapse:separate;border-spacing:4px;width:100%;min-width:640px;font-size:.9rem}
-.tiers th,.tiers td{padding:8px 10px;border-radius:10px;text-align:left;vertical-align:top}
-.tiers thead th{color:var(--plate);font-weight:800}
-.tiers tbody th{color:var(--muted);font-weight:700;background:transparent;white-space:nowrap}
-.tiers td{background:var(--t)}
-.promise{background:var(--indigo-t);border-radius:12px;padding:12px 16px;display:grid;gap:4px;font-family:var(--display);font-size:clamp(.95rem,2vw,1.05rem);color:var(--ink);line-height:1.45}
-.promise small{font-family:var(--body);font-size:.82rem;color:var(--muted)}
-
-/* Phones (wireframes) */
-.phones{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-figure{margin:0;display:grid;gap:8px;align-content:start}
-figcaption{font-size:.86rem;color:var(--muted)}
-figcaption b{color:var(--ink);display:block;font-size:.93rem}
-.phone{aspect-ratio:9/17;max-width:100%;border:2px solid var(--line);border-radius:26px;background:var(--bg);padding:12px 10px 8px;display:flex;flex-direction:column;gap:6px;font-size:.72rem;overflow:hidden}
-.phone .notch{width:38%;height:5px;border-radius:3px;background:var(--line);margin:0 auto 4px}
-.wf{border:1px dashed var(--line);border-radius:8px;padding:6px 8px;background:var(--plate)}
-.wf.solid{border-style:solid}
-.wf.blue{border-left:3px solid var(--proc);border-radius:0 8px 8px 0}
-.wf.purple{border-left:3px solid var(--rule);border-radius:0 8px 8px 0}
-.map{flex:1;position:relative;border:1px dashed var(--line);border-radius:10px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--neutral-t) 10px 11px)}
-.spot{position:absolute;background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:2px 6px;white-space:nowrap}
-.spot.lit{border-color:var(--rule);color:var(--rule)}
-.spot.mist{color:var(--muted);border-style:dashed}
-.spot.you{border-color:var(--gold);color:var(--gold);font-weight:800}
-.tabs{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding-top:6px;margin-top:auto;color:var(--muted)}
-.tabs .on{color:var(--indigo);font-weight:800}
-.btn{background:var(--indigo);color:var(--plate);text-align:center;border-radius:8px;padding:7px;font-weight:800}
-.big{font-size:1.7rem;text-align:center;font-variant-numeric:tabular-nums;font-family:var(--display)}
-.slider{display:flex;align-items:center;gap:6px}
-.slider .t{flex:1;height:3px;background:var(--line);position:relative;border-radius:2px}
-.slider .t i{position:absolute;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--indigo)}
-.center{text-align:center}
-.muted{color:var(--muted)}
-.lvl{height:6px;border-radius:3px;background:var(--neutral-t);overflow:hidden}.lvl i{display:block;height:100%;background:var(--rule)}
-.prow{display:flex;gap:4px}.prow>*{flex:1}
-
-.foot{text-align:center;color:var(--muted);font-size:.86rem;display:grid;gap:4px}
-.foot a{font-weight:700}
-
-/* Invest or collaborate: gold buttons on night, the same night as the cover */
-.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border-radius:999px;padding:11px 22px;font-weight:800;font-size:1.02rem;line-height:1.2;text-decoration:none;background:#E8C46B;color:#15122E;border:2px solid #E8C46B;cursor:pointer;font-family:var(--body)}
-.cta-btn:hover{background:#F3D88E;border-color:#F3D88E}
-.cta-btn:focus-visible{outline:3px solid #FBF6EC;outline-offset:3px}
-.cta-btn svg{flex:none;width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.cta-btn.ghost{background:transparent;color:#FBF6EC;border-color:rgba(232,196,107,.75)}
-.cta-btn.ghost:hover{background:rgba(232,196,107,.16)}
-.cover .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.toc a.toc-cta{background:#E8C46B;border-color:#C8A25A;color:#15122E}
-.toc a.toc-cta span{color:#15122E}
-.toc a.toc-cta:hover{background:#F3D88E}
-.connect{background:radial-gradient(40% 80% at 90% 10%,rgba(200,162,90,.18),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:2px solid #C8A25A;gap:18px}
-.connect .eyebrow{color:#F3D88E}
-.connect h2{font-size:clamp(1.8rem,4.6vw,2.7rem);color:#FBF6EC}
-.connect .lede{color:#E2DBF6;font-size:1.05rem}
-.ways{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-.way{border-radius:14px;padding:18px;display:grid;gap:12px;align-content:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);min-width:0}
-.way h3{font-family:var(--body);font-weight:800;font-size:1.2rem;letter-spacing:0;color:#FBF6EC;display:flex;gap:10px;align-items:center}
-.way .ic{background:#E8C46B}.way .ic svg{stroke:#15122E}
-.way p,.way li{color:#E2DBF6;font-size:.95rem;line-height:1.45}
-.way ul{margin:0;padding-left:20px;display:grid;gap:3px}
-.way .cta-btn{justify-self:start}
-.way-lead{border:2px solid #E8C46B;background:rgba(232,196,107,.12)}
-.mailrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#E2DBF6;font-size:.95rem;border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
-.mailrow b{font-size:1.05rem;color:#FBF6EC;letter-spacing:.01em;overflow-wrap:anywhere}
-.mailrow .cta-btn{min-height:40px;padding:7px 16px;font-size:.92rem}
-.float-cta{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 6px 20px rgba(13,11,34,.38);border-color:#C8A25A;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
-.float-cta.show{opacity:1;visibility:visible;transform:none}
-@media (prefers-reduced-motion:reduce){.float-cta{transition:none}}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media print{.float-cta,.cover .cta-row,.mailrow .cta-btn{display:none}}
-@media print{
-  body{background:#fff;padding:0}
-  .stack{gap:0;max-width:none}
-  .plate{break-after:page;border:0;border-radius:0;min-height:100vh}
-  .toc{display:none}
-  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-}
 @media (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
   @keyframes mk-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
   @keyframes mk-fill{from{fill-opacity:0}to{fill-opacity:.2}}
   @keyframes mk-pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
@@ -283,19 +207,24 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   .mark.again{animation:mk-rock 8s ease-in-out both}
 }
 
-/* Short overview additions */
-.cover .q{font-family:var(--display);font-size:clamp(1.45rem,4.4cqi,2.25rem);line-height:1.15;color:#F3D88E;max-width:20ch;text-wrap:balance}
-.pill.live{background:rgba(111,203,136,.18);border-color:rgba(111,203,136,.6)}
-.livedot{width:8px;height:8px;border-radius:50%;background:#6FCB88;display:inline-block}
-.cols.two{grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
-.lockbox{border:2px solid var(--rule);background:var(--rule-t);border-radius:14px;padding:12px;display:grid;gap:10px}
-.lockrow{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;align-items:start}
-.lk{font-family:var(--display);font-size:.8rem;letter-spacing:.08em;color:var(--rule);padding-top:5px}
-.chip .dot{background:var(--c)}
-@media(max-width:520px){.lockrow{grid-template-columns:1fr;gap:4px}}
-.note{color:var(--muted);font-size:.86rem}
-.bar-row span:first-child b{font-weight:800}
-.mission p.m{max-width:none}
+/* small screens */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:56px;gap:20px}
+  .hero-mark{max-width:190px;order:-1}
+  .split{grid-template-columns:1fr;gap:36px}
+  .three,.funds,.trio{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr}
+  .flow i{transform:rotate(90deg);justify-self:center}
+  .band{padding-top:64px;padding-bottom:64px}
+  .eqfoot{flex-direction:column;align-items:flex-start}.eqfoot p{text-align:left}
+}
+@media(max-width:560px){
+  .signals{grid-template-columns:1fr}
+  .bar-row{grid-template-columns:1fr;gap:4px}
+  .actions .btn{width:100%}
+  .lockgrid{padding:14px}
+}
+@media print{.eqbar{position:static}.band,.hero{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -306,7 +235,6 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   if(old.indexOf(h)>-1)location.replace('full/#'+h);
 })();
 </script>
-
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
@@ -353,12 +281,33 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
   <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
   <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4"/></symbol>
 </svg>
+<header class="eqbar">
+  <a class="brand" href="./" aria-label="Equilibrium home"><img src="icon.svg" alt="" width="34" height="34"><span><b>EQUILIBRIUM</b><small>Balance in motion</small></span></a>
+  <nav aria-label="Site">
+    <a href="#lock">The model</a><a href="#why">Why now</a><a href="#app">The app</a><a href="states/">State fit</a><a href="full/">Full concept</a>
+    <a class="go" href="#connect">Get involved</a>
+  </nav>
+</header>
 
-<main class="stack">
-
-<!-- Cover -->
-<section class="plate cover" aria-label="Cover">
-  <div class="mark" aria-hidden="true">
+<main>
+<!-- Hero -->
+<section class="hero" aria-labelledby="h-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Real-world evidence for psychedelic wellness</p>
+    <h1 id="h-hero">What works, <em>for whom,</em> over time?</h1>
+    <p class="lead">Psychedelic programs track a session. Equilibrium follows the months after it: a free daily practice app that shows which mix of practices, with or without plant medicines, goes with real change.</p>
+    <div class="actions">
+      <a class="btn gold" href="#connect">Get involved <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn ghost" href="full/">See the full concept</a>
+    </div>
+    <div class="proof">
+      <span><b><i class="live" aria-hidden="true"></i>Live</b>Release 4.5.1 alpha</span>
+      <span><b>Long-term</b>months, not days</span>
+      <span><b>Private</b>research only with a clear yes</span>
+    </div>
+  </div>
+  <figure class="hero-mark">
+    <div class="mark" aria-hidden="true">
     <svg viewBox="-6 -6 212 212">
       <defs>
         <clipPath id="mk-clip"><circle cx="100" cy="100" r="99.5"/></clipPath>
@@ -391,178 +340,174 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
       </g>
     </svg>
   </div>
-  <p class="eyebrow">ǝvōke · Be Well · October 2026</p>
-  <div class="lockup"><h1>EQUILIBRIUM</h1><p class="balance">Balance in motion</p></div>
-  <p class="q">What works, for whom, over time?</p>
-  <p class="tag">A free daily practice app that follows each member for months to see which mix of practices, with or without plant medicines, goes with real change.</p>
-  <div class="row">
-    <span class="pill live"><i class="livedot" aria-hidden="true"></i>Live · Release 4.5.1 alpha</span>
-    <span class="pill">Free to members</span>
-    <span class="pill">No ads, no trackers</span>
-  </div>
-  <div class="cta-row">
-    <a class="cta-btn" href="#connect">Get involved <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    <a class="cta-btn ghost" href="full/">See the full concept</a>
-  </div>
+    <figcaption>Practice · change · time</figcaption>
+  </figure>
 </section>
 
-<nav class="toc" aria-label="Sections">
-  <div class="toc-links">
-    <a href="#question"><span>01</span>The question</a>
-    <a href="#lock"><span>02</span>The combination lock</a>
-    <a href="#why"><span>03</span>Why now</a>
-    <a href="#app"><span>04</span>The working app</a>
-  </div>
-  <div class="toc-pins">
-    <a href="states/" class="toc-state"><svg aria-hidden="true"><use href="#i-map"/></svg>State fit</a>
-    <a href="#connect" class="toc-cta"><span>05</span>Get involved</a>
-  </div>
-</nav>
-
-<!-- 01 · The question -->
-<section class="plate" id="question" aria-labelledby="h-question">
-  <div class="head"><p class="eyebrow">01 · The question</p><h2 id="h-question">Trials ask if something works on average. People need to know what works for them.</h2></div>
-  <div class="cols two">
-    <div class="col neut"><h3><span>What the field measures</span></h3><ul>
-      <li><b>The average</b><small>One effect across a whole group</small></li>
-      <li><b>Weeks to a few months</b><small>Then follow-up ends</small></li>
-      <li><b>One medicine at a time</b><small>Practice and daily life left out</small></li>
-      <li><b>The clinic</b><small>Session days, not ordinary days</small></li>
-    </ul></div>
-    <div class="col good"><h3><span>What Equilibrium measures</span></h3><ul>
-      <li><b>Each person against their own start</b><small>Change for this person, not just the group</small></li>
-      <li><b>Months and years</b><small>A short check-in every evening, scales every week</small></li>
-      <li><b>Many practices, with or without a dose</b><small>Breath, stillness, movement, goals; micro, macro or none</small></li>
-      <li><b>Everyone counts</b><small>People who don't respond, and people who never dose</small></li>
-    </ul></div>
-  </div>
-</section>
-
-<!-- 02 · The combination lock -->
-<section class="plate" id="lock" aria-labelledby="h-lock">
-  <div class="head"><p class="eyebrow">02 · The combination lock</p><h2 id="h-lock">For some people, no single thing works. A set of dials has to line up.</h2></div>
-  <p class="lede">An idea from New Mexico's psychedelic community. Equilibrium records which dials were turned each day, then looks for the mix that comes before change.</p>
-  <div class="lockbox">
-    <div class="lockrow"><span class="lk">Practices</span><div class="chips">
-      <span class="chip rule"><i class="dot"></i>Breathwork</span><span class="chip rule"><i class="dot"></i>Meditation</span><span class="chip rule"><i class="dot"></i>Movement</span><span class="chip rule"><i class="dot"></i>Bodywork</span><span class="chip rule"><i class="dot"></i>Energy work</span><span class="chip rule"><i class="dot"></i>Therapy or coaching</span><span class="chip rule"><i class="dot"></i>Nature</span><span class="chip rule"><i class="dot"></i>Nutrition</span>
-    </div></div>
-    <div class="lockrow"><span class="lk">Dose</span><div class="chips">
-      <span class="chip neut"><i class="dot"></i>None</span><span class="chip gold"><i class="dot"></i>Micro</span><span class="chip gold"><i class="dot"></i>Macro</span>
-    </div></div>
-    <div class="lockrow"><span class="lk">Outcome</span><div class="chips">
-      <span class="chip good"><i class="dot"></i>Mood, sleep, stress and more, over months</span>
-    </div></div>
-  </div>
-  <h3 class="sub">Why you can't just test every mix</h3>
-  <div class="bars">
-    <div class="bar-row"><span><b>Every full mix</b> · 768 groups · 7,680 people</span><span class="bar"><i style="width:100%;background:var(--risk)"></i></span></div>
-    <div class="bar-row"><span><b>Pairs of practices</b> · 84 groups · 840 people</span><span class="bar"><i style="width:11%;background:var(--warn)"></i></span></div>
-    <div class="bar-row"><span><b>Each person vs themselves</b> · works from one person</span><span class="bar"><i style="width:2%;min-width:10px;background:var(--good)"></i></span></div>
-  </div>
-  <p class="note">8 practices × 3 dose states, at least 10 people behind every number.</p>
-  <h3 class="sub">How Equilibrium cracks it</h3>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Own control</h3><p>Compare each member's weeks with one mix against weeks with another</p></div>
-    <div class="step"><span class="n">2</span><h3>A short list first</h3><p>Practitioners name 3–5 mixes before the data comes in</p></div>
-    <div class="step"><span class="n">3</span><h3>Follow non-responders</h3><p>No change by week 12? See which dial they add before change shows</p></div>
-    <div class="step final"><span class="n">✓</span><h3>A map</h3><p>What works for whom, as patterns, not proof</p></div>
-  </div>
-  <div class="card rule"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>In the app now, and next</h3><p>Now: practice days and dose days, each person against their own start. Next: the eight practice dials on the evening check-in, filled in automatically from what members do in the app.</p></div></div>
-</section>
-
-<!-- 03 · Why now -->
-<section class="plate" id="why" aria-labelledby="h-why">
-  <div class="head"><p class="eyebrow">03 · Why now</p><h2 id="h-why">States are opening access faster than they're building ways to measure it.</h2></div>
-  <div class="cards c3">
-    <div class="card proc"><div class="ic"><svg><use href="#i-file"/></svg></div><div><h3>Federal push <span class="badge">Apr 2026</span></h3><p>Executive Order 14401 directs HHS to partner with states and expand real-world evidence on psychedelics.</p></div></div>
-    <div class="card proc"><div class="ic"><svg><use href="#i-question"/></svg></div><div><h3>FDA asked about data <span class="badge">Sep 2026</span></h3><p>Its public hearing put data collection and standardization on the agenda.</p></div></div>
-    <div class="card good"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>New Mexico</h3><p>Its new psilocybin program is writing its rules now, and hasn't set what it will measure.</p></div></div>
-    <div class="card risk"><div class="ic"><svg><use href="#i-clock"/></svg></div><div><h3>Oregon</h3><p>State reports cover the session and the 3 days after it.</p></div></div>
-    <div class="card warn"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Colorado</h3><p>A law allows a de-identified outcome database, but only if gifts or grants pay for it.</p></div></div>
-    <div class="card neut"><div class="ic"><svg><use href="#i-drop"/></svg></div><div><h3>Microdosing</h3><p>No state program follows microdosing or daily practice over months.</p></div></div>
-  </div>
-  <div class="mission"><p class="m">Equilibrium brings long-term, de-identified data to that gap, at no cost to the state.</p></div>
-  <a class="feature-btn" href="states/">Open the State Fit brief <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-</section>
-
-<!-- 04 · The working app -->
-<section class="plate" id="app" aria-labelledby="h-app">
-  <div class="head"><p class="eyebrow">04 · The working app</p><h2 id="h-app">Not a concept. Release 4.5.1 is live with a small test group.</h2></div>
-  <h3 class="sub">How a day becomes evidence</h3>
-  <div class="steps">
-    <div class="step"><span class="n">1</span><h3>Practice</h3><p>A few timed minutes off screen: breath, stillness, a walk, a lesson</p></div>
-    <div class="step"><span class="n">2</span><h3>Evening check-in</h3><p>Mood, energy, stress, focus, sleep, pressure, resource · 30 seconds</p></div>
-    <div class="step"><span class="n">3</span><h3>Weekly scales</h3><p>Validated measures: WHO-5, PHQ-2, GAD-2, side effects</p></div>
-    <div class="step final"><span class="n">✓</span><h3>Then vs now</h3><p>Each person against their own start, from day 14</p></div>
-  </div>
-  <div class="cols">
-    <div class="col good"><h3><span>Live today</span><small>4.5.1</small></h3><ul>
-      <li>Guided practice, with levels from 3 to 10 minutes</li>
-      <li>Evening and weekly check-ins</li>
-      <li>Goals, steps and wins</li>
-      <li>An optional, private dose log</li>
-      <li>Be Well Ministry joining: covenant, Safety Screening, consent</li>
-      <li>Sign-in and sync across devices</li>
-      <li>900+ automated checks before every release</li>
-    </ul></div>
-    <div class="col rule"><h3><span>Trust is built in</span></h3><ul>
-      <li>Research sharing only after a clear yes</li>
-      <li>De-identified: no names, notes or journal text</li>
-      <li>Shown only in groups of 10 or more</li>
-      <li>Research partners only, never advertisers or data brokers</li>
-      <li>No ads, no trackers</li>
-      <li>An independent ethics review before any data is studied</li>
-    </ul></div>
-    <div class="col proc"><h3><span>How it stays free</span></h3><ul>
-      <li><b>Free core</b><small>The daily loop, the path and research, for every member</small></li>
-      <li><b>Academy membership</b><small>Deeper levels in each school of practice</small></li>
-      <li><b>Research licenses</b><small>De-identified data for research and health partners</small></li>
-    </ul></div>
-  </div>
-</section>
-
-<!-- 05 · Get involved -->
-<section class="plate connect" id="connect" aria-labelledby="h-connect">
-  <div class="head"><p class="eyebrow">05 · Get involved</p><h2 id="h-connect">Invest, fund or partner</h2></div>
-  <p class="lede">We're looking for angel investors, research funders and partners to take Equilibrium from a small alpha to a real research platform. Write to us for the deck and a demo.</p>
-  <div class="ways">
-    <div class="way way-lead">
-      <h3><span class="ic"><svg><use href="#i-sprout"/></svg></span>Angel investors</h3>
-      <p>Back a working product early: a daily practice habit with a research engine inside it.</p>
-      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20angel%20investment&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27m%20interested%20in%20investing.%20Please%20send%20the%20deck.%0A%0AName%3A%0AFirm%20or%20network%20(if%20any)%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about investing</a>
-    </div>
-    <div class="way">
-      <h3><span class="ic"><svg><use href="#i-heart"/></svg></span>Research funders</h3>
-      <p>Foundations, donors and public programs that want long-term, real-world evidence with open methods.</p>
-      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20research%20funding&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20funding%20the%20research.%0A%0AName%3A%0AOrganization%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about funding</a>
-    </div>
-    <div class="way">
-      <h3><span class="ic"><svg><use href="#i-users"/></svg></span>State and research partners</h3>
-      <p>Health departments, universities, clinicians and psychedelic societies.</p>
-      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20partnership&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20a%20partnership.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AWhat%20I%27m%20thinking%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about partnering</a>
+<!-- Thesis -->
+<section class="band thesis" id="question" aria-labelledby="h-q">
+  <div class="inner">
+    <p class="eyebrow">01 · The question</p>
+    <h2 id="h-q" class="big">Trials ask if something works <em>on average.</em><br>People need to know what works <em>for them.</em></h2>
+    <div class="vs">
+      <div class="vcol neut"><h3>What the field measures</h3><ul>
+        <li><b>The average</b><small>One effect across a whole group</small></li>
+        <li><b>Weeks to a few months</b><small>Then follow-up ends</small></li>
+        <li><b>One medicine at a time</b><small>Practice and daily life left out</small></li>
+        <li><b>The clinic</b><small>Session days, not ordinary days</small></li>
+      </ul></div>
+      <div class="vcol good"><h3>What Equilibrium measures</h3><ul>
+        <li><b>Each person against their own start</b><small>Change for this person, not just the group</small></li>
+        <li><b>Months and years</b><small>A short check-in every evening, scales every week</small></li>
+        <li><b>Many practices, with or without a dose</b><small>Breath, stillness, movement, goals; micro, macro or none</small></li>
+        <li><b>Everyone counts</b><small>People who don't respond, and people who never dose</small></li>
+      </ul></div>
     </div>
   </div>
-  <div class="fitrow">
-    <span>Want more first?</span>
-    <a class="cta-btn ghost" href="states/"><svg aria-hidden="true"><use href="#i-map"/></svg>State Fit brief</a>
-    <a class="cta-btn ghost" href="full/"><svg aria-hidden="true"><use href="#i-layers"/></svg>The full concept</a>
-  </div>
-  <div class="mailrow">
-    <span>Or write directly:</span>
-    <b>cosmo@evokemagic.org</b>
-    <button class="cta-btn ghost" type="button" data-copy="cosmo@evokemagic.org"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy address</button>
-    <span class="copied" role="status" aria-live="polite"></span>
+</section>
+
+<!-- The combination lock -->
+<section class="band lockband" id="lock" aria-labelledby="h-lock">
+  <div class="inner">
+    <p class="eyebrow">02 · The combination lock</p>
+    <h2 id="h-lock">Change rarely has one dial.</h2>
+    <p class="sublead">An idea from New Mexico's psychedelic community. For some people one practice is enough. For others, change shows only when a second or third dial turns.</p>
+    <div class="lockgrid" role="table" aria-label="Illustration: which dials were on, and whether change followed">
+      <div class="lr head" role="row"><span role="columnheader">Member</span><span role="columnheader">Breath</span><span role="columnheader">Therapy</span><span role="columnheader">Micro</span><span role="columnheader">12 weeks</span></div>
+      <div class="lr" role="row"><span role="rowheader">Ana</span><span class="on" role="cell">On</span><span class="off" role="cell">Off</span><span class="on" role="cell">On</span><span class="yes" role="cell">Change</span></div>
+      <div class="lr" role="row"><span role="rowheader">Ben</span><span class="on" role="cell">On</span><span class="off" role="cell">Off</span><span class="on" role="cell">On</span><span class="no" role="cell">No change</span></div>
+      <div class="lr later" role="row"><span role="rowheader">Ben, later</span><span class="on" role="cell">On</span><span class="on2" role="cell">On</span><span class="on" role="cell">On</span><span class="yes" role="cell">Change</span></div>
+      <p class="cap">Illustration, not data. Ben's lock opened when a second dial turned.</p>
+    </div>
+    <div class="dials">
+      <span class="dl">Eight practice dials</span>
+      <span class="chip">Breathwork</span><span class="chip">Meditation</span><span class="chip">Movement</span><span class="chip">Bodywork</span><span class="chip">Energy work</span><span class="chip">Therapy or coaching</span><span class="chip">Nature</span><span class="chip">Nutrition</span>
+      <span class="dl">× dose</span><span class="chip g">None</span><span class="chip g">Micro</span><span class="chip g">Macro</span>
+    </div>
+    <div class="bars">
+      <p class="bt">Why you can't just test every mix</p>
+      <div class="bar-row"><span><b>Every full mix</b> · 768 groups · 7,680 people</span><span class="bar"><i style="width:100%;background:var(--risk)"></i></span></div>
+      <div class="bar-row"><span><b>Pairs of practices</b> · 84 groups · 840 people</span><span class="bar"><i style="width:11%;background:var(--warn)"></i></span></div>
+      <div class="bar-row"><span><b>Each person vs themselves</b> · works from one person</span><span class="bar"><i style="width:2%;min-width:10px;background:var(--good)"></i></span></div>
+      <p class="cap">8 practices × 3 dose states, at least 10 people behind every number.</p>
+    </div>
+    <div class="three">
+      <article><span>1</span><h3>Each person is their own control</h3><p>Compare a member's weeks with one mix against weeks with another.</p></article>
+      <article><span>2</span><h3>Test a short list first</h3><p>Practitioners name 3–5 likely mixes before the data comes in.</p></article>
+      <article><span>3</span><h3>Follow the non-responders</h3><p>No change by week 12? See which dial they add before change shows.</p></article>
+    </div>
+    <div class="nownext"><svg aria-hidden="true"><use href="#i-key"/></svg><p><b>In the app now:</b> practice days and dose days, each person against their own start. <b>Next:</b> the eight practice dials on the evening check-in, filled in automatically from what members do in the app.</p></div>
   </div>
 </section>
 
-<footer class="foot">
-  <span>Equilibrium by ǝvōke · Be Well Ministry · updated October 29, 2026.</span>
-  <span><a href="full/">The full concept</a> · <a href="states/">State Fit brief</a> · cosmo@evokemagic.org</span>
-  <span>Findings are patterns, not proof. Equilibrium is not medical care. Consent and privacy wording are drafts under legal review.</span>
-</footer>
+<!-- Why now -->
+<section class="band whyband" id="why" aria-labelledby="h-why">
+  <div class="inner split">
+    <div>
+      <p class="eyebrow">03 · Why now</p>
+      <h2 id="h-why">Programs are moving. Measurement isn't.</h2>
+      <p class="sublead">States are opening access faster than they're building ways to measure it. Equilibrium brings long-term, de-identified data to that gap, at no cost to the state.</p>
+      <div class="signals">
+        <article class="sig"><span>Federal signal · Apr 2026</span><strong>EO 14401</strong><p>Directs HHS to partner with states and expand real-world evidence on psychedelics.</p></article>
+        <article class="sig"><span>FDA · Sep 2026</span><strong>Data, on the agenda</strong><p>Its public hearing named data collection and standardization as a topic.</p></article>
+      </div>
+      <ul class="gaps">
+        <li><i class="d risk"></i><b>Oregon:</b> state reports cover the session and the 3 days after it</li>
+        <li><i class="d warn"></i><b>Colorado:</b> a de-identified outcome database is allowed, but only if gifts or grants pay for it</li>
+        <li><i class="d neut"></i><b>Microdosing:</b> no state program follows it, or daily practice, over months</li>
+      </ul>
+      <a class="textlink" href="states/">Explore the full State Fit brief <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <aside class="nm">
+      <p class="eyebrow">First opportunity</p>
+      <h3>New Mexico</h3>
+      <p>A new psilocybin program writing its rules now, without a set answer for what it will measure.</p>
+      <div class="meter"><span>Timing</span><b style="--w:95%"></b></div>
+      <div class="meter"><span>Community partners</span><b style="--w:88%"></b></div>
+      <div class="meter"><span>Evidence gap</span><b style="--w:90%"></b></div>
+      <small>Our planning judgment, not a government endorsement.</small>
+    </aside>
+  </div>
+</section>
 
+<!-- The working app -->
+<section class="band appband" id="app" aria-labelledby="h-app">
+  <div class="inner">
+    <p class="eyebrow center">04 · Working alpha · Release 4.5.1</p>
+    <h2 id="h-app" class="center">Daily practice becomes long-term evidence.</h2>
+    <div class="flow">
+      <article><span>1</span><h3>Practice</h3><p>A few timed minutes off screen: breath, stillness, a walk, a lesson</p></article><i aria-hidden="true">→</i>
+      <article><span>2</span><h3>Check in</h3><p>Mood, energy, stress, focus, sleep, pressure, resource · 30 seconds</p></article><i aria-hidden="true">→</i>
+      <article><span>3</span><h3>Weekly scales</h3><p>Validated measures: WHO-5, PHQ-2, GAD-2, side effects</p></article><i aria-hidden="true">→</i>
+      <article class="fin"><span>✓</span><h3>Then vs now</h3><p>Each person against their own start, from day 14</p></article>
+    </div>
+    <p class="guard">Patterns, not proof. No member data is studied before an independent ethics review.</p>
+    <div class="trio">
+      <div class="tcol good"><h3>Live today</h3><ul>
+        <li>Guided practice, with levels from 3 to 10 minutes</li>
+        <li>Evening and weekly check-ins</li>
+        <li>Goals, steps and wins</li>
+        <li>An optional, private dose log</li>
+        <li>Be Well Ministry joining: covenant, Safety Screening, consent</li>
+        <li>Sign-in and sync across devices</li>
+        <li>900+ automated checks before every release</li>
+      </ul></div>
+      <div class="tcol rule"><h3>Trust is built in</h3><ul>
+        <li>Research sharing only after a clear yes</li>
+        <li>De-identified: no names, notes or journal text</li>
+        <li>Shown only in groups of 10 or more</li>
+        <li>Research partners only, never advertisers or data brokers</li>
+        <li>No ads, no trackers</li>
+      </ul></div>
+      <div class="tcol proc"><h3>How it stays free</h3><ul>
+        <li><b>Free core</b>The daily loop, the path and research, for every member</li>
+        <li><b>Academy membership</b>Deeper levels in each school of practice</li>
+        <li><b>Research licenses</b>De-identified data for research and health partners</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- Get involved -->
+<section class="band connect" id="connect" aria-labelledby="h-connect">
+  <div class="inner">
+    <p class="eyebrow center">05 · Get involved</p>
+    <h2 id="h-connect" class="center">Invest, fund or partner.</h2>
+    <p class="sublead center">We're looking for angel investors, research funders and partners to take Equilibrium from a small alpha to a real research platform. Write to us for the deck and a demo.</p>
+    <div class="funds">
+      <article class="fund lead">
+        <span>Angel investors</span><h3>Back a working product</h3>
+        <p>A daily practice habit with a research engine inside it, live today.</p>
+        <a class="btn gold" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20angel%20investment&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27m%20interested%20in%20investing.%20Please%20send%20the%20deck.%0A%0AName%3A%0AFirm%20or%20network%20(if%20any)%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about investing</a>
+      </article>
+      <article class="fund">
+        <span>Research funders</span><h3>Fund the research</h3>
+        <p>Ethics review, independent analysis, data security and outreach to under-studied groups.</p>
+        <a class="btn ghost" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20research%20funding&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20funding%20the%20research.%0A%0AName%3A%0AOrganization%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about funding</a>
+      </article>
+      <article class="fund">
+        <span>State and research partners</span><h3>Build a pilot together</h3>
+        <p>Health departments, universities, clinicians and psychedelic societies.</p>
+        <a class="btn ghost" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20partnership&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20a%20partnership.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AWhat%20I%27m%20thinking%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about partnering</a>
+      </article>
+    </div>
+    <div class="closing">
+      <p>The field has its medicines.</p>
+      <h2>Now it needs a way to learn what works in real life.</h2>
+      <div class="actions center">
+        <a class="btn ghost" href="states/"><svg aria-hidden="true"><use href="#i-map"/></svg>Read State Fit</a>
+        <a class="btn ghost" href="full/"><svg aria-hidden="true"><use href="#i-layers"/></svg>Read the full concept</a>
+      </div>
+      <div class="mailrow"><span>Or write directly:</span><b>cosmo@evokemagic.org</b><button class="btn ghost sm" type="button" data-copy="cosmo@evokemagic.org"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy address</button><span class="copied" role="status" aria-live="polite"></span></div>
+    </div>
+  </div>
+</section>
 </main>
-<a class="cta-btn float-cta" href="#connect"><svg aria-hidden="true"><use href="#i-mail"/></svg>Get involved</a>
+
+<footer class="eqfoot">
+  <div class="brand"><img src="icon.svg" alt="" width="30" height="30"><span><b>EQUILIBRIUM</b><small>by ǝvōke · Be Well Ministry</small></span></div>
+  <p>Updated October 29, 2026. Findings are patterns, not proof. Equilibrium is not medical care. Consent and privacy wording are drafts under legal review.</p>
+</footer>
 
 <script>
 (function(){
@@ -572,18 +517,9 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
     function done(ok){if(say)say.textContent=ok?'Copied':'Select the address above to copy it'}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){done(true)},function(){done(false)})}else{done(false)}
   });
-  var f=document.querySelector('.float-cta'),cv=document.querySelector('.cover'),cn=document.getElementById('connect');
-  if(!f)return;
-  if(!cv||!cn||!('IntersectionObserver' in window)){f.classList.add('show');return}
-  var coverIn=true,connectIn=false;
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){if(e.target===cv)coverIn=e.isIntersecting;else connectIn=e.isIntersecting});
-    f.classList.toggle('show',!coverIn&&!connectIn);
-  });
-  io.observe(cv);io.observe(cn);
 })();
 (function(){
-  var m=document.querySelector('.mark'),c=document.querySelector('.cover');
+  var m=document.querySelector('.mark'),c=document.querySelector('.hero');
   if(!m||!c||!window.matchMedia||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var ready=false;setTimeout(function(){ready=true},14300);
   function again(){if(!ready)return;ready=false;m.classList.remove('again');void m.offsetWidth;m.classList.add('again');setTimeout(function(){ready=true},8000)}

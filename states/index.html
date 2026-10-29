@@ -11,6 +11,7 @@
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
 <link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../skin.css">
 <meta name="theme-color" content="#15122E">
 <style>
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -23,42 +24,44 @@ img{max-width:100%}
 @font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-400.woff2) format("woff2")}
 @font-face{font-family:"Atkinson Hyperlegible";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/atkinson-hyperlegible-700.woff2) format("woff2")}
 @font-face{font-family:"Atkinson Hyperlegible";font-style:italic;font-weight:400;font-display:swap;src:url(../fonts/atkinson-hyperlegible-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:400 800;font-display:swap;src:url(../fonts/nunito-400-800.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/jost-400.woff2) format("woff2")}
 @font-face{font-family:"Cinzel";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/cinzel-500-700.woff2) format("woff2")}
 @font-face{font-family:"Cinzel";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/cinzel-500-700.woff2) format("woff2")}
 @font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(../fonts/ibm-plex-mono-500.woff2) format("woff2")}
 @font-face{font-family:"Noto Sans Symbols 2";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/noto-sans-symbols-2-page.woff2) format("woff2")}
 /* Layout: a header band, a page switcher, then one concept per page as stacked color-coded cards (the member's own card language). */
 :root{
-  --bg:#F4F3F8; --surface:#FFFFFF; --ink:#1D1B2B; --muted:#5C596F; --line:#DCD9E6; --chrome:#2C2650; --chrome-ink:#FFFFFF; --on:#FFFFFF;
+  --bg:#F7F0E8; --surface:#FFFAF5; --ink:#2C1947; --muted:#685B79; --line:#DFD0E7; --chrome:#573394; --chrome-ink:#FFFFFF; --on:#FFFFFF;
   --g:#2D7A4E; --g-soft:#E5F3EA; --g-line:#B8DEC6;
   --r:#B93A2E; --r-soft:#FBEAE7; --r-line:#F0C2BB;
   --b:#2560B0; --b-soft:#E7EEFA; --b-line:#BCD0F0;
   --p:#7547BE; --p-soft:#F0E9FA; --p-line:#D5C3F1;
   --a:#A86400; --a-soft:#FCF0DA; --a-line:#EFD3A0;
-  --n:#5E5D6D; --n-soft:#EDECF2; --n-line:#D6D4E0;
+  --n:#5E5D6D; --n-soft:#F1EBF6; --n-line:#DFD0E7;
   --display:"Cinzel", "Trajan Pro", Georgia, serif;
-  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --body:"Nunito", "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --glyph:"Noto Sans Symbols 2", "Segoe UI Symbol", "Apple Symbols", sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#13121B; --surface:#1C1B27; --ink:#ECEAF5; --muted:#A4A1B9; --line:#2F2D40; --chrome:#C9BEF2; --chrome-ink:#17142A; --on:#14131C;
+  --bg:#100822; --surface:#1B1034; --ink:#EEE7F8; --muted:#B5A9CA; --line:#3A2A5C; --chrome:#C3A6F2; --chrome-ink:#170D31; --on:#140B2A;
   --g:#62C98F; --g-soft:#16301F; --g-line:#285A3B;
   --r:#F27D70; --r-soft:#361A18; --r-line:#6A2F2A;
   --b:#76AAF0; --b-soft:#152841; --b-line:#2A4C7A;
   --p:#B892F3; --p-soft:#271C3D; --p-line:#4A3772;
   --a:#F0B14E; --a-soft:#352710; --a-line:#69501F;
-  --n:#ABA9BB; --n-soft:#232230; --n-line:#3A3849;
+  --n:#ABA9BB; --n-soft:#231939; --n-line:#3A2A5C;
   color-scheme:dark;
 }}
 :root[data-theme="dark"]{
-  --bg:#13121B; --surface:#1C1B27; --ink:#ECEAF5; --muted:#A4A1B9; --line:#2F2D40; --chrome:#C9BEF2; --chrome-ink:#17142A; --on:#14131C;
+  --bg:#100822; --surface:#1B1034; --ink:#EEE7F8; --muted:#B5A9CA; --line:#3A2A5C; --chrome:#C3A6F2; --chrome-ink:#170D31; --on:#140B2A;
   --g:#62C98F; --g-soft:#16301F; --g-line:#285A3B;
   --r:#F27D70; --r-soft:#361A18; --r-line:#6A2F2A;
   --b:#76AAF0; --b-soft:#152841; --b-line:#2A4C7A;
   --p:#B892F3; --p-soft:#271C3D; --p-line:#4A3772;
   --a:#F0B14E; --a-soft:#352710; --a-line:#69501F;
-  --n:#ABA9BB; --n-soft:#232230; --n-line:#3A3849;
+  --n:#ABA9BB; --n-soft:#231939; --n-line:#3A2A5C;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -235,10 +238,23 @@ h3{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute
   .bh span{font-size:.75rem}
 }
 @media print{nav.tabs,.pager,.view,.viewnote{display:none}.page[hidden]{display:flex!important}}
+
+/* Shared skin: violet header band under the site bar */
+.sfhero{background:radial-gradient(circle at 80% 40%,rgba(143,81,205,.5) 0,rgba(97,46,158,.2) 26%,transparent 50%),linear-gradient(145deg,#150B30 0%,#2A1154 48%,#51277E 100%);color:#FBF6EC}
+.sfhero header{padding-block:56px 46px}
+.sfhero .eyebrow{color:#F3D88E;letter-spacing:.18em;font-weight:800}
+.sfhero h1{font-weight:500;font-size:clamp(2.2rem,6vw,3.8rem);letter-spacing:.03em}
+.sfhero .meta{color:#E2D8F2;font-size:1.05rem}
+nav.tabs{top:var(--barh,57px)}
+.page{scroll-margin-top:140px}
 </style>
 </head>
 <body>
-<header class="wrap">
+<header class="eqbar">
+  <a class="brand" href="../" aria-label="Equilibrium home"><img src="../icon.svg" alt="" width="34" height="34"><span><b>EQUILIBRIUM</b><small>Balance in motion</small></span></a>
+  <nav aria-label="Site"><a href="../#lock">The model</a><a href="../#why">Why now</a><a href="../#app">The app</a><a href="./" aria-current="page">State fit</a><a href="../full/">Full concept</a><a class="go" href="../#connect">Get involved</a></nav>
+</header>
+<div class="sfhero"><header class="wrap">
   <div class="toprow">
     <div>
       <div class="eyebrow">ǝvōke · Equilibrium · state landscape</div>
@@ -246,7 +262,7 @@ h3{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mute
       <p class="meta">Which legalizing and decriminalizing states fit Equilibrium, with New Mexico first. Prepared for partners and investors by ǝvōke. Sources checked Oct 23, 2026.</p>
     </div>
   </div>
-</header>
+</header></div>
 
 <nav class="tabs" aria-label="Pages">
   <div class="wrap"><a class="home" href="../" aria-label="Back to the Equilibrium concept overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span class="lbl">Overview</span></a><div class="tabrow" role="tablist" id="tabrow"></div></div>
