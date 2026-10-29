@@ -467,6 +467,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .member.lock button.dial{-webkit-appearance:none;appearance:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
 .knob .ptr{transform-box:view-box;transform-origin:32px 32px}
 .knob .arc{will-change:stroke-dasharray}
+.vtag.ex{background:rgba(237,178,90,.18);color:#F3C27A;margin-left:6px}.vtag.ex2{background:var(--warn-t);color:var(--warn);margin-left:6px}
 </style>
 </head>
 <body>
@@ -671,7 +672,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     <div class="views">
       <!-- Member -->
       <article class="vpanel member-v">
-        <header class="vhead"><span class="vtag mem">Member view</span><h3>One member, over months</h3><p>Private to her. Synced across her devices.</p></header>
+        <header class="vhead"><span class="vtag mem">Member view</span><span class="vtag ex2">Example member</span><h3>One member, over months</h3><p>Private to her. Synced across her devices.</p></header>
 
         <div class="vcard realcard">
           <div class="vcard-h"><b>Compass</b><span>the real screen</span></div>
@@ -705,7 +706,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
       <!-- Researcher -->
       <article class="vpanel research-v">
-        <header class="vhead"><span class="vtag res">Researcher view</span><h3>3,240 members · 26 weeks</h3><p>For approved partners. Groups of 10+ only.</p></header>
+        <header class="vhead"><span class="vtag res">Researcher view</span><span class="vtag ex">Example · simulated data</span><h3>A simulated 3,240 members · 26 weeks</h3><p>An example of the view at scale, not Equilibrium's real membership. For approved partners, groups of 10+ only.</p></header>
 
         <div class="rtabs" role="tablist" aria-label="Researcher view">
           <button type="button" role="tab" data-t="insights" aria-selected="false">Insights</button>
