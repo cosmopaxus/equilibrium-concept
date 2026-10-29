@@ -98,10 +98,24 @@ a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius
 .cover > *:not(.mark){position:relative;max-width:560px}
 
 /* Section links */
-.toc{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-start}
-.toc a{display:inline-flex;align-items:baseline;gap:6px;text-decoration:none;color:var(--indigo);background:var(--plate);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-weight:700;font-size:.85rem}
+.toc{position:sticky;top:0;z-index:15;display:flex;gap:8px;align-items:center;min-width:0;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+.toc-links{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent);padding-right:24px}
+.toc-links::-webkit-scrollbar{display:none}
+.toc-pins{display:flex;gap:6px;flex:none}
+.toc a{flex:none;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px;text-decoration:none;color:var(--indigo);background:var(--plate);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-weight:700;font-size:.85rem}
 .toc a span{color:var(--gold);font-size:.74rem;font-weight:800;font-variant-numeric:tabular-nums}
 .toc a:hover{border-color:var(--indigo)}
+.toc a svg{width:14px;height:14px;align-self:center;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.toc a.toc-state{background:var(--indigo);border-color:var(--indigo);color:var(--plate)}
+.toc a.toc-state:hover{filter:brightness(1.1)}
+@media(max-width:560px){.toc a.toc-cta{display:none}}
+.plate{scroll-margin-top:72px}
+.feature{border:2px solid var(--indigo);background:var(--indigo-t)}
+.feature .cards a.card{text-decoration:none;color:inherit}
+.feature .cards a.card:hover{filter:brightness(.97)}
+.feature-btn{justify-self:start;display:inline-flex;align-items:center;gap:10px;min-height:46px;border-radius:999px;padding:10px 20px;font-weight:800;text-decoration:none;background:var(--indigo);color:var(--plate)}
+.feature-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fitrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#E2DBF6;font-size:.95rem}
 
 /* Cards */
 .cards{display:grid;gap:8px}
@@ -371,23 +385,39 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
 </section>
 
 <nav class="toc" aria-label="Sections">
-  <a href="#mission"><span>01</span>Mission</a>
-  <a href="#jobs"><span>02</span>Five jobs</a>
-  <a href="#who"><span>03</span>Who it's for</a>
-  <a href="#measures"><span>04</span>What it measures</a>
-  <a href="#pillars"><span>05</span>Pillars</a>
-  <a href="#layers"><span>06</span>Layers</a>
-  <a href="#modes"><span>07</span>Two modes</a>
-  <a href="#day"><span>08</span>A day</a>
-  <a href="#principles"><span>09</span>Principles</a>
-  <a href="#borrow"><span>10</span>Inspiration</a>
-  <a href="#rewards"><span>11</span>Rewards</a>
-  <a href="#trust"><span>12</span>Trust and data</a>
-  <a href="#free"><span>13</span>Free vs Academy</a>
-  <a href="#status"><span>14</span>What's ready</a>
-  <a href="states/"><span>→</span>State fit</a>
-  <a href="#connect" class="toc-cta"><span>15</span>Invest · Collaborate</a>
+  <div class="toc-links">
+    <a href="#mission"><span>01</span>Mission</a>
+    <a href="#jobs"><span>02</span>Five jobs</a>
+    <a href="#who"><span>03</span>Who it's for</a>
+    <a href="#measures"><span>04</span>What it measures</a>
+    <a href="#pillars"><span>05</span>Pillars</a>
+    <a href="#layers"><span>06</span>Layers</a>
+    <a href="#modes"><span>07</span>Two modes</a>
+    <a href="#day"><span>08</span>A day</a>
+    <a href="#principles"><span>09</span>Principles</a>
+    <a href="#borrow"><span>10</span>Inspiration</a>
+    <a href="#rewards"><span>11</span>Rewards</a>
+    <a href="#trust"><span>12</span>Trust and data</a>
+    <a href="#free"><span>13</span>Free vs Academy</a>
+    <a href="#status"><span>14</span>What's ready</a>
+  </div>
+  <div class="toc-pins">
+    <a href="states/" class="toc-state"><svg aria-hidden="true"><use href="#i-map"/></svg>State fit</a>
+    <a href="#connect" class="toc-cta"><span>15</span>Invest · Collaborate</a>
+  </div>
 </nav>
+
+<!-- State fit · feature -->
+<section class="plate feature" id="state-fit" aria-labelledby="h-statefit">
+  <div class="head"><p class="eyebrow">State fit brief</p><h2 id="h-statefit">Where Equilibrium fits, state by state</h2></div>
+  <p class="lede">Which legalizing and decriminalizing states would gain most from long-term, real-world data on practice and plant medicine, and why New Mexico comes first.</p>
+  <div class="cards c3">
+    <a class="card good" href="states/#newmexico"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>New Mexico first</h3><p>Its new psilocybin program hasn't set what it measures yet.</p></div></a>
+    <a class="card proc" href="states/#board"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>The state fit board</h3><p>States scored on six things, from legal access to timing.</p></div></a>
+    <a class="card rule" href="states/#lock"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>The combination lock</h3><p>For some people the dials have to line up. How the app finds which ones.</p></div></a>
+  </div>
+  <a class="feature-btn" href="states/">Open the State Fit brief <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</section>
 
 <!-- 01 · Mission -->
 <section class="plate" id="mission" aria-labelledby="h-mission">
@@ -862,6 +892,10 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
       <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20collaboration&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20collaborate.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AHow%20I%27d%20like%20to%20help%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about collaborating</a>
     </div>
   </div>
+  <div class="fitrow">
+    <span>See where it fits first:</span>
+    <a class="cta-btn ghost" href="states/"><svg aria-hidden="true"><use href="#i-map"/></svg>Read the State Fit brief</a>
+  </div>
   <div class="mailrow">
     <span>Or write directly:</span>
     <b>cosmo@evokemagic.org</b>
@@ -871,7 +905,7 @@ figcaption b{color:var(--ink);display:block;font-size:.93rem}
 </section>
 
 <footer class="foot">
-  <span>Equilibrium by ǝvōke · Be Well Ministry · living concept overview, updated October 24, 2026.</span>
+  <span>Equilibrium by ǝvōke · Be Well Ministry · living concept overview, updated October 28, 2026.</span>
   <span>Investors and collaborators: <a href="#connect">get in touch</a> · cosmo@evokemagic.org</span>
   <span>Consent, privacy and ministry wording are drafts under legal review. Findings are patterns, not proof. Equilibrium is not medical care.</span>
 </footer>
