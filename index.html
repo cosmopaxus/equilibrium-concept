@@ -695,15 +695,15 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
         <header class="vhead"><span class="vtag res">Researcher view</span><h3>3,240 members · 26 weeks</h3><p>For approved partners. Groups of 10+ only.</p></header>
 
         <div class="rtabs" role="tablist" aria-label="Researcher view">
-          <button type="button" role="tab" data-t="insights" aria-selected="true" class="on">Insights</button>
+          <button type="button" role="tab" data-t="insights" aria-selected="false">Insights</button>
           <button type="button" role="tab" data-t="overview" aria-selected="false">Overview</button>
           <button type="button" role="tab" data-t="compare" aria-selected="false">Compare</button>
-          <button type="button" role="tab" data-t="change" aria-selected="false">Change</button>
+          <button type="button" role="tab" data-t="change" aria-selected="true" class="on">Change</button>
           <button type="button" role="tab" data-t="patterns" aria-selected="false">Patterns</button>
           <button type="button" role="tab" data-t="report" aria-selected="false">Report</button>
         </div>
 
-        <div class="vcard rpane ins" data-p="insights">
+        <div class="vcard rpane ins" data-p="insights" hidden>
           <div class="vcard-h"><b>Insights</b><span>patterns, not proof</span></div>
           <div class="ins-track" aria-live="polite">
             <div class="ins-slide" data-i="0" role="group" aria-roledescription="slide" aria-label="1 of 3">
@@ -758,12 +758,12 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <p class="cap" id="r-cmp-cap">Evening readings, 0–100, vs the same people's other days.</p>
         </div>
 
-        <div class="vcard rpane" data-p="change" hidden>
-          <div class="vcard-h"><b>Change from each person's start</b><span id="r-ch-label">WHO-5 well-being</span></div>
+        <div class="vcard rpane" data-p="change">
+          <div class="vcard-h"><b>Change from each person's start</b><span id="r-ch-label">GAD-2 worry</span></div>
           <div class="chips-row" role="group" aria-label="Scale">
-            <button type="button" class="rchip cchip on" data-c="who5" aria-pressed="true">WHO-5</button>
+            <button type="button" class="rchip cchip" data-c="who5" aria-pressed="false">WHO-5</button>
             <button type="button" class="rchip cchip" data-c="phq2" aria-pressed="false">PHQ-2</button>
-            <button type="button" class="rchip cchip" data-c="gad2" aria-pressed="false">GAD-2</button>
+            <button type="button" class="rchip cchip on" data-c="gad2" aria-pressed="true">GAD-2</button>
             <button type="button" class="rchip cchip" data-c="sleep" aria-pressed="false">Sleep</button>
           </div>
           <svg class="linechart" id="r-chart" viewBox="0 0 520 220" role="img" aria-label="Average change from each person's start, by weeks since starting, for four groups."></svg>
@@ -973,7 +973,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   var GR=[{l:'Macrodose + practice',n:'486',c:'#F08A5D'},{l:'Practice + microdose',n:'812',c:'#E8C46B'},{l:'Practice only',n:'920',c:'#B58BF0'},{l:'Microdose only',n:'377',c:'#6FB7E8'},{l:'Neither',n:'645',c:'#9B90AE'}];
   function drawCh(k){var c=CH[k];line(rc,c.g.map(function(v,i){return{v:v,c:GR[i].c,dot:1}}),{n:5,h:220,ymin:c.lo,ymax:c.hi,ticks:c.t,sign:1,xl:[[0,'Start'],[1,'Wk 5–8'],[2,'Wk 9–12'],[3,'Wk 13–26'],[4,'Wk 27–52']],base:0,anim:true});
     document.getElementById('r-ch-label').textContent=c.label;document.getElementById('r-ch-cap').textContent=c.cap}
-  if(rc){document.getElementById('r-legend').innerHTML=GR.map(function(g){return'<span><i style="--k:'+g.c+'"></i>'+g.l+' · '+g.n+'</span>'}).join('');drawCh('who5');
+  if(rc){document.getElementById('r-legend').innerHTML=GR.map(function(g){return'<span><i style="--k:'+g.c+'"></i>'+g.l+' · '+g.n+'</span>'}).join('');drawCh('gad2');
     chipGroup('.cchip',function(b){drawCh(b.dataset.c)})}
   function chipGroup(sel,fn){var bs=document.querySelectorAll(sel);bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});fn(b)})})}
   // overview (pretend)
