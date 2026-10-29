@@ -384,6 +384,20 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .strip.dark figcaption{color:#BFB2D3}.strip.dark figcaption b{color:#fff}
 .strip.dark img{border-color:rgba(255,255,255,.18)}
 @media(max-width:520px){.realgrid{grid-template-columns:1fr}}
+
+.members.three-up{grid-template-columns:repeat(3,minmax(0,1fr))}
+.three-up .member{padding:18px;gap:16px}
+.three-up .dialrow{gap:clamp(4px,1.2vw,14px)}
+.three-up .knob{width:clamp(54px,5.4vw,70px)}
+.three-up .outcome{padding:12px 14px}.three-up .outcome strong{font-size:20px}
+.member.lock button.dial{outline:none}
+.member.lock button.dial:hover .ring{stroke:var(--gold);stroke-width:2}
+.member.lock:not(.touched) .dialrow{animation:none}
+.hint.miss{color:var(--risk)}.hint.miss svg{display:none}
+.reset{justify-self:center;font:700 12.5px var(--body);color:var(--muted);background:none;border:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;visibility:hidden}
+.member.touched .reset{visibility:visible}
+.member small{white-space:nowrap}
+@media(max-width:1000px){.members.three-up{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -527,20 +541,30 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     <p class="eyebrow">02 · The combination lock</p>
     <h2 id="h-lock">Change rarely has one dial.</h2>
     <p class="sublead">An idea from New Mexico's psychedelic community. Averages hide the useful pattern: the same mix can work for one person and not another, until a second dial turns.</p>
-    <div class="members">
-      <article class="member">
+    <div class="members three-up">
+      <article class="member lock" data-key="Breath,Micro" data-start="Breath,Micro">
         <header><span class="av">A</span><div><small>Member A</small><h3>Ana</h3></div></header>
-        <div class="dialrow"><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></div><div class="dial" data-on="false"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></div><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>On</small></div></div>
-        <div class="outcome yes"><span>12 weeks</span><strong>Change</strong></div>
+        <div class="dialrow"><button class="dial" type="button" data-d="Breath" data-on="true" aria-pressed="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></button><button class="dial" type="button" data-d="Therapy" data-on="false" aria-pressed="false"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></button><button class="dial" type="button" data-d="Micro" data-on="true" aria-pressed="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>On</small></button></div>
+        <div class="outcome" aria-live="polite"><span class="when">12 weeks</span><strong class="res"></strong></div>
+        <p class="hint" data-hint="Ana's lock is open. Which dials hold it?"><svg aria-hidden="true"><use href="#i-arrow"/></svg><span>Ana's lock is open. Which dials hold it?</span></p>
+        <button class="reset" type="button">Reset</button>
       </article>
-      <article class="member" id="ben">
+      <article class="member lock" data-key="Breath,Therapy,Micro" data-start="Breath,Micro">
         <header><span class="av">B</span><div><small>Member B</small><h3>Ben</h3></div></header>
-        <div class="dialrow"><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></div><button class="dial" type="button" data-on="false" aria-pressed="false" id="ben-therapy"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></button><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>On</small></div></div>
-        <div class="outcome no" id="ben-out" aria-live="polite"><span id="ben-when">12 weeks</span><strong id="ben-res">No change</strong></div>
-        <p class="hint" id="ben-hint"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Tap Ben's therapy dial</p>
+        <div class="dialrow"><button class="dial" type="button" data-d="Breath" data-on="true" aria-pressed="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></button><button class="dial" type="button" data-d="Therapy" data-on="false" aria-pressed="false"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></button><button class="dial" type="button" data-d="Micro" data-on="true" aria-pressed="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>On</small></button></div>
+        <div class="outcome" aria-live="polite"><span class="when">12 weeks</span><strong class="res"></strong></div>
+        <p class="hint" data-hint="Find the dial that opens Ben's lock"><svg aria-hidden="true"><use href="#i-arrow"/></svg><span>Find the dial that opens Ben's lock</span></p>
+        <button class="reset" type="button">Reset</button>
+      </article>
+      <article class="member lock" data-key="Breath,Therapy" data-start="Breath">
+        <header><span class="av">C</span><div><small>Member C · never doses</small><h3>Cara</h3></div></header>
+        <div class="dialrow"><button class="dial" type="button" data-d="Breath" data-on="true" aria-pressed="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></button><button class="dial" type="button" data-d="Therapy" data-on="false" aria-pressed="false"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></button><button class="dial" type="button" data-d="Micro" data-on="false" aria-pressed="false"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>Off</small></button></div>
+        <div class="outcome" aria-live="polite"><span class="when">12 weeks</span><strong class="res"></strong></div>
+        <p class="hint" data-hint="Find Cara's missing dial"><svg aria-hidden="true"><use href="#i-arrow"/></svg><span>Find Cara's missing dial</span></p>
+        <button class="reset" type="button">Reset</button>
       </article>
     </div>
-    <p class="cap center">Illustration, not study results. Same starting mix, different response.</p>
+    <p class="cap center">Illustration, not study results. Every dial turns. Same three dials, three different locks.</p>
 
     <div class="lockmeta">
       <div>
@@ -811,13 +835,25 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 </script>
 <script>
 (function(){
-  var d=document.getElementById('ben-therapy');if(!d)return;
-  var out=document.getElementById('ben-out'),res=document.getElementById('ben-res'),when=document.getElementById('ben-when'),hint=document.getElementById('ben-hint');
-  d.addEventListener('click',function(){
-    var on=d.getAttribute('data-on')!=='true';
-    d.setAttribute('data-on',on);d.setAttribute('aria-pressed',on);d.querySelector('small').textContent=on?'On':'Off';
-    out.className='outcome '+(on?'yes':'no');res.textContent=on?'Change':'No change';when.textContent=on?'Next 12 weeks':'12 weeks';
-    hint.className='hint'+(on?' done':'');hint.lastChild.textContent=on?"Ben's lock opened when a second dial turned":"Tap Ben's therapy dial";
+  var MSG={Ana:{open:"Ana's lock: breath and a microdose",shut:"A dial Ana needs is off"},
+           Ben:{open:"Ben's lock opened when therapy joined",shut:"Ben needs one more dial"},
+           Cara:{open:"Cara's lock opened without any dose",shut:"Cara needs one more dial"}};
+  document.querySelectorAll('.member.lock').forEach(function(card){
+    var key=card.dataset.key.split(','),start=card.dataset.start.split(','),name=card.querySelector('h3').textContent;
+    var dials=[].slice.call(card.querySelectorAll('.dial')),out=card.querySelector('.outcome'),res=card.querySelector('.res'),when=card.querySelector('.when'),hint=card.querySelector('.hint'),ht=hint.querySelector('span');
+    function set(d,on){d.setAttribute('data-on',on);d.setAttribute('aria-pressed',on);d.querySelector('small').textContent=on?'On':'Off'}
+    function update(touched){
+      var on=dials.filter(function(d){return d.getAttribute('data-on')==='true'}).map(function(d){return d.dataset.d});
+      var open=key.every(function(k){return on.indexOf(k)>-1});
+      out.className='outcome '+(open?'yes':'no');res.textContent=open?'Change':'No change';
+      when.textContent=touched?'Next 12 weeks':'12 weeks';
+      if(!touched){hint.className='hint';ht.textContent=hint.dataset.hint}
+      else{hint.className='hint'+(open?' done':' miss');ht.textContent=open?MSG[name].open:MSG[name].shut}
+      card.classList.toggle('touched',!!touched);
+    }
+    dials.forEach(function(d){d.addEventListener('click',function(){set(d,d.getAttribute('data-on')!=='true');update(true)})});
+    card.querySelector('.reset').addEventListener('click',function(){dials.forEach(function(d){set(d,start.indexOf(d.dataset.d)>-1)});update(false)});
+    update(false);
   });
 })();
 </script>
