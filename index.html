@@ -225,6 +225,77 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
   .lockgrid{padding:14px}
 }
 @media print{.eqbar{position:static}.band,.hero{break-inside:avoid}}
+/* evidence gap timeline */
+.timeline{max-width:900px;margin:0 auto 28px;background:var(--plate);border:1px solid var(--line);border-radius:20px;padding:22px 24px;box-shadow:0 20px 50px rgba(67,32,105,.08)}
+.tl-scale{display:flex;justify-content:space-between;margin-left:calc(min(260px,38%) + 14px);font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.tl-row{display:grid;grid-template-columns:min(260px,38%) 1fr;gap:14px;align-items:center;margin:12px 0}
+.tl-k{font-weight:800}.tl-k small{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
+.tl-bar{height:18px;border-radius:999px;background:var(--neutral-t);border:1px solid var(--line);overflow:hidden;background-image:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),var(--line) calc(25% - 1px) 25%)}
+.tl-bar i{display:block;height:100%;border-radius:999px}
+.tl-bar .sliver{width:1.2%;min-width:7px;background:var(--risk)}
+.tl-bar .full{width:100%;background:linear-gradient(90deg,var(--plum),#8F51CD 60%,var(--gold))}
+.pair{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;max-width:900px;margin:0 auto}
+.pc{border-radius:18px;padding:20px;background:var(--t);border:1px solid color-mix(in srgb,var(--c) 40%,transparent)}
+.pc span{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:10.5px;font-weight:800;color:var(--c)}
+.pc h3{font-family:var(--display);font-weight:600;font-size:22px;margin:8px 0 4px}
+.pc p{color:var(--muted)}
+.plus{font-style:normal;font-size:28px;color:var(--gold-d);font-weight:800}
+
+/* members + dials */
+.members{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:38px 0 10px;padding:16px;border:1px solid var(--line);border-radius:24px;background:color-mix(in srgb,var(--plate) 80%,transparent);box-shadow:0 20px 50px rgba(67,32,105,.1)}
+.member{background:var(--plate);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:18px;align-content:start}
+.member header{display:flex;gap:12px;align-items:center}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#2A1154;color:#F3D88E;font-family:var(--display);font-weight:600}
+.member small{display:block;text-transform:uppercase;letter-spacing:.13em;font-size:10px;font-weight:800;color:var(--muted)}
+.member h3{font-family:var(--display);font-weight:600;font-size:22px}
+.dialrow{display:flex;justify-content:center;gap:clamp(10px,3vw,28px)}
+.dial{display:grid;justify-items:center;gap:2px;background:none;border:0;padding:6px;border-radius:14px;font:inherit;color:var(--ink)}
+.dial b{font-size:14px;font-weight:800}
+.dial small{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.dial[data-on="true"] small{color:var(--plum)}
+.knob{width:clamp(58px,9vw,76px);height:auto;overflow:visible}
+.knob .ticks path{stroke:var(--line);stroke-width:2;stroke-linecap:round;fill:none}
+.knob .ring{fill:var(--neutral-t);stroke:var(--line);stroke-width:1}
+.knob .arc{fill:none;stroke:var(--gold);stroke-width:5;stroke-linecap:round;stroke-dasharray:12 100;transition:stroke-dasharray .5s cubic-bezier(.22,1,.36,1)}
+.knob .cap{fill:var(--plate);stroke:var(--line)}
+.knob .ptr{transform-origin:32px 32px;transform:rotate(-120deg);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.knob .ptr line{stroke:var(--muted);stroke-width:3;stroke-linecap:round}
+.dial[data-on="true"] .ring{fill:var(--plum);stroke:var(--plum)}
+.dial[data-on="true"] .arc{stroke-dasharray:72 100}
+.dial[data-on="true"] .ptr{transform:rotate(55deg)}
+.dial[data-on="true"] .ptr line{stroke:var(--gold-d)}
+button.dial{cursor:pointer;outline:2px dashed color-mix(in srgb,var(--gold) 80%,transparent);outline-offset:2px}
+button.dial[data-on="true"]{outline-color:transparent}
+button.dial:hover .ring{stroke:var(--gold)}
+button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.outcome{display:flex;justify-content:space-between;align-items:center;border-radius:14px;padding:14px 18px;border:1px solid color-mix(in srgb,var(--c) 40%,transparent);background:var(--t);transition:background .4s,border-color .4s}
+.outcome span{text-transform:uppercase;letter-spacing:.13em;font-size:10.5px;font-weight:800;color:var(--muted)}
+.outcome strong{font-family:var(--display);font-weight:600;font-size:22px;color:var(--c)}
+.outcome.yes{--c:var(--good);--t:var(--good-t)}.outcome.no{--c:var(--risk);--t:var(--risk-t)}
+.hint{display:flex;align-items:center;gap:8px;justify-content:center;text-align:center;font-weight:800;color:var(--gold-d);font-size:14px}
+.hint svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4;transform:rotate(-90deg)}
+.hint.done{color:var(--good)}.hint.done svg{display:none}
+.lockmeta{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:40px 0}
+.lockmeta .dials{margin:0}
+.lockmeta .bars{margin:0}
+
+/* investor-first close */
+.connect .eyebrow,.connect h2,.connect .sublead{text-align:left}
+.paths{display:grid;grid-template-columns:1.15fr .85fr;gap:16px;margin-top:40px;align-items:stretch}
+.paths .fund p{min-height:0}
+.paths .fund h3{font-size:clamp(22px,2.6vw,30px)}
+.ticks{list-style:none;margin:4px 0 8px;padding:0;display:grid;gap:8px;color:#E7DDF2}
+.ticks li{display:flex;gap:10px}.ticks li::before{content:"";flex:none;width:8px;height:8px;margin-top:8px;border-radius:50%;background:#E8C46B}
+.fine{color:#B9ACCB;font-size:13px}
+.who{margin:4px 0 8px;display:grid;gap:12px}
+.who dt{font-weight:800;color:#fff}.who dd{margin:0;color:#CFC4DA;font-size:15px}
+
+@media(max-width:860px){
+  .members,.lockmeta,.paths{grid-template-columns:1fr}
+  .pair{grid-template-columns:1fr}.plus{justify-self:center}
+  .tl-row{grid-template-columns:1fr;gap:6px}.tl-scale{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){.knob .arc,.knob .ptr,.outcome{transition:none}}
 </style>
 </head>
 <body>
@@ -284,8 +355,8 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
 <header class="eqbar">
   <a class="brand" href="./" aria-label="Equilibrium home"><img src="icon.svg" alt="" width="34" height="34"><span><b>EQUILIBRIUM</b><small>Balance in motion</small></span></a>
   <nav aria-label="Site">
-    <a href="#lock">The model</a><a href="#why">Why now</a><a href="#app">The app</a><a href="states/">State fit</a><a href="full/">Full concept</a>
-    <a class="go" href="#connect">Get involved</a>
+    <a href="#lock">The model</a><a href="#why">Why now</a><a href="#app">Working alpha</a><a href="states/">State fit</a><a href="full/">Full concept</a>
+    <a class="go" href="#connect">Invest · Partner</a>
   </nav>
 </header>
 
@@ -295,15 +366,15 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
   <div class="hero-copy">
     <p class="eyebrow">Real-world evidence for psychedelic wellness</p>
     <h1 id="h-hero">What works, <em>for whom,</em> over time?</h1>
-    <p class="lead">Psychedelic programs track a session. Equilibrium follows the months after it: a free daily practice app that shows which mix of practices, with or without plant medicines, goes with real change.</p>
+    <p class="lead">Programs track a session. Equilibrium follows the months after it, to see which mix of daily practice, integration and plant medicine goes with real change, person by person.</p>
     <div class="actions">
-      <a class="btn gold" href="#connect">Get involved <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn gold" href="#connect">Talk to us about investing <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
       <a class="btn ghost" href="full/">See the full concept</a>
     </div>
     <div class="proof">
       <span><b><i class="live" aria-hidden="true"></i>Live</b>Release 4.5.1 alpha</span>
-      <span><b>Long-term</b>months, not days</span>
-      <span><b>Private</b>research only with a clear yes</span>
+      <span><b>Daily + weekly</b>follow-up for months</span>
+      <span><b>Opt-in</b>research only with a clear yes</span>
     </div>
   </div>
   <figure class="hero-mark">
@@ -344,24 +415,20 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
   </figure>
 </section>
 
-<!-- Thesis -->
+<!-- Evidence gap -->
 <section class="band thesis" id="question" aria-labelledby="h-q">
   <div class="inner">
-    <p class="eyebrow">01 · The question</p>
-    <h2 id="h-q" class="big">Trials ask if something works <em>on average.</em><br>People need to know what works <em>for them.</em></h2>
-    <div class="vs">
-      <div class="vcol neut"><h3>What the field measures</h3><ul>
-        <li><b>The average</b><small>One effect across a whole group</small></li>
-        <li><b>Weeks to a few months</b><small>Then follow-up ends</small></li>
-        <li><b>One medicine at a time</b><small>Practice and daily life left out</small></li>
-        <li><b>The clinic</b><small>Session days, not ordinary days</small></li>
-      </ul></div>
-      <div class="vcol good"><h3>What Equilibrium measures</h3><ul>
-        <li><b>Each person against their own start</b><small>Change for this person, not just the group</small></li>
-        <li><b>Months and years</b><small>A short check-in every evening, scales every week</small></li>
-        <li><b>Many practices, with or without a dose</b><small>Breath, stillness, movement, goals; micro, macro or none</small></li>
-        <li><b>Everyone counts</b><small>People who don't respond, and people who never dose</small></li>
-      </ul></div>
+    <p class="eyebrow center">01 · The evidence gap</p>
+    <h2 id="h-q" class="big center">A session is a moment.<br><em>Change takes months.</em></h2>
+    <div class="timeline" role="img" aria-label="Over a year: Oregon's state reports cover the session and 3 days; Equilibrium follows every day for a year and more.">
+      <div class="tl-scale"><span>Session</span><span>3 mo</span><span>6 mo</span><span>9 mo</span><span>12 mo +</span></div>
+      <div class="tl-row"><span class="tl-k">What a state program reports<small>Oregon: the session and 3 days after</small></span><span class="tl-bar"><i class="sliver"></i></span></div>
+      <div class="tl-row"><span class="tl-k">What Equilibrium follows<small>Every evening, every week, for a year and more</small></span><span class="tl-bar"><i class="full"></i></span></div>
+    </div>
+    <div class="pair">
+      <article class="pc neut"><span>Programs can see</span><h3>The session</h3><p>The dose, the day, the immediate response.</p></article>
+      <i class="plus" aria-hidden="true">+</i>
+      <article class="pc good"><span>Equilibrium adds</span><h3>Real life, over time</h3><p>Practice, integration, people who don't respond, and people who never dose.</p></article>
     </div>
   </div>
 </section>
@@ -371,32 +438,44 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
   <div class="inner">
     <p class="eyebrow">02 · The combination lock</p>
     <h2 id="h-lock">Change rarely has one dial.</h2>
-    <p class="sublead">An idea from New Mexico's psychedelic community. For some people one practice is enough. For others, change shows only when a second or third dial turns.</p>
-    <div class="lockgrid" role="table" aria-label="Illustration: which dials were on, and whether change followed">
-      <div class="lr head" role="row"><span role="columnheader">Member</span><span role="columnheader">Breath</span><span role="columnheader">Therapy</span><span role="columnheader">Micro</span><span role="columnheader">12 weeks</span></div>
-      <div class="lr" role="row"><span role="rowheader">Ana</span><span class="on" role="cell">On</span><span class="off" role="cell">Off</span><span class="on" role="cell">On</span><span class="yes" role="cell">Change</span></div>
-      <div class="lr" role="row"><span role="rowheader">Ben</span><span class="on" role="cell">On</span><span class="off" role="cell">Off</span><span class="on" role="cell">On</span><span class="no" role="cell">No change</span></div>
-      <div class="lr later" role="row"><span role="rowheader">Ben, later</span><span class="on" role="cell">On</span><span class="on2" role="cell">On</span><span class="on" role="cell">On</span><span class="yes" role="cell">Change</span></div>
-      <p class="cap">Illustration, not data. Ben's lock opened when a second dial turned.</p>
+    <p class="sublead">An idea from New Mexico's psychedelic community. Averages hide the useful pattern: the same mix can work for one person and not another, until a second dial turns.</p>
+    <div class="members">
+      <article class="member">
+        <header><span class="av">A</span><div><small>Member A</small><h3>Ana</h3></div></header>
+        <div class="dialrow"><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></div><div class="dial" data-on="false"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></div><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>On</small></div></div>
+        <div class="outcome yes"><span>12 weeks</span><strong>Change</strong></div>
+      </article>
+      <article class="member" id="ben">
+        <header><span class="av">B</span><div><small>Member B</small><h3>Ben</h3></div></header>
+        <div class="dialrow"><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Breath</b><small>On</small></div><button class="dial" type="button" data-on="false" aria-pressed="false" id="ben-therapy"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Therapy</b><small>Off</small></button><div class="dial" data-on="true"><svg class="knob" viewBox="0 0 64 64" aria-hidden="true"><g class="ticks"><path d="M32 4v5M54.6 13.4l-3.5 3.5M60 32h-5M9.4 13.4l3.5 3.5M4 32h5M13.4 54.6l3.5-3.5M54.6 54.6l-3.5-3.5"/></g><circle class="ring" cx="32" cy="32" r="20"/><path class="arc" d="M18.2 45.8A20 20 0 1 1 45.8 45.8" pathLength="100"/><circle class="cap" cx="32" cy="32" r="13"/><g class="ptr"><line x1="32" y1="32" x2="32" y2="21"/></g></svg><b>Micro</b><small>On</small></div></div>
+        <div class="outcome no" id="ben-out" aria-live="polite"><span id="ben-when">12 weeks</span><strong id="ben-res">No change</strong></div>
+        <p class="hint" id="ben-hint"><svg aria-hidden="true"><use href="#i-arrow"/></svg>Tap Ben's therapy dial</p>
+      </article>
     </div>
-    <div class="dials">
-      <span class="dl">Eight practice dials</span>
-      <span class="chip">Breathwork</span><span class="chip">Meditation</span><span class="chip">Movement</span><span class="chip">Bodywork</span><span class="chip">Energy work</span><span class="chip">Therapy or coaching</span><span class="chip">Nature</span><span class="chip">Nutrition</span>
-      <span class="dl">× dose</span><span class="chip g">None</span><span class="chip g">Micro</span><span class="chip g">Macro</span>
-    </div>
-    <div class="bars">
-      <p class="bt">Why you can't just test every mix</p>
-      <div class="bar-row"><span><b>Every full mix</b> · 768 groups · 7,680 people</span><span class="bar"><i style="width:100%;background:var(--risk)"></i></span></div>
-      <div class="bar-row"><span><b>Pairs of practices</b> · 84 groups · 840 people</span><span class="bar"><i style="width:11%;background:var(--warn)"></i></span></div>
-      <div class="bar-row"><span><b>Each person vs themselves</b> · works from one person</span><span class="bar"><i style="width:2%;min-width:10px;background:var(--good)"></i></span></div>
-      <p class="cap">8 practices × 3 dose states, at least 10 people behind every number.</p>
+    <p class="cap center">Illustration, not study results. Same starting mix, different response.</p>
+
+    <div class="lockmeta">
+      <div>
+        <p class="bt">Eight practice dials, three dose settings</p>
+        <div class="dials">
+          <span class="chip">Breathwork</span><span class="chip">Meditation</span><span class="chip">Movement</span><span class="chip">Bodywork</span><span class="chip">Energy work</span><span class="chip">Therapy or coaching</span><span class="chip">Nature</span><span class="chip">Nutrition</span>
+          <span class="chip g">No dose</span><span class="chip g">Micro</span><span class="chip g">Macro</span>
+        </div>
+      </div>
+      <div class="bars">
+        <p class="bt">Why no trial can test every mix</p>
+        <div class="bar-row"><span><b>Every full mix</b> · 7,680 people</span><span class="bar"><i style="width:100%;background:var(--risk)"></i></span></div>
+        <div class="bar-row"><span><b>Pairs of practices</b> · 840 people</span><span class="bar"><i style="width:11%;background:var(--warn)"></i></span></div>
+        <div class="bar-row"><span><b>Each person vs themselves</b> · from one person</span><span class="bar"><i style="width:2%;min-width:10px;background:var(--good)"></i></span></div>
+        <p class="cap">8 practices × 3 dose settings, at least 10 people behind every number.</p>
+      </div>
     </div>
     <div class="three">
       <article><span>1</span><h3>Each person is their own control</h3><p>Compare a member's weeks with one mix against weeks with another.</p></article>
       <article><span>2</span><h3>Test a short list first</h3><p>Practitioners name 3–5 likely mixes before the data comes in.</p></article>
       <article><span>3</span><h3>Follow the non-responders</h3><p>No change by week 12? See which dial they add before change shows.</p></article>
     </div>
-    <div class="nownext"><svg aria-hidden="true"><use href="#i-key"/></svg><p><b>In the app now:</b> practice days and dose days, each person against their own start. <b>Next:</b> the eight practice dials on the evening check-in, filled in automatically from what members do in the app.</p></div>
+    <div class="nownext"><svg aria-hidden="true"><use href="#i-key"/></svg><p><b>In the app now:</b> practice days and dose days, each person against their own start. <b>Next:</b> all eight practice dials on the evening check-in, filled in automatically from what members do in the app.</p></div>
   </div>
 </section>
 
@@ -408,8 +487,8 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
       <h2 id="h-why">Programs are moving. Measurement isn't.</h2>
       <p class="sublead">States are opening access faster than they're building ways to measure it. Equilibrium brings long-term, de-identified data to that gap, at no cost to the state.</p>
       <div class="signals">
-        <article class="sig"><span>Federal signal · Apr 2026</span><strong>EO 14401</strong><p>Directs HHS to partner with states and expand real-world evidence on psychedelics.</p></article>
-        <article class="sig"><span>FDA · Sep 2026</span><strong>Data, on the agenda</strong><p>Its public hearing named data collection and standardization as a topic.</p></article>
+        <article class="sig"><span>Federal signal · EO 14401</span><strong>$50M+</strong><p>For HHS to partner with states, share data and expand real-world evidence on psychedelics.</p></article>
+        <article class="sig"><span>FDA · Sep 2026</span><strong>Data on the agenda</strong><p>Its public hearing named data collection and standardization as a topic.</p></article>
       </div>
       <ul class="gaps">
         <li><i class="d risk"></i><b>Oregon:</b> state reports cover the session and the 3 days after it</li>
@@ -471,24 +550,30 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
 <!-- Get involved -->
 <section class="band connect" id="connect" aria-labelledby="h-connect">
   <div class="inner">
-    <p class="eyebrow center">05 · Get involved</p>
-    <h2 id="h-connect" class="center">Invest, fund or partner.</h2>
-    <p class="sublead center">We're looking for angel investors, research funders and partners to take Equilibrium from a small alpha to a real research platform. Write to us for the deck and a demo.</p>
-    <div class="funds">
+    <p class="eyebrow">05 · The next stage</p>
+    <h2 id="h-connect">Back the evidence layer.</h2>
+    <p class="sublead">Equilibrium works today. The next step takes it from a small alpha to a platform ready for its first state pilot.</p>
+    <div class="paths">
       <article class="fund lead">
-        <span>Angel investors</span><h3>Back a working product</h3>
-        <p>A daily practice habit with a research engine inside it, live today.</p>
-        <a class="btn gold" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20angel%20investment&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27m%20interested%20in%20investing.%20Please%20send%20the%20deck.%0A%0AName%3A%0AFirm%20or%20network%20(if%20any)%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about investing</a>
+        <span>First path · Angel investors</span>
+        <h3>Build what the field is missing.</h3>
+        <ul class="ticks">
+          <li>Native iPhone and Android apps</li>
+          <li>The first state-ready pilot</li>
+          <li>Ethics review, independent analysis and data security</li>
+        </ul>
+        <a class="btn gold" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20angel%20investment&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20investing.%0A%0AName%3A%0AFirm%20or%20network%20(if%20any)%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Talk to us about investing</a>
+        <small class="fine">The deck and terms are shared after an introductory conversation.</small>
       </article>
       <article class="fund">
-        <span>Research funders</span><h3>Fund the research</h3>
-        <p>Ethics review, independent analysis, data security and outreach to under-studied groups.</p>
-        <a class="btn ghost" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20research%20funding&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20funding%20the%20research.%0A%0AName%3A%0AOrganization%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about funding</a>
-      </article>
-      <article class="fund">
-        <span>State and research partners</span><h3>Build a pilot together</h3>
-        <p>Health departments, universities, clinicians and psychedelic societies.</p>
-        <a class="btn ghost" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20partnership&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20a%20partnership.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AWhat%20I%27m%20thinking%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about partnering</a>
+        <span>Second path · Partners</span>
+        <h3>Design the first pilot with us.</h3>
+        <dl class="who">
+          <div><dt>States and programs</dt><dd>Choose the population, measures and follow-up</dd></div>
+          <div><dt>Researchers</dt><dd>Strengthen the methods, ethics review and publication</dd></div>
+          <div><dt>Funders and donors</dt><dd>Pay for independent research and wider access</dd></div>
+        </dl>
+        <a class="btn ghost" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20partnership&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20overview%20and%20I%27d%20like%20to%20talk%20about%20a%20partnership.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AWhat%20I%27m%20thinking%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Talk to us about partnering</a>
       </article>
     </div>
     <div class="closing">
@@ -509,6 +594,18 @@ h2 em,h1 em{font-style:normal;color:var(--plum)}
   <p>Updated October 29, 2026. Findings are patterns, not proof. Equilibrium is not medical care. Consent and privacy wording are drafts under legal review.</p>
 </footer>
 
+<script>
+(function(){
+  var d=document.getElementById('ben-therapy');if(!d)return;
+  var out=document.getElementById('ben-out'),res=document.getElementById('ben-res'),when=document.getElementById('ben-when'),hint=document.getElementById('ben-hint');
+  d.addEventListener('click',function(){
+    var on=d.getAttribute('data-on')!=='true';
+    d.setAttribute('data-on',on);d.setAttribute('aria-pressed',on);d.querySelector('small').textContent=on?'On':'Off';
+    out.className='outcome '+(on?'yes':'no');res.textContent=on?'Change':'No change';when.textContent=on?'Next 12 weeks':'12 weeks';
+    hint.className='hint'+(on?' done':'');hint.lastChild.textContent=on?"Ben's lock opened when a second dial turned":"Tap Ben's therapy dial";
+  });
+})();
+</script>
 <script>
 (function(){
   var btn=document.querySelector('[data-copy]'),say=document.querySelector('.copied');
