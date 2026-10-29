@@ -462,6 +462,11 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .connect .opener h2 em{color:#E8C46B}
 .connect .opener .sublead{max-width:760px;margin:6px auto 0}
 .connect .closing h2{text-align:center}
+
+.hint.side{color:var(--muted)}.hint.side svg{display:none}
+.member.lock button.dial{-webkit-appearance:none;appearance:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.knob .ptr{transform-box:view-box;transform-origin:32px 32px}
+.knob .arc{will-change:stroke-dasharray}
 </style>
 </head>
 <body>
@@ -1067,7 +1072,8 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
       else{hint.className='hint'+(open?' done':' miss');ht.textContent=open?MSG[name].open:MSG[name].shut}
       card.classList.toggle('touched',!!touched);
     }
-    dials.forEach(function(d){d.addEventListener('click',function(){set(d,d.getAttribute('data-on')!=='true');update(true)})});
+    dials.forEach(function(d){d.addEventListener('click',function(){var on=d.getAttribute('data-on')!=='true';set(d,on);update(true);
+        if(key.indexOf(d.dataset.d)<0){hint.className='hint side';ht.textContent=d.dataset.d+(on?' on':' off')+": not part of "+name+"'s lock"}})});
     card.querySelector('.reset').addEventListener('click',function(){dials.forEach(function(d){set(d,start.indexOf(d.dataset.d)>-1)});update(false)});
     update(false);
   });
