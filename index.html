@@ -373,6 +373,17 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .shot figcaption b{display:block;color:var(--ink);font-weight:800;margin-bottom:2px}
 @media(max-width:980px){.views{grid-template-columns:1fr}}
 @media(max-width:520px){.compass-wrap{grid-template-columns:1fr}.compass{max-width:220px;margin:0 auto}.shot{grid-template-columns:120px 1fr}}
+
+.realgrid{display:grid;grid-template-columns:minmax(0,1.1fr) 1fr;gap:16px;align-items:center}
+.realgrid img,.strip img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid #3A2A5C;box-shadow:0 14px 34px rgba(30,12,60,.22)}
+.realside{display:grid;gap:10px;font-size:14.5px}.realside b{font-weight:800}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.strip figure{margin:0;display:grid;gap:8px}
+.zoom{display:block;border-radius:16px}.zoom:hover img{outline:2px solid #E8C46B;outline-offset:2px}
+.strip figcaption{font-size:13px;color:var(--muted)}.strip figcaption b{display:block;color:var(--ink);font-weight:800}
+.strip.dark figcaption{color:#BFB2D3}.strip.dark figcaption b{color:#fff}
+.strip.dark img{border-color:rgba(255,255,255,.18)}
+@media(max-width:520px){.realgrid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -562,32 +573,21 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     <p class="eyebrow center">03 · Two views of the same change</p>
     <h2 id="h-views" class="center">Members see their own lock. Researchers see the pattern.</h2>
     <p class="sublead center">Every evening check-in feeds two views: a private one for the member, and a de-identified one for states and research partners.</p>
-    <p class="pretend"><svg aria-hidden="true"><use href="#i-question"/></svg>Illustrations with pretend data. No real member data is shown.</p>
+    <p class="pretend"><svg aria-hidden="true"><use href="#i-question"/></svg>Real app screens with test data, plus charts with pretend data. No real member data is shown.</p>
 
     <div class="views">
       <!-- Member -->
       <article class="vpanel member-v">
-        <header class="vhead"><span class="vtag mem">Member view</span><h3>Maya · 6 months in</h3><p>Private to her. Synced across her devices.</p></header>
+        <header class="vhead"><span class="vtag mem">Member view</span><h3>One member, over months</h3><p>Private to her. Synced across her devices.</p></header>
 
-        <div class="vcard">
-          <div class="vcard-h"><b>Compass</b><span>Pointing to Water</span></div>
-          <div class="compass-wrap">
-            <svg class="compass" viewBox="0 0 220 220" role="img" aria-label="Compass dial: the needle points to Water this week; faded lines show where it pointed in the last 8 weeks.">
-              <circle cx="110" cy="110" r="96" class="c-ring"/>
-              <circle cx="110" cy="110" r="70" class="c-ring2"/>
-              <g class="c-ticks"></g>
-              <g class="c-past"></g>
-              <g class="c-el"><circle cx="110" cy="18" r="13" fill="#D85A30"/><text x="110" y="23">Fire</text></g>
-              <g class="c-el"><circle cx="202" cy="110" r="13" fill="#C9A227"/><text x="202" y="115">Air</text></g>
-              <g class="c-el"><circle cx="110" cy="202" r="13" fill="#378ADD"/><text x="110" y="207">Water</text></g>
-              <g class="c-el"><circle cx="18" cy="110" r="13" fill="#4E8A2A"/><text x="18" y="115">Earth</text></g>
-              <g class="c-needle"><path d="M110 110 L104 104 L110 42 L116 104 Z" class="nd-n"/><path d="M110 110 L104 116 L110 168 L116 116 Z" class="nd-s"/></g>
-              <circle cx="110" cy="110" r="7" class="c-hub"/>
-            </svg>
-            <div class="compass-side">
-              <p class="why"><b>Why:</b> lower mood on 4 of the last 7 evenings.</p>
-              <p class="prac"><b>Practice to match:</b> Listening, 5 minutes.</p>
-              <p class="pastnote">Dots: where the needle pointed each of the last 8 weeks, newest on the outside.</p>
+        <div class="vcard realcard">
+          <div class="vcard-h"><b>Compass</b><span>the real screen</span></div>
+          <div class="realgrid">
+            <a href="img/alpha-compass.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass.jpg" alt="The Compass in the working alpha: pointing to Earth this week, with fire, air, water and earth readings from the last 7 days of evening check-ins." width="760" height="893" loading="lazy"></a>
+            <div class="realside">
+              <p><b>Reads her evening check-ins.</b> No extra questions.</p>
+              <p><b>Points to the element that needs her most</b>, says why, and offers a practice to match.</p>
+              <p class="pastnote">Gold rings show the 3 weeks before, so change over time stays visible.</p>
             </div>
           </div>
         </div>
@@ -600,13 +600,14 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
             <button type="button" class="mchip" data-m="calm" aria-pressed="false">Calm</button>
           </div>
           <svg class="linechart" id="m-chart" viewBox="0 0 520 210" role="img" aria-label="Line chart of Maya's weekly score over 26 weeks against her starting point."></svg>
-          <p class="cap">Weekly score, 0–100. Dashed line: her starting point. Dips are normal.</p>
+          <p class="cap">Pretend member, 6 months. Weekly score, 0–100. Dashed line: her starting point. Dips are normal.</p>
         </div>
 
-        <figure class="shot">
-          <div class="phone"><img src="img/then-vs-now-alpha.jpg" alt="Then vs now in the working alpha: well-being +20, calm +6, at ease +2, brighter mood +2, sleep dip." width="700" height="805" loading="lazy"></div>
-          <figcaption><b>The real screen</b>Then vs now in the working alpha, with a test member's data. Tap a measure for its line.</figcaption>
-        </figure>
+        <div class="strip">
+          <figure><a href="img/alpha-compass-over-time.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass-over-time.jpg" alt="Compass over time in the alpha: where the needle pointed each of the last 8 weeks, with a week-by-week strip." width="760" height="1193" loading="lazy"></a><figcaption><b>Compass over time</b>Where the needle pointed, week by week</figcaption></figure>
+          <figure><a href="img/alpha-then-vs-now.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-then-vs-now.jpg" alt="Then vs now in the alpha: starting point beside the last 4 weeks, well-being +14.7, with a trend line." width="760" height="1343" loading="lazy"></a><figcaption><b>Then vs now</b>Her start beside her recent weeks</figcaption></figure>
+        </div>
+        <p class="cap">Real screens from the working alpha, with a test member and five weeks of test history.</p>
       </article>
 
       <!-- Researcher -->
@@ -632,12 +633,18 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <div class="legend" id="r-legend"></div>
         </div>
 
+        <div class="strip dark">
+          <figure><a href="img/alpha-researcher-compare.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-researcher-compare.jpg" alt="The researcher view in the alpha, Compare tab: practice days vs other days for the same 100 pretend people." width="900" height="1026" loading="lazy"></a><figcaption><b>Compare</b>Practice days vs other days</figcaption></figure>
+          <figure><a href="img/alpha-researcher-change.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-researcher-change.jpg" alt="The researcher view in the alpha, Change tab: WHO-5 change from each person's start by weeks since starting." width="900" height="1026" loading="lazy"></a><figcaption><b>Change</b>vs each person's own start</figcaption></figure>
+        </div>
+        <p class="cap">Real screens from the working alpha, on its demo backend with 100 pretend people.</p>
+
         <ul class="rules">
           <li><svg aria-hidden="true"><use href="#i-users"/></svg>Every number from 10+ people</li>
           <li><svg aria-hidden="true"><use href="#i-shield"/></svg>No names, rows or journal text</li>
           <li><svg aria-hidden="true"><use href="#i-file"/></svg>Printable report and summary CSV</li>
         </ul>
-        <p class="built">Built into the alpha: Overview, Compare, Change, Patterns and Report tabs, answered inside the database.</p>
+        <p class="built">Built into the alpha: Overview, Compare, Change, Patterns and Report tabs, answered inside the database. The charts above show how it reads at a few thousand people.</p>
       </article>
     </div>
   </div>
