@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Equilibrium Full Concept</title>
+<meta name="description" content="Equilibrium by ǝvōke: a free daily practice app that helps people keep a real practice, see what changes, and add their experience to psychedelic wellness research.">
+<meta property="og:title" content="Equilibrium · concept overview">
+<meta property="og:description" content="A daily practice app that helps you keep a real practice, see what changes, and add your experience to psychedelic wellness research.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cosmopaxus.github.io/equilibrium-concept/full/">
+<meta property="og:image" content="https://cosmopaxus.github.io/equilibrium-concept/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Equilibrium concept overview: the name and the gold Equilibrium mark on night navy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cosmopaxus.github.io/equilibrium-concept/og-image.jpg">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#15122E">
+<style>
+/* Fonts are served from this site, so a visit makes no outside requests (no ads, no trackers). SIL Open Font License: fonts/OFL-*.txt */
+@font-face{font-family:"Cinzel";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/cinzel-500-700.woff2) format("woff2")}
+@font-face{font-family:"Cinzel";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/cinzel-500-700.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/jost-400.woff2) format("woff2")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:400;font-display:swap;src:url(../fonts/nunito-400-800.woff2) format("woff2")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:600;font-display:swap;src:url(../fonts/nunito-400-800.woff2) format("woff2")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:700;font-display:swap;src:url(../fonts/nunito-400-800.woff2) format("woff2")}
+@font-face{font-family:"Nunito";font-style:normal;font-weight:800;font-display:swap;src:url(../fonts/nunito-400-800.woff2) format("woff2")}
+/* Layout: one concept per framed "plate", like folios in an academy prospectus. Prints one plate per page. */
+:root{
+  --bg:#F6F0E4; --plate:#FFFCF5; --ink:#24203A; --muted:#5E5872; --line:#E2D7C2;
+  --indigo:#4B3A8F; --indigo-t:#E8E3F6; --gold:#9A6F1E; --gold-l:#E8C46B; --gold-t:#F6EBCF;
+  --good:#2F7D46; --good-t:#DDF0E2; --proc:#2F62AE; --proc-t:#DCE6F5;
+  --rule:#7A3E9D; --rule-t:#EEE2F5; --warn:#A8670A; --warn-t:#F8EAD0; --risk:#B23E36; --risk-t:#F6DEDB;
+  --neutral:#5B6875; --neutral-t:#E5E8EC;
+  --sky1:#2A2150; --sky2:#5B4A9E;
+  --display:"Cinzel", "Trajan Pro", Georgia, serif;
+  --body:"Nunito", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15131F; --plate:#1E1B2B; --ink:#EDE8F7; --muted:#ABA4C0; --line:#3A3550;
+  --indigo:#A898F0; --indigo-t:#2C2650; --gold:#E8C46B; --gold-t:#3A3020;
+  --good:#6FCB88; --good-t:#1C3324; --proc:#80A9EE; --proc-t:#1B2A44;
+  --rule:#C894E6; --rule-t:#33223F; --warn:#EDB25A; --warn-t:#3A2C14; --risk:#EE8F86; --risk-t:#3D211E;
+  --neutral:#A9B4C0; --neutral-t:#272D35;
+  --sky1:#0F0B24; --sky2:#3A2E72; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15131F; --plate:#1E1B2B; --ink:#EDE8F7; --muted:#ABA4C0; --line:#3A3550;
+  --indigo:#A898F0; --indigo-t:#2C2650; --gold:#E8C46B; --gold-t:#3A3020;
+  --good:#6FCB88; --good-t:#1C3324; --proc:#80A9EE; --proc-t:#1B2A44;
+  --rule:#C894E6; --rule-t:#33223F; --warn:#EDB25A; --warn-t:#3A2C14; --risk:#EE8F86; --risk-t:#3D211E;
+  --neutral:#A9B4C0; --neutral-t:#272D35;
+  --sky1:#0F0B24; --sky2:#3A2E72; color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+.stack{max-width:1040px;margin:0 auto;display:grid;gap:16px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:.02em}
+h2{font-size:clamp(1.3rem,3vw,1.75rem);line-height:1.15}
+h3{font-size:1.05rem;line-height:1.25}
+p{margin:0}
+p,li{text-wrap:pretty}
+a{color:var(--indigo)}
+a:focus-visible{outline:3px solid var(--gold-l);outline-offset:2px;border-radius:6px}
+.plate{background:var(--plate);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,2.6vw,26px);display:grid;gap:14px;position:relative;overflow:hidden;scroll-margin-top:16px;min-width:0}
+.eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.lede{color:var(--muted);max-width:66ch;font-size:.98rem}
+.head{display:grid;gap:4px}
+.sub{font-family:var(--body);font-weight:800;font-size:1rem;letter-spacing:0;margin-top:2px}
+.take{display:grid;gap:6px;border-top:1px solid var(--line);padding-top:10px;color:var(--muted);max-width:70ch}
+.take b{color:var(--ink)}
+
+/* Cover */
+.cover{background:radial-gradient(42% 70% at 82% 50%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:0;display:block;container-type:inline-size}
+.cover > *:not(.mark){margin-top:16px}.cover > .eyebrow{margin-top:0}
+.cover .eyebrow{color:#F3D88E}
+.cover h1{font-size:clamp(2rem,6.2cqi,4rem);line-height:1;letter-spacing:.14em;font-weight:600}
+.lockup h1{margin-bottom:10px}
+.balance{font-family:"Jost","Nunito",system-ui,sans-serif;font-size:clamp(.72rem,1.7cqi,.86rem);letter-spacing:.34em;text-transform:uppercase;color:#B9B5CF}
+.cover .tag{font-size:clamp(1.05rem,2.5cqi,1.3rem);max-width:36ch;text-wrap:pretty;color:#E9E3FA}
+.cover .motto{text-wrap:pretty;font-size:.95rem;color:#D9D0F5;font-style:italic}
+.cover .row{margin-bottom:-10px;font-size:0}.cover .row .pill{margin:0 10px 10px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:6px 14px;font-weight:700;font-size:.88rem}
+.cover .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#FBF6EC}
+.mark{float:right;position:relative;width:min(34cqi,330px);aspect-ratio:1;margin:0 clamp(0px,2cqi,22px) 6px 0;shape-outside:circle(50%) border-box;shape-margin:clamp(8px,2cqi,18px);pointer-events:none;color:#C8A25A}
+.mark svg{display:block;width:100%;height:100%;overflow:visible}
+.mark .dash{fill:none;stroke:currentColor;stroke-width:.6;stroke-dasharray:2 2;stroke-opacity:.6}
+.mark mask .dr{fill:none;stroke:#fff;stroke-width:4;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .thin{fill:none;stroke:currentColor;stroke-width:.6;stroke-opacity:.85;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .form{fill:currentColor;fill-opacity:.2;stroke:currentColor;stroke-width:.9;stroke-linejoin:round;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .needle{fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:0}
+.mark .dot{fill:currentColor;transform-box:fill-box;transform-origin:center}
+.mark .ring{transform-box:view-box;transform-origin:50% 50%}
+@media(max-width:560px){.mark{float:none;width:min(200px,60cqi);margin:0 auto 4px}.cover{background:radial-gradient(60% 34% at 50% 16%,rgba(200,162,90,.14),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A)}}
+.cover > *:not(.mark){position:relative;max-width:560px}
+
+/* Section links */
+.toc{position:sticky;top:0;z-index:15;display:flex;gap:8px;align-items:center;min-width:0;background:var(--bg);padding:8px 0;border-bottom:1px solid var(--line)}
+.toc-links{display:flex;gap:6px;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 90%,transparent);mask-image:linear-gradient(90deg,#000 90%,transparent);padding-right:24px}
+.toc-links::-webkit-scrollbar{display:none}
+.toc-pins{display:flex;gap:6px;flex:none}
+.toc a{flex:none;white-space:nowrap;display:inline-flex;align-items:baseline;gap:6px;text-decoration:none;color:var(--indigo);background:var(--plate);border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-weight:700;font-size:.85rem}
+.toc a span{color:var(--gold);font-size:.74rem;font-weight:800;font-variant-numeric:tabular-nums}
+.toc a:hover{border-color:var(--indigo)}
+.toc a svg{width:14px;height:14px;align-self:center;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.toc a.toc-state{background:var(--indigo);border-color:var(--indigo);color:var(--plate)}
+.toc a.toc-state:hover{filter:brightness(1.1)}
+@media(max-width:560px){.toc a.toc-cta{display:none}}
+.plate{scroll-margin-top:72px}
+.feature{border:2px solid var(--indigo);background:var(--indigo-t)}
+.feature .cards a.card{text-decoration:none;color:inherit}
+.feature .cards a.card:hover{filter:brightness(.97)}
+.feature-btn{justify-self:start;display:inline-flex;align-items:center;gap:10px;min-height:46px;border-radius:999px;padding:10px 20px;font-weight:800;text-decoration:none;background:var(--indigo);color:var(--plate)}
+.feature-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fitrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#E2DBF6;font-size:.95rem}
+
+/* Cards */
+.cards{display:grid;gap:8px}
+.cards.c2{grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr))}
+.cards.c3{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.cards.c4{grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr))}
+.card{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:var(--t);border:1px solid var(--c);min-width:0}
+.ic{flex:none;width:30px;height:30px;border-radius:9px;background:var(--c);display:grid;place-items:center;color:var(--plate);font-weight:800;font-size:.85rem}
+.ic svg{width:18px;height:18px;stroke:var(--plate);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-family:var(--body);font-weight:800;font-size:.97rem;letter-spacing:0}
+.card p{color:var(--muted);font-size:.9rem;line-height:1.45}
+.card .badge{display:inline-block;margin-left:6px;font-size:.72rem;font-weight:800;padding:1px 8px;border-radius:999px;background:var(--plate);color:var(--c);border:1px solid var(--c);vertical-align:1px;letter-spacing:.02em}
+.good{--c:var(--good);--t:var(--good-t)} .proc{--c:var(--proc);--t:var(--proc-t)} .rule{--c:var(--rule);--t:var(--rule-t)}
+.warn{--c:var(--warn);--t:var(--warn-t)} .risk{--c:var(--risk);--t:var(--risk-t)} .neut{--c:var(--neutral);--t:var(--neutral-t)}
+.gold{--c:var(--gold);--t:var(--gold-t)}
+
+/* Mission */
+.mission{background:var(--good-t);border:1px solid var(--good);border-radius:12px;padding:14px 16px;display:grid;gap:6px}
+.mission .eyebrow{color:var(--good)}
+.mission p.m{font-family:var(--display);font-size:clamp(1.08rem,2.4vw,1.35rem);line-height:1.4;max-width:46ch}
+.mission p.e{color:var(--muted);font-style:italic}
+
+/* Steps */
+.steps{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));align-items:stretch}
+.step{display:grid;grid-template-columns:auto 1fr;column-gap:8px;row-gap:2px;align-content:start;padding:8px 10px;border-radius:10px;background:var(--proc-t);border:1px solid var(--proc);position:relative;margin:4px 14px 4px 0;min-width:0}
+.step .n{width:20px;height:20px;border-radius:50%;background:var(--proc);color:var(--plate);display:grid;place-items:center;font-weight:800;font-size:.7rem;align-self:center}
+.step h3{font-family:var(--body);font-weight:800;font-size:.9rem;letter-spacing:0;align-self:center}
+.step p{grid-column:1/-1;color:var(--muted);font-size:.84rem;line-height:1.4}
+.step::after{content:"→";position:absolute;right:-16px;top:50%;transform:translateY(-50%);color:var(--proc);font-weight:800}
+.step:last-child::after{content:none}
+.step.final{background:var(--good-t);border-color:var(--good)} .step.final .n{background:var(--good)}
+.step.bad{background:var(--risk-t);border-color:var(--risk)} .step.bad .n{background:var(--risk)}
+.step.plain{background:var(--neutral-t);border-color:var(--neutral)} .step.plain .n{background:var(--neutral)}
+@media(max-width:620px){.steps{grid-template-columns:1fr}.step{margin:0 0 14px}.step::after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.steps .step:last-child{margin-bottom:0}}
+
+/* Columns */
+.cols{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.col{border-radius:12px;border:1px solid var(--c);background:var(--t);padding:10px;display:grid;gap:6px;align-content:start;min-width:0}
+.col h3{font-family:var(--body);font-weight:800;letter-spacing:0;color:var(--c);display:flex;justify-content:space-between;gap:8px}
+.col h3 small{font-weight:700;color:var(--muted)}
+.col ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.col li{background:var(--plate);border-radius:8px;padding:6px 9px;font-size:.88rem;line-height:1.35}
+.col li b{display:block}
+.col li small{display:block;color:var(--muted);font-size:.82rem}
+
+/* How it fits */
+.fit{display:grid;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fit-row{display:grid;grid-template-columns:92px minmax(0,1fr);border-bottom:1px solid var(--line)}
+.fit-row:last-child{border-bottom:none}
+.fit-k{padding:10px 12px;font-family:var(--display);font-size:.82rem;letter-spacing:.08em;color:var(--gold);background:var(--gold-t);border-right:1px solid var(--line)}
+.fit-v{padding:9px 12px;display:grid;gap:6px;min-width:0}
+.fit-v b{font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:.86rem;font-weight:700;padding:3px 10px;border:1.5px solid var(--c);border-radius:999px;background:var(--t);color:var(--ink)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c)}
+.plist{list-style:none;margin:0;padding:0;display:grid}
+.plist li{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed var(--line);font-size:.92rem}
+.plist li:last-child{border-bottom:none}
+.plist .dots{display:inline-flex;gap:4px;align-items:center}
+@media(max-width:520px){.fit-row{grid-template-columns:1fr}.fit-k{border-right:none;border-bottom:1px solid var(--line);padding:8px 14px}}
+
+/* Bars */
+.bars{display:grid;gap:6px}
+.bar-row{display:grid;grid-template-columns:minmax(0,210px) 1fr;gap:12px;align-items:center;font-size:.92rem}
+.bar{height:14px;border-radius:999px;background:var(--neutral-t);overflow:hidden;border:1px solid var(--line)}
+.bar i{display:block;height:100%;border-radius:999px}
+@media(max-width:520px){.bar-row{grid-template-columns:1fr;gap:4px}}
+
+/* Tiers table */
+.tiers{overflow-x:auto}
+.tiers table{border-collapse:separate;border-spacing:4px;width:100%;min-width:640px;font-size:.9rem}
+.tiers th,.tiers td{padding:8px 10px;border-radius:10px;text-align:left;vertical-align:top}
+.tiers thead th{color:var(--plate);font-weight:800}
+.tiers tbody th{color:var(--muted);font-weight:700;background:transparent;white-space:nowrap}
+.tiers td{background:var(--t)}
+.promise{background:var(--indigo-t);border-radius:12px;padding:12px 16px;display:grid;gap:4px;font-family:var(--display);font-size:clamp(.95rem,2vw,1.05rem);color:var(--ink);line-height:1.45}
+.promise small{font-family:var(--body);font-size:.82rem;color:var(--muted)}
+
+/* Phones (wireframes) */
+.phones{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+figure{margin:0;display:grid;gap:8px;align-content:start}
+figcaption{font-size:.86rem;color:var(--muted)}
+figcaption b{color:var(--ink);display:block;font-size:.93rem}
+.phone{aspect-ratio:9/17;max-width:100%;border:2px solid var(--line);border-radius:26px;background:var(--bg);padding:12px 10px 8px;display:flex;flex-direction:column;gap:6px;font-size:.72rem;overflow:hidden}
+.phone .notch{width:38%;height:5px;border-radius:3px;background:var(--line);margin:0 auto 4px}
+.wf{border:1px dashed var(--line);border-radius:8px;padding:6px 8px;background:var(--plate)}
+.wf.solid{border-style:solid}
+.wf.blue{border-left:3px solid var(--proc);border-radius:0 8px 8px 0}
+.wf.purple{border-left:3px solid var(--rule);border-radius:0 8px 8px 0}
+.map{flex:1;position:relative;border:1px dashed var(--line);border-radius:10px;background:repeating-linear-gradient(135deg,transparent 0 10px,var(--neutral-t) 10px 11px)}
+.spot{position:absolute;background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:2px 6px;white-space:nowrap}
+.spot.lit{border-color:var(--rule);color:var(--rule)}
+.spot.mist{color:var(--muted);border-style:dashed}
+.spot.you{border-color:var(--gold);color:var(--gold);font-weight:800}
+.tabs{display:flex;justify-content:space-around;border-top:1px solid var(--line);padding-top:6px;margin-top:auto;color:var(--muted)}
+.tabs .on{color:var(--indigo);font-weight:800}
+.btn{background:var(--indigo);color:var(--plate);text-align:center;border-radius:8px;padding:7px;font-weight:800}
+.big{font-size:1.7rem;text-align:center;font-variant-numeric:tabular-nums;font-family:var(--display)}
+.slider{display:flex;align-items:center;gap:6px}
+.slider .t{flex:1;height:3px;background:var(--line);position:relative;border-radius:2px}
+.slider .t i{position:absolute;top:-4px;width:10px;height:10px;border-radius:50%;background:var(--indigo)}
+.center{text-align:center}
+.muted{color:var(--muted)}
+.lvl{height:6px;border-radius:3px;background:var(--neutral-t);overflow:hidden}.lvl i{display:block;height:100%;background:var(--rule)}
+.prow{display:flex;gap:4px}.prow>*{flex:1}
+
+.foot{text-align:center;color:var(--muted);font-size:.86rem;display:grid;gap:4px}
+.foot a{font-weight:700}
+
+/* Invest or collaborate: gold buttons on night, the same night as the cover */
+.cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;border-radius:999px;padding:11px 22px;font-weight:800;font-size:1.02rem;line-height:1.2;text-decoration:none;background:#E8C46B;color:#15122E;border:2px solid #E8C46B;cursor:pointer;font-family:var(--body)}
+.cta-btn:hover{background:#F3D88E;border-color:#F3D88E}
+.cta-btn:focus-visible{outline:3px solid #FBF6EC;outline-offset:3px}
+.cta-btn svg{flex:none;width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.cta-btn.ghost{background:transparent;color:#FBF6EC;border-color:rgba(232,196,107,.75)}
+.cta-btn.ghost:hover{background:rgba(232,196,107,.16)}
+.cover .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.toc a.toc-cta{background:#E8C46B;border-color:#C8A25A;color:#15122E}
+.toc a.toc-cta span{color:#15122E}
+.toc a.toc-cta:hover{background:#F3D88E}
+.connect{background:radial-gradient(40% 80% at 90% 10%,rgba(200,162,90,.18),rgba(200,162,90,0) 70%),linear-gradient(165deg,#0D0B22,#15122E 45%,#221D4A);color:#FBF6EC;border:2px solid #C8A25A;gap:18px}
+.connect .eyebrow{color:#F3D88E}
+.connect h2{font-size:clamp(1.8rem,4.6vw,2.7rem);color:#FBF6EC}
+.connect .lede{color:#E2DBF6;font-size:1.05rem}
+.ways{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))}
+.way{border-radius:14px;padding:18px;display:grid;gap:12px;align-content:start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);min-width:0}
+.way h3{font-family:var(--body);font-weight:800;font-size:1.2rem;letter-spacing:0;color:#FBF6EC;display:flex;gap:10px;align-items:center}
+.way .ic{background:#E8C46B}.way .ic svg{stroke:#15122E}
+.way p,.way li{color:#E2DBF6;font-size:.95rem;line-height:1.45}
+.way ul{margin:0;padding-left:20px;display:grid;gap:3px}
+.way .cta-btn{justify-self:start}
+.way-lead{border:2px solid #E8C46B;background:rgba(232,196,107,.12)}
+.mailrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:#E2DBF6;font-size:.95rem;border-top:1px solid rgba(255,255,255,.18);padding-top:14px}
+.mailrow b{font-size:1.05rem;color:#FBF6EC;letter-spacing:.01em;overflow-wrap:anywhere}
+.mailrow .cta-btn{min-height:40px;padding:7px 16px;font-size:.92rem}
+.float-cta{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:20;box-shadow:0 6px 20px rgba(13,11,34,.38);border-color:#C8A25A;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .25s ease,transform .25s ease,visibility .25s}
+.float-cta.show{opacity:1;visibility:visible;transform:none}
+@media (prefers-reduced-motion:reduce){.float-cta{transition:none}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media print{.float-cta,.cover .cta-row,.mailrow .cta-btn{display:none}}
+@media print{
+  body{background:#fff;padding:0}
+  .stack{gap:0;max-width:none}
+  .plate{break-after:page;border:0;border-radius:0;min-height:100vh}
+  .toc{display:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media (prefers-reduced-motion:no-preference){
+  @keyframes mk-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  @keyframes mk-fill{from{fill-opacity:0}to{fill-opacity:.2}}
+  @keyframes mk-pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+  @keyframes mk-sway{0%{transform:rotate(0)}25%{transform:rotate(6deg)}55%{transform:rotate(-3.5deg)}80%{transform:rotate(1.4deg)}100%{transform:rotate(0)}}
+  @keyframes mk-rock{0%{transform:rotate(0)}12.5%{transform:rotate(5deg)}37.5%{transform:rotate(-7deg)}62.5%{transform:rotate(6deg)}87.5%{transform:rotate(-3deg)}100%{transform:rotate(0)}}
+  .mark mask .dr,.mark .thin,.mark .needle{animation:mk-draw var(--d,1s) cubic-bezier(.65,0,.35,1) var(--t,0s) both}
+  .mark .form{animation:mk-draw .8s cubic-bezier(.65,0,.35,1) var(--t,0s) both,mk-fill .7s ease-out var(--tf,0s) both}
+  .mark .dot{animation:mk-pop .45s cubic-bezier(.34,1.56,.64,1) var(--t,0s) both}
+  .mark .d0{--t:.1s;--d:1.2s}.mark .d1{--t:.3s;--d:.9s}.mark .d2{--t:.4s;--d:.9s}.mark .d3{--t:1.2s;--d:1s}.mark .d4{--t:1.35s;--d:1s}
+  .mark .p0{--t:.15s}.mark .p1{--t:.23s}.mark .p2{--t:.31s}.mark .p3{--t:.39s}
+  .mark .t0{--t:.9s;--d:1s}.mark .t1{--t:1.8s;--d:.6s}.mark .t2{--t:1.9s;--d:.6s}
+  .mark .needle{--t:2.4s;--d:.7s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+  .mark .ctr{--t:3s}
+  .mark .f0{--t:3.3s;--tf:3.7s}.mark .f1{--t:3.4s;--tf:3.8s}.mark .f2{--t:3.7s;--tf:4s}.mark .f3{--t:3.8s;--tf:4.1s}
+  .mark .ring{animation:mk-sway 1.8s ease-in-out 4.4s both}
+  .mark{animation:mk-rock 8s ease-in-out 6.3s both}
+  .mark.again{animation:mk-rock 8s ease-in-out both}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 5h6a3 3 0 0 1 3 3v12a3 3 0 0 0-3-3H3zM21 5h-6a3 3 0 0 0-3 3v12a3 3 0 0 1 3-3h6z"/></symbol>
+  <symbol id="i-temple" viewBox="0 0 24 24"><path d="M5 21V10a7 7 0 0 1 14 0v11M3 21h18M10 21v-5h4v5"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M7.5 14h9"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.7M12 17h.01"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><path d="M12 12h.01"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M6 20h12M5 8h14M7 8l-3 6h6zM17 8l-3 6h6z"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2zM9 4v14M15 6v14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9.5 12h5v4h-5zM10.5 12v-1.5a1.5 1.5 0 0 1 3 0V12"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-5 3 10 2-5h7"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 14v4M8 20h8"/></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M5 8h13l-3-3M19 16H6l3 3"/></symbol>
+  <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c1-3 3-5 6-5s5 2 6 5"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.5c3 0 4.5 2 5.5 5"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M5 20l4-8 4 4 6-12"/><circle cx="19" cy="4" r="1.5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M6 21V4h12v17M3 21h18M14.5 12.5h.01"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 12c0-3 2-5 6-5 0 3-2 5-6 5"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l2 2M18.5 4.5l2 2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l3 6 6 1-4.5 4 1 6-5.5-3-5.5 3 1-6L3 10l6-1z"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8C10 4 6 4 6 6.5S10 8 12 8zM12 8c2-4 6-4 6-1.5S14 8 12 8z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></symbol>
+  <symbol id="i-heartplus" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10zM12 9v5M9.5 11.5h5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.5 8.5L20 20M8.5 15.5L20 4"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 13h6M9 17h6"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></symbol>
+  <symbol id="i-gem" viewBox="0 0 24 24"><path d="M6 4h12l3 5-9 11L3 9zM3 9h18M9.5 4L12 20 14.5 4"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 9h11a3 3 0 1 0-3-3M3 15h15a3 3 0 1 1-3 3"/></symbol>
+  <symbol id="i-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-keyhole" viewBox="0 0 24 24"><circle cx="12" cy="9" r="4"/><path d="M10.5 12.5L9 20h6l-1.5-7.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 9V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4"/></symbol>
+</svg>
+
+<main class="stack">
+
+<!-- Cover -->
+<section class="plate cover" aria-label="Cover">
+  <div class="mark" aria-hidden="true">
+    <svg viewBox="-6 -6 212 212">
+      <defs>
+        <clipPath id="mk-clip"><circle cx="100" cy="100" r="99.5"/></clipPath>
+        <mask id="mk-m0" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d0" cx="100" cy="100" r="94" pathLength="1" transform="rotate(-90 100 100)"/></mask>
+        <mask id="mk-m1" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><line class="dr d1" x1="100" y1="0" x2="100" y2="200" pathLength="1"/></mask>
+        <mask id="mk-m2" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><line class="dr d2" x1="0" y1="100" x2="200" y2="100" pathLength="1"/></mask>
+        <mask id="mk-m3" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d3" cx="106.87" cy="125.65" r="88.56" pathLength="1" transform="rotate(200 106.87 125.65)"/></mask>
+        <mask id="mk-m4" maskUnits="userSpaceOnUse" x="-20" y="-20" width="240" height="240"><circle class="dr d4" cx="93.13" cy="74.35" r="88.56" pathLength="1" transform="rotate(20 93.13 74.35)"/></mask>
+      </defs>
+      <circle class="dash" cx="100" cy="100" r="94" mask="url(#mk-m0)"/>
+      <g clip-path="url(#mk-clip)">
+        <line class="dash" x1="100" y1="0" x2="100" y2="200" mask="url(#mk-m1)"/>
+        <line class="dash" x1="0" y1="100" x2="200" y2="100" mask="url(#mk-m2)"/>
+      </g>
+      <circle class="dot p0" cx="100" cy="6" r="4"/><circle class="dot p1" cx="194" cy="100" r="4"/><circle class="dot p2" cx="100" cy="194" r="4"/><circle class="dot p3" cx="6" cy="100" r="4"/>
+      <g class="ring">
+        <g clip-path="url(#mk-clip)">
+          <circle class="dash" cx="106.87" cy="125.65" r="88.56" mask="url(#mk-m3)"/>
+          <circle class="dash" cx="93.13" cy="74.35" r="88.56" mask="url(#mk-m4)"/>
+        </g>
+        <circle class="thin t0" cx="100" cy="100" r="80" pathLength="1" transform="rotate(-160 100 100)"/>
+        <circle class="thin t1" cx="78.75" cy="105.70" r="22" pathLength="1" transform="rotate(195 78.75 105.70)"/>
+        <circle class="thin t2" cx="121.25" cy="94.30" r="22" pathLength="1" transform="rotate(15 121.25 94.30)"/>
+        <path class="form f0" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z" pathLength="1"/>
+        <path class="form f1" d="M20.30 106.97 A80 80 0 0 1 172.50 66.19 A88.56 88.56 0 0 0 20.30 106.97 Z" pathLength="1" transform="rotate(180 100 100)"/>
+        <path class="form f2" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z" pathLength="1"/>
+        <path class="form f3" d="M57.50 111.39 A22 22 0 0 1 100 100 A24.29 24.29 0 0 0 57.50 111.39 Z" pathLength="1" transform="rotate(180 100 100)"/>
+        <line class="needle" x1="3.41" y1="125.88" x2="196.59" y2="74.12" pathLength="1"/>
+        <circle class="dot ctr" cx="100" cy="100" r="4"/>
+      </g>
+    </svg>
+  </div>
+  <p class="eyebrow">ǝvōke · Be Well · full concept · October 2026</p>
+  <div class="lockup"><h1>EQUILIBRIUM</h1><p class="balance">Balance in motion</p></div>
+  <p class="tag">A daily practice app that helps you keep a real practice, see what changes, and add your experience to psychedelic wellness research.</p>
+  <p class="motto">Duolingo for inner work: practice off screen, grow on screen.</p>
+  <div class="row">
+    <span class="pill">Free to members</span>
+    <span class="pill">No ads, no trackers</span>
+    <span class="pill">Research only</span>
+  </div>
+  <div class="cta-row">
+    <a class="cta-btn" href="#connect">Invest or collaborate <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    <a class="cta-btn ghost" href="../">The short overview</a>
+  </div>
+</section>
+
+<nav class="toc" aria-label="Sections">
+  <div class="toc-links">
+    <a href="#mission"><span>01</span>Mission</a>
+    <a href="#jobs"><span>02</span>Five jobs</a>
+    <a href="#who"><span>03</span>Who it's for</a>
+    <a href="#measures"><span>04</span>What it measures</a>
+    <a href="#pillars"><span>05</span>Pillars</a>
+    <a href="#layers"><span>06</span>Layers</a>
+    <a href="#modes"><span>07</span>Two modes</a>
+    <a href="#day"><span>08</span>A day</a>
+    <a href="#principles"><span>09</span>Principles</a>
+    <a href="#borrow"><span>10</span>Inspiration</a>
+    <a href="#rewards"><span>11</span>Rewards</a>
+    <a href="#trust"><span>12</span>Trust and data</a>
+    <a href="#free"><span>13</span>Free vs Academy</a>
+    <a href="#status"><span>14</span>What's ready</a>
+  </div>
+  <div class="toc-pins">
+    <a href="../states/" class="toc-state"><svg aria-hidden="true"><use href="#i-map"/></svg>State fit</a>
+    <a href="#connect" class="toc-cta"><span>15</span>Invest · Collaborate</a>
+  </div>
+</nav>
+
+<!-- State fit · feature -->
+<section class="plate feature" id="state-fit" aria-labelledby="h-statefit">
+  <div class="head"><p class="eyebrow">State fit brief</p><h2 id="h-statefit">Where Equilibrium fits, state by state</h2></div>
+  <p class="lede">Which legalizing and decriminalizing states would gain most from long-term, real-world data on practice and plant medicine, and why New Mexico comes first.</p>
+  <div class="cards c3">
+    <a class="card good" href="../states/#newmexico"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>New Mexico first</h3><p>Its new psilocybin program hasn't set what it measures yet.</p></div></a>
+    <a class="card proc" href="../states/#board"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>The state fit board</h3><p>States scored on six things, from legal access to timing.</p></div></a>
+    <a class="card rule" href="../states/#lock"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>The combination lock</h3><p>For some people the dials have to line up. How the app finds which ones.</p></div></a>
+  </div>
+  <a class="feature-btn" href="../states/">Open the State Fit brief <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</section>
+
+<!-- 01 · Mission -->
+<section class="plate" id="mission" aria-labelledby="h-mission">
+  <div class="head"><p class="eyebrow">01 · Why it exists</p><h2 id="h-mission">Mission</h2></div>
+  <div class="mission">
+    <p class="eyebrow">Mission</p>
+    <p class="m">Real-world research for the entheogen and psychedelic wellness movement, from members who keep a real practice.</p>
+    <p class="e">Ethos: help people keep a real practice, and show whether it's changing them.</p>
+  </div>
+  <div class="cards c2">
+    <div class="card neut"><div class="ic"><svg><use href="#i-question"/></svg></div><div><h3>The problem</h3><p>Consistency is the hard part of any self-work, and no one can yet show what actually helps.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-target"/></svg></div><div><h3>The answer</h3><p>Make showing up rewarding, then measure before and after, so members and the movement can see the real effect.</p></div></div>
+  </div>
+  <h3 class="sub">The daily loop</h3>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Practice</h3><p>Off screen: sit, breathe, walk, study, dose if opted in.</p></div>
+    <div class="step"><span class="n">2</span><h3>Reflect + check in</h3><p>One line about the session, 30 seconds in the evening.</p></div>
+    <div class="step"><span class="n">3</span><h3>Character grows</h3><p>Light, element stars, garden, rank.</p></div>
+    <div class="step final"><span class="n">4</span><h3>Real change shows</h3><p>Starting point vs now, for you and for research.</p></div>
+  </div>
+  <div class="take"><p>A timed practice plus the evening check-in is <b>a day that counts.</b></p></div>
+</section>
+
+<!-- 02 · Five jobs -->
+<section class="plate" id="jobs" aria-labelledby="h-jobs">
+  <div class="head"><p class="eyebrow">02 · What it does</p><h2 id="h-jobs">Five jobs, one app</h2></div>
+  <div class="cards">
+    <div class="card proc"><div class="ic"><svg><use href="#i-play"/></svg></div><div><h3>1 · Practice</h3><p>A few minutes a day: guided sessions, breath, stillness.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-check"/></svg></div><div><h3>2 · Track</h3><p>Goals, steps, wins, check-ins, dose log. See then vs now.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>3 · Learn</h3><p>The Path and the Academy, plus safe-use education.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>4 · Belong</h3><p>A clear way into the Be Well Ministry: covenant, Safety Screening, consent. Community later.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>5 · Contribute</h3><p>De-identified data for the movement. A clear yes to share, off any time. It goes to research only.</p></div></div>
+  </div>
+  <div class="card rule"><div class="ic"><svg><use href="#i-link"/></svg></div><div><h3>Why it's one app</h3><p>The steps that welcome someone into the ministry are the same steps that keep them safe: informed consent, a safety screening and safe-use education. Practice and tracking build the research.</p></div></div>
+</section>
+
+<!-- 03 · Who it's for -->
+<section class="plate" id="who" aria-labelledby="h-who">
+  <div class="head"><p class="eyebrow">03 · Who it's for</p><h2 id="h-who">Citizen scientists of the psychedelic wellness movement</h2>
+  <p class="lede">Adults who use entheogens, want to, or are curious. People who practice without dosing are welcome, and they're the comparison group.</p></div>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Why they come</h3><p>To help entheogen and psychedelic wellness research.</p></div>
+    <div class="step"><span class="n">2</span><h3>Why they stay</h3><p>A practice and integration that improve their lives.</p></div>
+    <div class="step final"><span class="n">3</span><h3>What it builds</h3><p>Months of data that show what actually works.</p></div>
+  </div>
+  <div class="cards c3">
+    <div class="card good"><div class="ic"><svg><use href="#i-drop"/></svg></div><div><h3>Adults who use entheogens</h3><p>Micro, macro or ceremony. A private dose log and protocol rhythm. They choose their own amount; the app never suggests one.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-compass"/></svg></div><div><h3>Adults who want to, or are curious</h3><p>They start with the practice and turn dosing on when they're ready, with safe-use education close by.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Practice-only adults</h3><p>Welcome as they are. They're the comparison group: is it the dose, or the practice?</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>Sincere seekers</h3><p>Advanced mode and the Academy: halls of teaching in many traditions, from the jhanas and Hermetic training to Jungian depth work and parts work.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Be Well Ministry members</h3><p>The Hall of Spirit: covenant, Safety Screening, consent; Psychedelic Studies later. Adults only.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-lock"/></svg></div><div><h3>Under 18</h3><p>Reflection mode: practice, goals, journal. No dosing tools, no Hall, never in research, data stays on the device.</p></div></div>
+  </div>
+  <div class="card warn"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Why non-dosers matter</h3><p>If only people who dose join, the research can't tell what comes from dosing and what comes from showing up every day.</p></div></div>
+</section>
+
+<!-- 04 · What it measures -->
+<section class="plate" id="measures" aria-labelledby="h-measures">
+  <div class="head"><p class="eyebrow">04 · The research</p><h2 id="h-measures">What it measures, and why it's different</h2>
+  <p class="lede">Equilibrium follows each member for months to see which mix of daily practices, with or without plant medicines, goes with real change. Because it counts the people who don't respond too, it can show what works for whom, not just on average.</p></div>
+  <div class="cards c2">
+    <div class="card good"><div class="ic"><svg><use href="#i-moon"/></svg></div><div><h3>Every evening</h3><p>Mood, energy, stress, focus, sleep, pressure and resource, on 0–100 sliders. Dosed, practiced, worked on a goal.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-calendar"/></svg></div><div><h3>Every week</h3><p>Validated scales (WHO-5, PHQ-2, GAD-2; PSS-4 monthly), side effects with severity, a safety question.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-pulse"/></svg></div><div><h3>Dose and practice days</h3><p>Micro, macro or none, compared with each person's own off days and starting point.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-trophy"/></svg></div><div><h3>Real-life function</h3><p>Goals, steps and wins, as weekly counts.</p></div></div>
+  </div>
+  <h3 class="sub">Different because</h3>
+  <div class="cards c2">
+    <div class="card proc"><div class="ic"><svg><use href="#i-hourglass"/></svg></div><div><h3>Months, not weeks</h3><p>Each person is followed from their starting point for a year and more.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-swap"/></svg></div><div><h3>Each person vs their own start</h3><p>Change is measured against the member's own baseline.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-sparkle"/></svg></div><div><h3>Many practices, not one medicine</h3><p>Breath, stillness, movement, goals, with or without a dose.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>Everyone counts</h3><p>Non-dosers and non-responders are part of the picture.</p></div></div>
+  </div>
+  <h3 class="sub">Structured experience report</h3>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Before</h3><p>Intention, set, setting, mood.</p></div>
+    <div class="step"><span class="n">2</span><h3>The dose</h3><p>Offering, amount and time, from the dose log.</p></div>
+    <div class="step"><span class="n">3</span><h3>The experience</h3><p>Timeline, effects checklist, the member's own story.</p></div>
+    <div class="step"><span class="n">4</span><h3>After</h3><p>Next-day check-in and integration questions.</p></div>
+    <div class="step final"><span class="n">5</span><h3>Follow-ups</h3><p>One week, one month, three months: what changed?</p></div>
+  </div>
+  <div class="take"><p>Every step is structured data. The story itself stays private to the member. Findings are reported as <b>patterns, not proof,</b> until an independent ethics review.</p></div>
+  <a class="card good" href="../states/" style="text-decoration:none;color:inherit"><div class="ic"><svg><use href="#i-map"/></svg></div><div><h3>Where it fits, state by state</h3><p>Which legalizing and decriminalizing states would gain most from this data, with New Mexico first. <b style="color:var(--indigo)">Open the State Fit brief →</b></p></div></a>
+</section>
+
+<!-- 05 · Pillars -->
+<section class="plate" id="pillars" aria-labelledby="h-pillars">
+  <div class="head"><p class="eyebrow">05 · Four pillars</p><h2 id="h-pillars">Research and integration first</h2>
+  <p class="lede">"Keep a real practice" is Integration; "show whether it's changing them" is Research. Research is the primary objective and how the app is funded; Integration is what members touch every day.</p></div>
+  <div class="cards c2">
+    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>1 · Research <span class="badge">core</span></h3><p>Job: Contribute. Check-ins, validated scales, dose tracking, structured experience reports, integration scales.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>2 · Integration <span class="badge">core</span></h3><p>Jobs: Practice, Track. Guided practice, goals and steps, applying it in real life.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>3 · Education <span class="badge">next</span></h3><p>Job: Learn. The Academy: schools, masters, levels I–IV.</p></div></div>
+    <div class="card neut"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>4 · Community <span class="badge">later</span></h3><p>Job: Belong. The Be Well Ministry now; events, forums, partner groups later.</p></div></div>
+  </div>
+  <h3 class="sub">How it fits together</h3>
+  <div class="fit">
+    <div class="fit-row"><span class="fit-k">Why</span><div class="fit-v"><b>The mission</b><span>Real-world research for the psychedelic wellness movement, from members who keep a real practice.</span></div></div>
+    <div class="fit-row"><span class="fit-k">What</span><div class="fit-v"><b>Four pillars</b><span class="chips"><span class="chip good"><i class="dot"></i>Research · core</span><span class="chip proc"><i class="dot"></i>Integration · core</span><span class="chip rule"><i class="dot"></i>Education · next</span><span class="chip neut"><i class="dot"></i>Community · later</span></span></div></div>
+    <div class="fit-row"><span class="fit-k">How</span><div class="fit-v"><b>Five jobs</b><span class="chips"><span class="chip proc">Practice</span><span class="chip proc">Track</span><span class="chip rule">Learn</span><span class="chip neut">Belong</span><span class="chip good">Contribute</span></span><span class="muted" style="font-size:.86rem">Education adds what you practice. Community adds who you share it with. The daily loop stays the same.</span></div></div>
+    <div class="fit-row"><span class="fit-k">Decide</span><div class="fit-v"><b>Principles and the pillars they guard</b>
+      <ul class="plist">
+        <li>Life is the practice <span class="dots"><i class="dot proc"></i></span></li>
+        <li>One obvious next step <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i><i class="dot neut"></i></span></li>
+        <li>Growth you can see <span class="dots"><i class="dot proc"></i></span></li>
+        <li>Proven, not claimed <span class="dots"><i class="dot proc"></i><i class="dot rule"></i></span></li>
+        <li>Honesty is part of the path <span class="dots"><i class="dot good"></i><i class="dot proc"></i></span></li>
+        <li>Each tradition in its own voice <span class="dots"><i class="dot rule"></i></span></li>
+        <li>Trust is everything <span class="dots"><i class="dot good"></i><i class="dot neut"></i></span></li>
+        <li>Free core, paid depth <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i></span></li>
+        <li>Adults choose, a net is always there <span class="dots"><i class="dot good"></i><i class="dot proc"></i><i class="dot rule"></i><i class="dot neut"></i></span></li>
+        <li>Informed before sacred <span class="dots"><i class="dot neut"></i></span></li>
+      </ul></div></div>
+  </div>
+</section>
+
+<!-- 06 · Layers -->
+<section class="plate" id="layers" aria-labelledby="h-layers">
+  <div class="head"><p class="eyebrow">06 · Structure</p><h2 id="h-layers">Three layers on a science base</h2></div>
+  <div class="cards">
+    <div class="card rule"><div class="ic"><svg><use href="#i-book"/></svg></div><div><h3>Layer 3 · The Academy <span class="badge">level I free · II+ membership</span></h3><p>Halls of teaching from many traditions, each taught in its own voice by its own master. Levels I–IV, trials. Up to two at a time, like an RPG job system.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>Layer 2 · The Path <span class="badge">free</span></h3><p>Universal main rank: Foundation → Acolyte → Initiate → Adept. Short lessons. Rank rises only by invitation after real practice.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-sun"/></svg></div><div><h3>Layer 1 · The daily loop <span class="badge">free</span></h3><p>Guided session, top 3 goals, dose log (if opted in), evening check-in, journal, wins. A few minutes a day.</p></div></div>
+    <div class="card neut"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Underneath · Citizen science <span class="badge">free · a clear yes</span></h3><p>Check-ins feed a de-identified research copy only after a clear yes. Turning it off takes two steps, any time. Every feature works without sharing.</p></div></div>
+  </div>
+  <h3 class="sub">The Academy's halls of teaching</h3>
+  <div class="cards c3">
+    <div class="card rule"><div class="ic"><svg><use href="#i-orbit"/></svg></div><div><h3>Contemplative <span class="badge">live · I–II</span></h3><p>Mindful breathing and walking, the jhanas, insight (noting), loving-kindness. The suggested first hall.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Hermetic <span class="badge">live · I–II</span></h3><p>Franz Bardon's <i>Initiation into Hermetics</i>: thought control, the soul mirror, conscious breathing, elemental balance.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-keyhole"/></svg></div><div><h3>Depth psychology <span class="badge">planned</span></h3><p>Two strands: Jung's shadow work, dreams, active imagination and archetypes, and parts work, getting to know the different parts of yourself. Parts work may grow into its own hall.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-wind"/></svg></div><div><h3>Body and breath <span class="badge">planned</span></h3><p>Body scan and yoga nidra, slow breathing, qigong and yoga flows, time in nature.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>Psychedelic Studies <span class="badge">planned · Be Well</span></h3><p>A hall inside the Hall of Spirit for adult Be Well members: the history of sacred plant use; set, setting and ceremony; safety and harm reduction; integration; ethics and care for others.</p></div></div>
+    <div class="card neut"><div class="ic"><svg><use href="#i-plus"/></svg></div><div><h3>More halls to come</h3><p>Other traditions of meditation, healing and self-mastery, each with its own master and levels.</p></div></div>
+  </div>
+  <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>The Way <span class="badge">next</span></h3><p>The main path that runs through every hall: each rank samples the basics of every school, and the halls open beside it.</p></div></div>
+  <div class="take"><p>A new member only has to understand the bottom layer. The higher layers reveal themselves as they climb. <b>Simple mode</b> shows the daily loop, the Path and Contemplative I practices; <b>Advanced mode</b> opens the map and the Academy.</p></div>
+</section>
+
+<!-- 07 · Two modes -->
+<section class="plate" id="modes" aria-labelledby="h-modes">
+  <div class="head"><p class="eyebrow">07 · Two modes + app map</p><h2 id="h-modes">Simple first. Advanced when you're ready.</h2>
+  <p class="lede">Everyone starts in Simple: one calm Today screen, no long scrolls. Advanced is free and opt in; it opens the world map and the Academy around the same daily loop.</p></div>
+  <div class="cols">
+    <div class="col good"><h3><span>Simple</span><small>default</small></h3><ul>
+      <li><b>Today</b><small>Opens here. One Begin card (the next Path lesson), then goals, dose log (if opted in) and evening check-in.</small></li>
+      <li><b>Progress</b><small>Path rank and lessons, goals, wins, then vs now, Light and gems, garden. "Go deeper" at the bottom: the Hall of Spirit and Advanced mode.</small></li>
+      <li><b>Journal</b><small>Reflections, check-in notes, experience reports.</small></li>
+    </ul></div>
+    <div class="col rule"><h3><span>Advanced</span><small>opt in, free</small></h3><ul>
+      <li><b>World</b><small>Opens here. Academy map with the Path, school buildings, the garden and the Hall of Spirit. A collapsible Today tray on top.</small></li>
+      <li><b>Character</b><small>Rank bar, element constellations, classes, wins, goals, bag, gems, settings.</small></li>
+      <li><b>Journal</b><small>Everything in Simple, plus Compass and the soul mirror once unlocked.</small></li>
+    </ul></div>
+  </div>
+  <div class="cards c2">
+    <div class="card proc"><div class="ic"><svg><use href="#i-route"/></svg></div><div><h3>The Path lives in both</h3><p>Its next lesson fills Today's Begin card; its rank and lessons sit in Progress (Character in Advanced).</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-wind"/></svg></div><div><h3>Breath and stillness from day one</h3><p>Simple's "Other practices" are Contemplative Level I: mindful breathing, listening, body scan, ten quiet minutes, the mindful walk, three thanks.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-arrow"/></svg></div><div><h3>Practice carries in</h3><p>Shelf practice is saved now. If you later join Contemplative, it counts toward Level I. Joining stays a choice, by invitation.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Hall of Spirit · Be Well Ministry</h3><p>A wing of the academy for adult members, free to join with an optional donation. Joining is read, screened and agreed to: the covenant, a Safety Screening and informed consent.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-orbit"/></svg></div><div><h3>One journey</h3><p>Everything you record lives in one journey, so nothing gets split or lost, and data is recorded the same way for everyone.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Support on every screen</h3><p>A Support button floats on every screen in both modes, with psychedelic peer support first.</p></div></div>
+  </div>
+</section>
+
+<!-- 08 · A day -->
+<section class="plate" id="day" aria-labelledby="h-day">
+  <div class="head"><p class="eyebrow">08 · Wireframes</p><h2 id="h-day">A day in Equilibrium</h2>
+  <p class="lede">Clean wireframes for structure only. The app itself is flat and simple for now; painted art may come later.</p></div>
+  <div class="phones">
+
+    <figure><div class="phone" role="img" aria-label="Simple mode Today screen with one Begin card and three short rows">
+      <div class="notch"></div>
+      <div class="muted">Sunday · day 9</div>
+      <div><b>Good evening</b></div>
+      <div class="wf muted">○ Practice + ○ Check-in = day counted</div>
+      <div class="wf solid"><span class="muted">Your path · 4 of 8</span><br><b>An honest inventory</b><br><span class="muted">10 min</span><div class="btn" style="margin-top:6px">Begin</div><div class="center muted" style="margin-top:4px">Other practices ›</div></div>
+      <div class="wf">◎ Top 3 goals ›</div>
+      <div class="wf">💧 Dose log ›</div>
+      <div class="wf">☾ Evening check-in ›</div>
+      <div class="tabs"><span class="on">Today</span><span>Progress</span><span>Journal</span></div>
+    </div><figcaption><b>1a · Simple: open on today</b>One obvious next step. Everything else is one tap away, no scrolling.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="World tab with Today tray and academy map">
+      <div class="notch"></div>
+      <div class="wf blue"><b>Today</b> ▾<div class="prow muted" style="margin-top:3px"><span>▶ Session</span><span>◎ Goals</span><span>☾ Check-in</span></div></div>
+      <div class="map">
+        <span class="spot" style="top:4%;left:50%;transform:translateX(-50%)">⛩ Hall of Spirit</span>
+        <span class="spot mist" style="top:20%;left:6%">Depth · later</span>
+        <span class="spot lit" style="top:34%;right:6%">Hermetic · I</span>
+        <span class="spot lit" style="top:50%;left:6%">Contemplative · II</span>
+        <span class="spot you" style="top:66%;right:10%">● You · Acolyte</span>
+        <span class="spot" style="bottom:5%;left:22%">❦ Garden</span>
+      </div>
+      <div class="tabs"><span class="on">World</span><span>Character</span><span>Journal</span></div>
+    </div><figcaption><b>1b · Advanced: open on the world</b>The map is home. Today's quests ride on top and fold away when done.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="Session start screen with timer and Begin button">
+      <div class="notch"></div>
+      <div class="center muted">Hermetic I · Thought observation</div>
+      <div class="wf solid center" style="padding:14px 8px">🜂 Salamander<br><span class="muted">"Watch the thoughts. Don't follow them."</span></div>
+      <div class="big" style="margin-top:8px">10:00</div>
+      <div class="prow muted center"><span>5</span><span style="color:var(--indigo);font-weight:800">10</span><span>15</span><span>20</span></div>
+      <div style="margin-top:auto" class="btn">Begin</div>
+    </div><figcaption><b>2 · Begin a session</b>The master's word and the element's familiar as tutor. Pick a length.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="Timer running during off-screen practice">
+      <div class="notch"></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px" class="center">
+        <div class="big">07:42</div>
+        <div class="muted">Screen can dim.<br>Spring water, then a chime.</div>
+      </div>
+      <div class="prow center muted"><span>Pause</span><span>End early</span></div>
+    </div><figcaption><b>3 · Practice off screen</b>The real work. The timer is the first piece of proof.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="One-line reflection after the session">
+      <div class="notch"></div>
+      <div><b>What happened?</b></div>
+      <div class="wf solid" style="min-height:64px">Kept drifting to work. Caught it faster by the end.</div>
+      <div class="muted">→ saved to Journal</div>
+      <div style="margin-top:auto" class="btn">Done</div>
+    </div><figcaption><b>4 · One-line reflection</b>The timer plus a full sentence (8 words or more) counts toward gems.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="Reward screen showing Light earned, one gem and constellation progress">
+      <div class="notch"></div>
+      <div class="big" style="color:var(--gold)">✦</div>
+      <div class="center"><b>+30 Light</b><br><span class="muted">20 practice · 10 your line</span></div>
+      <div class="wf solid">🜂 Fire constellation<div class="lvl" style="margin-top:4px"><i style="width:58%"></i></div><span class="muted">star 7 of 12</span></div>
+      <div class="wf solid">+1 gem · ripens in 30 days<div class="lvl" style="margin-top:4px"><i style="width:80%;background:var(--good)"></i></div><span class="muted">4 of 5 days to a steady week</span></div>
+      <div class="muted center" style="margin-top:auto">Back to World</div>
+    </div><figcaption><b>5 · Reward</b>Light right away. Gems need proof, and a steady week adds a bonus.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="Evening check-in with sliders and taps">
+      <div class="notch"></div>
+      <div><b>How was today?</b></div>
+      <div class="slider"><span>Mood</span><span class="t"><i style="left:62%"></i></span></div>
+      <div class="slider"><span>Energy</span><span class="t"><i style="left:50%"></i></span></div>
+      <div class="slider"><span>Stress</span><span class="t"><i style="left:30%"></i></span></div>
+      <div class="slider"><span>Focus</span><span class="t"><i style="left:55%"></i></span></div>
+      <div class="slider"><span>Sleep</span><span class="t"><i style="left:70%"></i></span></div>
+      <div class="wf">Dosed? · Practiced ✓ · Goal ✓</div>
+      <div class="center" style="margin-top:auto;color:var(--good);font-weight:800">❦ Garden grows · day counted</div>
+    </div><figcaption><b>6 · Evening check-in</b>Two short steps. Session + check-in = showing up for the day.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="School window with level tabs and lessons">
+      <div class="notch"></div>
+      <div class="muted">← World</div>
+      <div><b>Hermetic school</b> <span class="muted">· Master's hall</span></div>
+      <div class="prow center"><span class="wf solid" style="border-color:var(--rule);color:var(--rule)">I</span><span class="wf">II 🔒</span><span class="wf">III</span><span class="wf">IV</span></div>
+      <div class="wf purple">Master: "Clarity, then time."</div>
+      <div class="wf">✓ Thought observation</div>
+      <div class="wf">◐ Soul mirror · bright</div>
+      <div class="wf">○ Breath with the elements</div>
+      <div class="muted" style="margin-top:auto">Level II opens with membership + invitation</div>
+    </div><figcaption><b>Anytime · a school</b>Tap a building on the map to open its own window.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="Character sheet with rank, elements and classes">
+      <div class="notch"></div>
+      <div><b>Acolyte</b> <span class="muted">→ Initiate</span></div>
+      <div class="lvl"><i style="width:60%"></i></div>
+      <div class="prow center" style="margin-top:4px"><span class="wf">🜂 7</span><span class="wf">🜁 4</span><span class="wf">🜄 5</span><span class="wf">🜃 9</span></div>
+      <div class="wf">Classes: Contemplative II · Hermetic I</div>
+      <div class="wf">Wins 23 · Goals 3 active</div>
+      <div class="wf">Bag · Gems 22 (6 ripening)</div>
+      <div class="tabs"><span>World</span><span class="on">Character</span><span>Journal</span></div>
+    </div><figcaption><b>Anytime · Character</b>Who you're becoming. Positive only.</figcaption></figure>
+
+    <figure><div class="phone" role="img" aria-label="Journal tab with entries and tools">
+      <div class="notch"></div>
+      <div class="wf solid">Today · reflection + check-in note</div>
+      <div class="wf solid">Then vs now <span class="muted">(after 14 days)</span></div>
+      <div class="wf solid">Compass reading</div>
+      <div class="wf muted">🔒 Soul mirror · opens in Hermetic I</div>
+      <div class="tabs"><span>World</span><span>Character</span><span class="on">Journal</span></div>
+    </div><figcaption><b>Anytime · Journal</b>What you've lived. Private.</figcaption></figure>
+  </div>
+</section>
+
+<!-- 09 · Principles -->
+<section class="plate" id="principles" aria-labelledby="h-principles">
+  <div class="head"><p class="eyebrow">09 · How we decide</p><h2 id="h-principles">Ten principles</h2></div>
+  <div class="cards c2">
+    <div class="card proc"><div class="ic"><svg><use href="#i-door"/></svg></div><div><h3>Life is the practice</h3><p>The screen is a doorway. The real work happens off it.</p></div></div>
+    <div class="card proc"><div class="ic"><svg><use href="#i-arrow"/></svg></div><div><h3>One obvious next step</h3><p>Open the app, see today. Never a cluttered screen.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>Growth you can see</h3><p>Stars, garden, rank. Positive only, never shaming.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-key"/></svg></div><div><h3>Proven, not claimed</h3><p>Doors open by invitation after real practice. Nothing automatic.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-scale"/></svg></div><div><h3>Honesty is part of the path</h3><p>Light runs on honor. Gems need proof.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-star"/></svg></div><div><h3>Each tradition in its own voice</h3><p>Hermetic is disciplined, Contemplative is warm. No watering down.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><h3>Trust is everything</h3><p>Private by default. No ads, no trackers. Research is de-identified and goes to research only.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-gift"/></svg></div><div><h3>Free core, paid depth</h3><p>Daily loop, Path and research free forever. Academy depth by membership.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-heart"/></svg></div><div><h3>Adults choose, a net is always there</h3><p>Consenting adults set their path; Support is one tap away.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-temple"/></svg></div><div><h3>Informed before sacred <span class="badge">new</span></h3><p>Every step into the ministry is read, screened and agreed to. That's what keeps members safe, and it's what keeps the ministry strong.</p></div></div>
+  </div>
+</section>
+
+<!-- 10 · Inspiration -->
+<section class="plate" id="borrow" aria-labelledby="h-borrow">
+  <div class="head"><p class="eyebrow">10 · Inspiration</p><h2 id="h-borrow">What we borrow from proven apps and games</h2></div>
+  <div class="cards c4">
+    <div class="card proc"><div class="ic">D</div><div><h3>Duolingo → the Path</h3><p>One clear path, bite-size lessons, always one next tap.</p></div></div>
+    <div class="card proc"><div class="ic">H</div><div><h3>Habitica → Character</h3><p>Real habits become XP on a character sheet.</p></div></div>
+    <div class="card good"><div class="ic">F</div><div><h3>Finch → tone</h3><p>A gentle companion that never shames a missed day.</p></div></div>
+    <div class="card good"><div class="ic">S</div><div><h3>Stardew Valley → rhythm</h3><p>Short cozy days, seasons, a garden that pauses instead of a streak that breaks.</p></div></div>
+    <div class="card rule"><div class="ic">H</div><div><h3>Hades → home and masters</h3><p>A hub you return to; characters who notice your progress.</p></div></div>
+    <div class="card rule"><div class="ic">S</div><div><h3>Skyrim → elements</h3><p>Skills grow by use, shown as four constellations.</p></div></div>
+    <div class="card rule"><div class="ic">FF</div><div><h3>Final Fantasy jobs → schools</h3><p>Pick a class, level it, switch, keep what you learned.</p></div></div>
+  </div>
+</section>
+
+<!-- 11 · Rewards -->
+<section class="plate" id="rewards" aria-labelledby="h-rewards">
+  <div class="head"><p class="eyebrow">11 · Rewards</p><h2 id="h-rewards">Two currencies: honor and proof</h2></div>
+  <div class="cols">
+    <div class="col proc"><h3><span>✦ Light (XP)</span><small>never redeemable</small></h3><ul>
+      <li><b>Honor system</b><small>Every session (+20), a full-sentence line (+10), notes, finished steps and goals.</small></li>
+      <li><b>What it grows</b><small>Lights stars, grows the garden, fills rank. Faking it only fools yourself.</small></li>
+    </ul></div>
+    <div class="col rule"><h3><span>◆ Gems</span><small>redeemable later</small></h3><ul>
+      <li><b>Proof-backed</b><small>1 per proven day (a timed session + the evening check-in) and 1 per full line.</small></li>
+      <li><b>A steady week</b><small>+7 when 5 of 7 days are proven.</small></li>
+    </ul></div>
+  </div>
+  <h3 class="sub">How strong each proof signal is</h3>
+  <div class="bars" role="img" aria-label="Proof strength: tapping I did it is weakest, then a guided timer, then a specific reflection, then a pattern across the week is strongest">
+    <div class="bar-row"><span>Tap "I did it"</span><span class="bar"><i style="width:10%;background:var(--neutral)"></i></span></div>
+    <div class="bar-row"><span>Guided timer in app</span><span class="bar"><i style="width:35%;background:var(--proc)"></i></span></div>
+    <div class="bar-row"><span>Specific reflection</span><span class="bar"><i style="width:50%;background:var(--proc)"></i></span></div>
+    <div class="bar-row"><span>Pattern across the week</span><span class="bar"><i style="width:75%;background:var(--good)"></i></span></div>
+  </div>
+  <div class="cards c2">
+    <div class="card warn"><div class="ic"><svg><use href="#i-clock"/></svg></div><div><h3>Daily cap</h3><p>Up to 2 gems a day and 21 a week. Tapping more earns nothing.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-sprout"/></svg></div><div><h3>No fail state</h3><p>Every proven day counts; a steady week adds a bonus.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-hourglass"/></svg></div><div><h3>Gems ripen</h3><p>30 days before they can be redeemed.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Research stays clean</h3><p>Gems reward showing up, never the answers. A low reading earns what a high one does.</p></div></div>
+  </div>
+  <h3 class="sub">One week, two ways</h3>
+  <div class="steps">
+    <div class="step"><span class="n">1</span><h3>Real member</h3><p>5 timed sessions, each with the evening check-in · 3 full-sentence lines.</p></div>
+    <div class="step final"><span class="n">✓</span><h3>Earns</h3><p>+130 Light from sessions · 5 + 3 + 7 = 15 gems.</p></div>
+  </div>
+  <div class="steps">
+    <div class="step plain"><span class="n">1</span><h3>Tapper</h3><p>Taps everything · 0-second timers · "ok" notes.</p></div>
+    <div class="step bad"><span class="n">✕</span><h3>Earns</h3><p>Light only · 0 gems.</p></div>
+  </div>
+</section>
+
+<!-- 12 · Trust -->
+<section class="plate" id="trust" aria-labelledby="h-trust">
+  <div class="head"><p class="eyebrow">12 · Trust is everything</p><h2 id="h-trust">Three data tiers, plus a guide you choose</h2></div>
+  <div class="tiers"><table>
+    <thead><tr><th style="background:transparent"></th><th style="background:var(--good)">Personal vault</th><th style="background:var(--proc)">Citizen science</th><th style="background:var(--rule)">Research studies</th><th style="background:var(--neutral)">Guide connection</th></tr></thead>
+    <tbody>
+      <tr><th>What</th><td class="good">Everything, synced across devices</td><td class="proc">De-identified everyday readings</td><td class="rule">Deeper questionnaires</td><td class="neut">What the person shares</td></tr>
+      <tr><th>Who sees it</th><td class="good">Only the person</td><td class="proc">ǝvōke research team and research partners</td><td class="rule">Team and partners named per study</td><td class="neut">Only the chosen guide</td></tr>
+      <tr><th>Name attached</th><td class="good">Yes, their account</td><td class="proc">No</td><td class="rule">No</td><td class="neut">Yes, by choice</td></tr>
+      <tr><th>How you join</th><td class="good">Automatic</td><td class="proc">A clear yes; off any time</td><td class="rule">A yes to each study</td><td class="neut">Invite, revoke any time</td></tr>
+    </tbody>
+  </table></div>
+  <div class="promise">
+    <span>Your journal is private to you.</span>
+    <span>Anything you share for research has no name, email or account attached.</span>
+    <span>Your research data goes only to research: universities, health organizations and research partners, under agreements that forbid trying to identify anyone.</span>
+    <span>It is never sold or licensed to advertisers, insurers, employers, data brokers or law enforcement, and we publish who receives it.</span>
+    <small>Draft wording, under legal review.</small>
+  </div>
+  <div class="cards c3">
+    <div class="card good"><div class="ic"><svg><use href="#i-users"/></svg></div><div><h3>Groups of 10 or more</h3><p>Every shared number covers at least 10 people. Smaller groups say "not enough yet."</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-scissors"/></svg></div><div><h3>Readings only</h3><p>Research copies keep readings and age ranges: no notes, no journal text, no exact dates, no names.</p></div></div>
+    <div class="card rule"><div class="ic"><svg><use href="#i-file"/></svg></div><div><h3>Research licenses only</h3><p>Row-level data only under a signed data-use agreement with the partner's ethics approval: no re-identifying, no resale.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-ban"/></svg></div><div><h3>No ads, ever</h3><p>No advertising or analytics code in the app.</p></div></div>
+    <div class="card good"><div class="ic"><svg><use href="#i-lock"/></svg></div><div><h3>Under 18 stays on the device</h3><p>Reflection mode, no sign-in, never in research.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-heartplus"/></svg></div><div><h3>Not medical care</h3><p>No one reviews answers in real time. Support is on every screen.</p></div></div>
+  </div>
+</section>
+
+<!-- 13 · Free vs Academy -->
+<section class="plate" id="free" aria-labelledby="h-free">
+  <div class="head"><p class="eyebrow">13 · Sustainability</p><h2 id="h-free">Free core, paid depth</h2></div>
+  <div class="cols">
+    <div class="col good"><h3><span>Always free</span></h3><ul>
+      <li><b>The daily loop</b><small>Sessions, check-ins, goals, dose log, journal.</small></li>
+      <li><b>The full Path</b><small>Foundation → Adept.</small></li>
+      <li><b>Character, Light, gems, garden</b></li>
+      <li><b>Citizen science and Support</b></li>
+      <li><b>Level I of every school</b><small>Try every class before paying.</small></li>
+      <li><b>Advanced mode</b><small>The map and the Academy are free to open; only levels II+ need membership.</small></li>
+      <li><b>Be Well Ministry membership</b><small>Free to join, with an optional donation. Opens the Hall of Spirit.</small></li>
+    </ul></div>
+    <div class="col rule"><h3><span>Academy membership</span></h3><ul>
+      <li><b>Levels II and up, every school</b><small>One membership, sold through Be Well and the web. Separate from Be Well Ministry membership.</small></li>
+      <li><b>A real teacher</b><small>Voiced lessons from each school's master.</small></li>
+      <li><b>A real curriculum</b><small>Every hall taught in its own tradition, levels I–IV: the jhanas in Contemplative, Bardon in Hermetic, Jung and parts work in Depth psychology.</small></li>
+      <li><b>Earned proof</b><small>Trials and seals that mean something.</small></li>
+      <li><b>Others on the path</b><small>Circles, cohorts, partner perks (later).</small></li>
+    </ul></div>
+  </div>
+  <div class="cards c2">
+    <div class="card good"><div class="ic"><svg><use href="#i-flask"/></svg></div><div><h3>Research keeps it free</h3><p>De-identified research data, licensed to research and health partners only, free or for a fee. Fees keep the app free; they never pay members or add gems.</p></div></div>
+    <div class="card warn"><div class="ic"><svg><use href="#i-gem"/></svg></div><div><h3>Gems never buy practice or levels</h3><p>Paying opens the doors. Walking through them is still earned.</p></div></div>
+  </div>
+</section>
+
+<!-- 14 · Status -->
+<section class="plate" id="status" aria-labelledby="h-status">
+  <div class="head"><p class="eyebrow">14 · Where it stands</p><h2 id="h-status">What's ready, October 2026</h2></div>
+  <div class="col good">
+    <h3><span>Just added</span><small>October 26 · Release 4.5.1</small></h3>
+    <ul>
+      <li>0–100 evening check-ins<small>Finer sliders, each with a plain word for where it sits ("63 · Lifted")</small></li>
+      <li>Pressure and Resource<small>Two new evening measures: how much life asked of you today, and how well held you felt</small></li>
+      <li>Then vs now at 14 days<small>Opens two weeks in, with a countdown until then</small></li>
+      <li>Practice levels<small>3, 5, then 10 minutes, so anyone can train up to a longer sit; consistency earns the next level</small></li>
+      <li>In-app beta feedback<small>A feedback tab on every screen sends notes straight to the team</small></li>
+    </ul>
+  </div>
+  <div class="cols" style="align-items:start">
+    <div class="col neut"><h3><span>Live today</span><small>Release 4.5.1 · small test group</small></h3><ul>
+      <li>Simple and Advanced modes</li>
+      <li>Guided practice sessions, the Path and the Academy's first levels</li>
+      <li>Schools of study, the world map and Compass<small>In Advanced mode</small></li>
+      <li>Evening and weekly check-ins with validated scales</li>
+      <li>Goals with steps; a garden that grows with practice</li>
+      <li>Light and gems<small>Gems need proof of practice</small></li>
+      <li>Optional dosing tools<small>A private dose log, rhythms, planned sessions and follow-ups; on or off any time</small></li>
+      <li>Citizen science, with a clear yes<small>De-identified, shown only in groups of 10+; not studied before an ethics review</small></li>
+      <li>Hall of Spirit joining<small>Covenant, Safety Screening and consent, with the four safe-use cards</small></li>
+      <li>Staff follow-up records<small>A login-gated Ministry view: Be Well members and any flagged screening that needs a follow-up</small></li>
+      <li>What's new after every update, and sign up again when our forms change</li>
+      <li>Sign-in and sync across devices</li>
+      <li>The new icon, launch screen and logo</li>
+      <li>900+ automated checks pass before every release<small>Plus a separate test pass on the preview before anything goes live</small></li>
+    </ul></div>
+    <div class="col good"><h3><span>In testing now</span><small>the preview</small></h3><ul>
+      <li>Real phones<small>Sign-in, sync and a full day on an iPhone and an Android phone</small></li>
+    </ul></div>
+    <div style="display:grid;gap:10px;align-content:start;min-width:0">
+    <div class="col proc"><h3><span>Coming next</span></h3><ul>
+      <li>Invites to the small test group<small>After the check on real phones</small></li>
+      <li>Reminders<small>A gentle line in the app, and one tap to add them to your calendar</small></li>
+      <li>A clearer first day</li>
+    </ul></div>
+    <div class="col rule"><h3><span>Later</span></h3><ul>
+      <li>A Compass makeover</li>
+      <li>The Way<small>A main path that samples every school</small></li>
+      <li>Reminders as phone pop-ups</li>
+      <li>The app as the way into Be Well membership</li>
+      <li>A wider beta<small>After the reviews below</small></li>
+    </ul></div>
+    </div>
+  </div>
+  <div class="card warn"><div class="ic"><svg><use href="#i-shield"/></svg></div><div><h3>Before members' data is studied</h3><p>An independent ethics review (IRB) · a privacy policy and research consent reviewed by counsel · a clinical read of the safety wording · the integration scales' source wording · the Academy membership price.</p></div></div>
+</section>
+
+<!-- 15 · Invest or collaborate -->
+<section class="plate connect" id="connect" aria-labelledby="h-connect">
+  <div class="head"><p class="eyebrow">15 · Get involved</p><h2 id="h-connect">Invest or collaborate</h2></div>
+  <p class="lede">Equilibrium is a working app with a research engine inside it. We're looking for angel investors, funders and collaborators to help take it from a small alpha to a real research platform. Write to us and we'll send the full picture and set up a demo.</p>
+  <div class="ways">
+    <div class="way way-lead">
+      <h3><span class="ic"><svg><use href="#i-sprout"/></svg></span>Angel investors</h3>
+      <p>Back a working product early: a daily practice habit with a research engine inside it, built for the psychedelic wellness movement. Write for the deck and a demo.</p>
+      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20angel%20investment&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27m%20interested%20in%20investing.%20Please%20send%20the%20deck.%0A%0AName%3A%0AFirm%20or%20network%20(if%20any)%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about investing</a>
+    </div>
+    <div class="way">
+      <h3><span class="ic"><svg><use href="#i-heart"/></svg></span>Grant makers and donors</h3>
+      <p>Foundations and donors who want long-term, real-world evidence for the psychedelic wellness movement, with open methods.</p>
+      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20research%20funding&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20talk%20about%20funding%20the%20research.%0A%0AName%3A%0AOrganization%3A%0ABest%20way%20to%20reach%20me%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about funding research</a>
+    </div>
+    <div class="way">
+      <h3><span class="ic"><svg><use href="#i-users"/></svg></span>Collaborators and partners</h3>
+      <ul>
+        <li>Researchers and universities</li>
+        <li>Clinicians, therapists and coaches</li>
+        <li>Psychedelic societies, facilitators and wellness groups</li>
+        <li>Developers and designers</li>
+      </ul>
+      <a class="cta-btn" href="mailto:cosmo@evokemagic.org?subject=Equilibrium%20%C2%B7%20collaboration&amp;body=Hi%20Cosmo%2C%0A%0AI%20saw%20the%20Equilibrium%20concept%20overview%20and%20I%27d%20like%20to%20collaborate.%0A%0AName%3A%0AOrganization%20or%20role%3A%0AHow%20I%27d%20like%20to%20help%3A%0A"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email about collaborating</a>
+    </div>
+  </div>
+  <div class="fitrow">
+    <span>See where it fits first:</span>
+    <a class="cta-btn ghost" href="../states/"><svg aria-hidden="true"><use href="#i-map"/></svg>Read the State Fit brief</a>
+  </div>
+  <div class="mailrow">
+    <span>Or write directly:</span>
+    <b>cosmo@evokemagic.org</b>
+    <button class="cta-btn ghost" type="button" data-copy="cosmo@evokemagic.org"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy address</button>
+    <span class="copied" role="status" aria-live="polite"></span>
+  </div>
+</section>
+
+<footer class="foot">
+  <span>Equilibrium by ǝvōke · Be Well Ministry · full concept, updated October 28, 2026.</span>
+  <span>Investors and collaborators: <a href="#connect">get in touch</a> · cosmo@evokemagic.org</span>
+  <span>Consent, privacy and ministry wording are drafts under legal review. Findings are patterns, not proof. Equilibrium is not medical care.</span>
+</footer>
+
+</main>
+<a class="cta-btn float-cta" href="#connect"><svg aria-hidden="true"><use href="#i-mail"/></svg>Invest · Collaborate</a>
+<script>
+(function(){
+  var btn=document.querySelector('[data-copy]'),say=document.querySelector('.copied');
+  if(btn)btn.addEventListener('click',function(){
+    var t=btn.getAttribute('data-copy');
+    function done(ok){if(say)say.textContent=ok?'Copied':'Select the address above to copy it'}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){done(true)},function(){done(false)})}else{done(false)}
+  });
+  var f=document.querySelector('.float-cta'),cv=document.querySelector('.cover'),cn=document.getElementById('connect');
+  if(!f)return;
+  if(!cv||!cn||!('IntersectionObserver' in window)){f.classList.add('show');return}
+  var coverIn=true,connectIn=false;
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.target===cv)coverIn=e.isIntersecting;else connectIn=e.isIntersecting});
+    f.classList.toggle('show',!coverIn&&!connectIn);
+  });
+  io.observe(cv);io.observe(cn);
+})();
+(function(){
+  var m=document.querySelector('.mark'),c=document.querySelector('.cover');
+  if(!m||!c||!window.matchMedia||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var ready=false;setTimeout(function(){ready=true},14300);
+  function again(){if(!ready)return;ready=false;m.classList.remove('again');void m.offsetWidth;m.classList.add('again');setTimeout(function(){ready=true},8000)}
+  c.addEventListener('pointerenter',again);c.addEventListener('click',again);
+})();
+</script>
+</body>
+</html>
