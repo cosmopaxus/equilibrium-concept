@@ -454,6 +454,14 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .ins-btn:hover{border-color:#E8C46B}
 .ins-dots{display:flex;gap:8px}.ins-dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}.ins-dots i.on{background:#E8C46B}
 .ins-slide[hidden]{display:none}
+
+.opener{text-align:center;display:grid;justify-items:center;gap:6px}
+.opener-mark{width:clamp(130px,16vw,190px);height:auto;margin-bottom:14px;filter:drop-shadow(0 0 18px rgba(232,196,107,.18))}
+.connect .opener .eyebrow,.connect .opener h2,.connect .opener .sublead{text-align:center}
+.connect .opener h2{max-width:900px;font-weight:500}
+.connect .opener h2 em{color:#E8C46B}
+.connect .opener .sublead{max-width:760px;margin:6px auto 0}
+.connect .closing h2{text-align:center}
 </style>
 </head>
 <body>
@@ -882,9 +890,12 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 <!-- Get involved -->
 <section class="band connect" id="connect" aria-labelledby="h-connect">
   <div class="inner">
-    <p class="eyebrow">06 · The next stage</p>
-    <h2 id="h-connect">Help build the evidence layer.</h2>
-    <p class="sublead">Equilibrium works today. The next step takes it from a small alpha to a platform ready for its first state pilot.</p>
+    <div class="opener">
+      <img src="img/mark-gold.svg" alt="" width="200" height="200" class="opener-mark">
+      <p class="eyebrow">06 · Build the evidence layer with us</p>
+      <h2 id="h-connect">In a field full of innovation, <em>data builds confidence.</em></h2>
+      <p class="sublead">We're looking for aligned supporters, research funders and collaborators who understand that the next breakthrough may be better measurement, not another isolated intervention.</p>
+    </div>
     <div class="paths">
       <article class="fund lead">
         <span>Supporters and early backers</span>
