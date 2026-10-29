@@ -296,6 +296,83 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   .tl-row{grid-template-columns:1fr;gap:6px}.tl-scale{margin-left:0}
 }
 @media (prefers-reduced-motion:reduce){.knob .arc,.knob .ptr,.outcome{transition:none}}
+/* two views */
+.viewsband{background:linear-gradient(var(--cream),var(--lav2))}
+.pretend{display:flex;gap:8px;align-items:center;justify-content:center;margin:18px auto 36px;font-size:14px;font-weight:700;color:var(--warn)}
+.pretend svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.views{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.vpanel{border-radius:24px;padding:20px;display:grid;gap:14px;border:1px solid var(--line)}
+.member-v{background:var(--plate)}
+.research-v{background:linear-gradient(160deg,#1A0E36,#2E1559 70%,#3D1C6E);color:#EEE7F8;border-color:#4A3478}
+.vhead h3{font-family:var(--display);font-weight:600;font-size:24px;margin:8px 0 2px}
+.vhead p{color:var(--muted);font-size:14.5px}
+.research-v .vhead p{color:#BFB2D3}
+.vtag{display:inline-block;text-transform:uppercase;letter-spacing:.13em;font-size:10.5px;font-weight:800;padding:4px 10px;border-radius:999px}
+.vtag.mem{background:var(--good-t);color:var(--good)}
+.vtag.res{background:rgba(232,196,107,.16);color:#F3D88E}
+.vcard{border-radius:16px;padding:16px;border:1px solid var(--line);background:var(--cream)}
+.research-v .vcard{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14)}
+.vcard-h{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:10px;flex-wrap:wrap}
+.vcard-h b{font-weight:800;font-size:16px}
+.vcard-h span{font-size:13px;font-weight:700;color:var(--plum)}
+.research-v .vcard-h span{color:#F3D88E}
+.compass-wrap{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:16px;align-items:center}
+.compass{width:100%;height:auto}
+.c-ring{fill:var(--plate);stroke:var(--line);stroke-width:1.5}
+.c-ring2{fill:none;stroke:var(--line);stroke-dasharray:3 4}
+.c-ticks line{stroke:var(--line);stroke-width:1.5}
+.c-past circle{fill:var(--plum)}
+.c-el text{font:800 7.5px var(--body);fill:#fff;text-anchor:middle;letter-spacing:.02em}
+.nd-n{fill:#378ADD}.nd-s{fill:var(--line)}
+.c-hub{fill:var(--gold);stroke:var(--plate);stroke-width:2}
+.c-needle{transform-origin:110px 110px;transform:rotate(180deg)}
+@media (prefers-reduced-motion:no-preference){.c-needle{animation:needle 2.6s cubic-bezier(.22,1,.36,1) both}
+@keyframes needle{0%{transform:rotate(60deg)}55%{transform:rotate(200deg)}75%{transform:rotate(172deg)}100%{transform:rotate(180deg)}}}
+.compass-side{display:grid;gap:8px;font-size:14.5px}
+.compass-side b{font-weight:800}
+.pastnote{color:var(--muted);font-size:13px}
+.chips-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.mchip,.rchip{font:700 13px var(--body);padding:6px 12px;border-radius:999px;cursor:pointer;border:1.5px solid var(--line);background:var(--plate);color:var(--ink)}
+.mchip.on{background:var(--plum);border-color:var(--plum);color:var(--plate)}
+.rchip{background:transparent;color:#E7DDF2;border-color:rgba(255,255,255,.25)}
+.rchip.on{background:#E8C46B;border-color:#E8C46B;color:#140B2F}
+.mchip:focus-visible,.rchip:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.linechart{width:100%;height:auto;display:block}
+.linechart .grid{stroke:var(--line);stroke-width:1}
+.research-v .linechart .grid{stroke:rgba(255,255,255,.12)}
+.linechart text{font:700 11px var(--body);fill:var(--muted)}
+.research-v .linechart text{fill:#B9ACCB}
+.linechart .base{stroke:var(--muted);stroke-dasharray:5 5;stroke-width:1.5}
+.linechart .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.linechart .area{opacity:.14}
+.research-v .cap{color:#B9ACCB}
+.cmp{display:grid;gap:9px}
+.cmp-row{display:grid;grid-template-columns:62px 1fr 46px;gap:10px;align-items:center;font-size:13.5px}
+.cmp-row b{font-weight:800}
+.cmp-bars{display:grid;gap:3px}
+.cmp-bars i{display:block;height:9px;border-radius:999px;transition:width .5s cubic-bezier(.22,1,.36,1)}
+.cmp-bars i.a{background:#E8C46B}.cmp-bars i.b{background:rgba(255,255,255,.28)}
+.cmp-row .d{text-align:right;font-weight:800;color:#8FE0A8}
+.cmp-row .d.neg{color:#F2A49B}
+.cmp-key{display:flex;gap:14px;font-size:12px;color:#BFB2D3;margin-top:4px}
+.cmp-key span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--k)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:#D6CBE3;margin-top:6px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:16px;height:4px;border-radius:2px;background:var(--k)}
+.rtabs{display:flex;gap:6px;flex-wrap:wrap}
+.rtabs span{font-size:12.5px;font-weight:800;padding:5px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.2);color:#BFB2D3}
+.rtabs span.on{background:rgba(232,196,107,.18);border-color:#E8C46B;color:#F3D88E}
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rules li{display:flex;gap:10px;align-items:center;font-size:14px;color:#E7DDF2}
+.rules svg{width:18px;height:18px;flex:none;stroke:#E8C46B;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.built{font-size:13px;color:#B9ACCB;border-top:1px solid rgba(255,255,255,.14);padding-top:12px}
+.shot{display:grid;grid-template-columns:minmax(150px,230px) 1fr;gap:16px;align-items:center;margin:0}
+.phone{border-radius:22px;padding:8px;background:#0E0A1E;border:1px solid #3A2A5C;box-shadow:0 14px 34px rgba(30,12,60,.25)}
+.phone img{display:block;width:100%;height:auto;border-radius:14px}
+.shot figcaption{font-size:14px;color:var(--muted)}
+.shot figcaption b{display:block;color:var(--ink);font-weight:800;margin-bottom:2px}
+@media(max-width:980px){.views{grid-template-columns:1fr}}
+@media(max-width:520px){.compass-wrap{grid-template-columns:1fr}.compass{max-width:220px;margin:0 auto}.shot{grid-template-columns:120px 1fr}}
 </style>
 </head>
 <body>
@@ -355,7 +432,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 <header class="eqbar">
   <a class="brand" href="./" aria-label="Equilibrium home"><img src="icon.svg" alt="" width="34" height="34"><span><b>EQUILIBRIUM</b><small>Balance in motion</small></span></a>
   <nav aria-label="Site">
-    <a href="#lock">The model</a><a href="#why">Why now</a><a href="#app">Working alpha</a><a href="states/">State fit</a><a href="full/">Full concept</a>
+    <a href="#lock">The model</a><a href="#views">Metrics</a><a href="#why">Why now</a><a href="#app">Working alpha</a><a href="states/">State fit</a><a href="full/">Full concept</a>
     <a class="go" href="#connect">Invest · Partner</a>
   </nav>
 </header>
@@ -479,11 +556,98 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   </div>
 </section>
 
+<!-- Two views -->
+<section class="band viewsband" id="views" aria-labelledby="h-views">
+  <div class="inner">
+    <p class="eyebrow center">03 · Two views of the same change</p>
+    <h2 id="h-views" class="center">Members see their own lock. Researchers see the pattern.</h2>
+    <p class="sublead center">Every evening check-in feeds two views: a private one for the member, and a de-identified one for states and research partners.</p>
+    <p class="pretend"><svg aria-hidden="true"><use href="#i-question"/></svg>Illustrations with pretend data. No real member data is shown.</p>
+
+    <div class="views">
+      <!-- Member -->
+      <article class="vpanel member-v">
+        <header class="vhead"><span class="vtag mem">Member view</span><h3>Maya · 6 months in</h3><p>Private to her. Synced across her devices.</p></header>
+
+        <div class="vcard">
+          <div class="vcard-h"><b>Compass</b><span>Pointing to Water</span></div>
+          <div class="compass-wrap">
+            <svg class="compass" viewBox="0 0 220 220" role="img" aria-label="Compass dial: the needle points to Water this week; faded lines show where it pointed in the last 8 weeks.">
+              <circle cx="110" cy="110" r="96" class="c-ring"/>
+              <circle cx="110" cy="110" r="70" class="c-ring2"/>
+              <g class="c-ticks"></g>
+              <g class="c-past"></g>
+              <g class="c-el"><circle cx="110" cy="18" r="13" fill="#D85A30"/><text x="110" y="23">Fire</text></g>
+              <g class="c-el"><circle cx="202" cy="110" r="13" fill="#C9A227"/><text x="202" y="115">Air</text></g>
+              <g class="c-el"><circle cx="110" cy="202" r="13" fill="#378ADD"/><text x="110" y="207">Water</text></g>
+              <g class="c-el"><circle cx="18" cy="110" r="13" fill="#4E8A2A"/><text x="18" y="115">Earth</text></g>
+              <g class="c-needle"><path d="M110 110 L104 104 L110 42 L116 104 Z" class="nd-n"/><path d="M110 110 L104 116 L110 168 L116 116 Z" class="nd-s"/></g>
+              <circle cx="110" cy="110" r="7" class="c-hub"/>
+            </svg>
+            <div class="compass-side">
+              <p class="why"><b>Why:</b> lower mood on 4 of the last 7 evenings.</p>
+              <p class="prac"><b>Practice to match:</b> Listening, 5 minutes.</p>
+              <p class="pastnote">Dots: where the needle pointed each of the last 8 weeks, newest on the outside.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard-h"><b>Over time</b><span id="m-delta">+18 since her start</span></div>
+          <div class="chips-row" role="group" aria-label="Measure">
+            <button type="button" class="mchip on" data-m="wellbeing" aria-pressed="true">Well-being</button>
+            <button type="button" class="mchip" data-m="sleep" aria-pressed="false">Sleep</button>
+            <button type="button" class="mchip" data-m="calm" aria-pressed="false">Calm</button>
+          </div>
+          <svg class="linechart" id="m-chart" viewBox="0 0 520 210" role="img" aria-label="Line chart of Maya's weekly score over 26 weeks against her starting point."></svg>
+          <p class="cap">Weekly score, 0–100. Dashed line: her starting point. Dips are normal.</p>
+        </div>
+
+        <figure class="shot">
+          <div class="phone"><img src="img/then-vs-now-alpha.jpg" alt="Then vs now in the working alpha: well-being +20, calm +6, at ease +2, brighter mood +2, sleep dip." width="700" height="805" loading="lazy"></div>
+          <figcaption><b>The real screen</b>Then vs now in the working alpha, with a test member's data. Tap a measure for its line.</figcaption>
+        </figure>
+      </article>
+
+      <!-- Researcher -->
+      <article class="vpanel research-v">
+        <header class="vhead"><span class="vtag res">Researcher view</span><h3>3,240 members · 26 weeks</h3><p>For approved partners. Groups of 10+ only.</p></header>
+
+        <div class="rtabs" aria-hidden="true"><span>Overview</span><span class="on">Compare</span><span>Change</span><span>Patterns</span><span>Report</span></div>
+
+        <div class="vcard">
+          <div class="vcard-h"><b>Compare days</b><span>each person vs themselves</span></div>
+          <div class="chips-row" role="group" aria-label="Compare">
+            <button type="button" class="rchip on" data-s="practice" aria-pressed="true">Practice days</button>
+            <button type="button" class="rchip" data-s="micro" aria-pressed="false">Microdose days</button>
+            <button type="button" class="rchip" data-s="macro" aria-pressed="false">Macrodose days</button>
+          </div>
+          <div class="cmp" id="r-cmp"></div>
+          <p class="cap" id="r-cmp-cap">Evening readings, 0–100, vs the same people's other days.</p>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard-h"><b>Change from each person's start</b><span>WHO-5 well-being</span></div>
+          <svg class="linechart" id="r-chart" viewBox="0 0 520 220" role="img" aria-label="Average change in WHO-5 well-being from each person's start, by weeks since starting, for four groups."></svg>
+          <div class="legend" id="r-legend"></div>
+        </div>
+
+        <ul class="rules">
+          <li><svg aria-hidden="true"><use href="#i-users"/></svg>Every number from 10+ people</li>
+          <li><svg aria-hidden="true"><use href="#i-shield"/></svg>No names, rows or journal text</li>
+          <li><svg aria-hidden="true"><use href="#i-file"/></svg>Printable report and summary CSV</li>
+        </ul>
+        <p class="built">Built into the alpha: Overview, Compare, Change, Patterns and Report tabs, answered inside the database.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- Why now -->
 <section class="band whyband" id="why" aria-labelledby="h-why">
   <div class="inner split">
     <div>
-      <p class="eyebrow">03 · Why now</p>
+      <p class="eyebrow">04 · Why now</p>
       <h2 id="h-why">Programs are moving. Measurement isn't.</h2>
       <p class="sublead">States are opening access faster than they're building ways to measure it. Equilibrium brings long-term, de-identified data to that gap, at no cost to the state.</p>
       <div class="signals">
@@ -512,7 +676,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 <!-- The working app -->
 <section class="band appband" id="app" aria-labelledby="h-app">
   <div class="inner">
-    <p class="eyebrow center">04 · Working alpha · Release 4.5.1</p>
+    <p class="eyebrow center">05 · Working alpha · Release 4.5.1</p>
     <h2 id="h-app" class="center">Daily practice becomes long-term evidence.</h2>
     <div class="flow">
       <article><span>1</span><h3>Practice</h3><p>A few timed minutes off screen: breath, stillness, a walk, a lesson</p></article><i aria-hidden="true">→</i>
@@ -550,7 +714,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 <!-- Get involved -->
 <section class="band connect" id="connect" aria-labelledby="h-connect">
   <div class="inner">
-    <p class="eyebrow">05 · The next stage</p>
+    <p class="eyebrow">06 · The next stage</p>
     <h2 id="h-connect">Back the evidence layer.</h2>
     <p class="sublead">Equilibrium works today. The next step takes it from a small alpha to a platform ready for its first state pilot.</p>
     <div class="paths">
@@ -594,6 +758,50 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   <p>Updated October 29, 2026. Findings are patterns, not proof. Equilibrium is not medical care. Consent and privacy wording are drafts under legal review.</p>
 </footer>
 
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  // compass ticks + past weeks (tree rings)
+  var t=document.querySelector('.c-ticks'),pst=document.querySelector('.c-past');
+  if(t){for(var i=0;i<36;i++){var a=i*10*Math.PI/180,r1=i%9===0?84:89;el('line',{x1:110+r1*Math.sin(a),y1:110-r1*Math.cos(a),x2:110+94*Math.sin(a),y2:110-94*Math.cos(a)},t)}
+    var past=[270,270,180,0,180,90,180,180];past.forEach(function(d,k){var a=d*Math.PI/180,r=24+k*6;el('circle',{cx:110+r*Math.sin(a),cy:110-r*Math.cos(a),r:3.2,opacity:(0.25+k*0.09).toFixed(2)},pst)})}
+  // pretend member series, 26 weeks
+  function series(start,gain,seed,noise){var out=[],s=seed;for(var w=0;w<26;w++){s=(s*9301+49297)%233280;var n=(s/233280-.5)*noise;var v=start+gain*(1-Math.exp(-w/8))+n;if(w===11)v-=9;out.push(Math.max(5,Math.min(95,Math.round(v))))}out[0]=start;return out}
+  var M={wellbeing:series(48,20,7,9),sleep:series(55,9,3,10),calm:series(44,15,11,9)};
+  function line(svg,sets,opts){
+    while(svg.firstChild)svg.removeChild(svg.firstChild);
+    var W=520,H=opts.h||210,L=34,R=10,T=12,B=26,n=opts.n,ymin=opts.ymin,ymax=opts.ymax;
+    function x(i){return L+(W-L-R)*i/(n-1)}function y(v){return T+(H-T-B)*(1-(v-ymin)/(ymax-ymin))}
+    opts.ticks.forEach(function(v){el('line',{x1:L,x2:W-R,y1:y(v),y2:y(v),'class':'grid'},svg);var tx=el('text',{x:L-6,y:y(v)+4,'text-anchor':'end'},svg);tx.textContent=(opts.sign&&v>0?'+':'')+v});
+    opts.xl.forEach(function(p){var tx=el('text',{x:x(p[0]),y:H-6,'text-anchor':p[0]===0?'start':(p[0]===n-1?'end':'middle')},svg);tx.textContent=p[1]});
+    if(opts.base!=null)el('line',{x1:L,x2:W-R,y1:y(opts.base),y2:y(opts.base),'class':'base'},svg);
+    sets.forEach(function(s){var d=s.v.map(function(v,i){return(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)}).join(' ');
+      if(s.area)el('path',{d:d+' L'+x(n-1)+' '+y(ymin)+' L'+x(0)+' '+y(ymin)+' Z',fill:s.c,'class':'area'},svg);
+      var p=el('path',{d:d,stroke:s.c,'class':'ln'},svg);
+      if(opts.anim&&p.getTotalLength&&!matchMedia('(prefers-reduced-motion: reduce)').matches){var L2=p.getTotalLength();p.style.strokeDasharray=L2;p.style.strokeDashoffset=L2;p.getBoundingClientRect();p.style.transition='stroke-dashoffset 1.1s cubic-bezier(.22,1,.36,1)';p.style.strokeDashoffset=0}
+      if(s.dot){el('circle',{cx:x(n-1),cy:y(s.v[n-1]),r:5,fill:s.c},svg)}});
+  }
+  var mc=document.getElementById('m-chart'),md=document.getElementById('m-delta');
+  function drawM(k,anim){var v=M[k];line(mc,[{v:v,c:'#7A4FC0',area:1,dot:1}],{n:26,ymin:20,ymax:90,ticks:[25,50,75],xl:[[0,'Start'],[8,'2 mo'],[17,'4 mo'],[25,'6 mo']],base:v[0],anim:anim});var d=v[25]-v[0];md.textContent=(d>=0?'+':'')+d+' since her start'}
+  if(mc){drawM('wellbeing',true);document.querySelectorAll('.mchip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.mchip').forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});drawM(b.dataset.m,true)})})}
+  // researcher compare (pretend)
+  var C={practice:{n:'2,910 people',r:[['Mood',64,57],['Energy',61,56],['Stress',38,45,1],['Focus',63,57],['Sleep',66,63]]},
+         micro:{n:'1,188 people',r:[['Mood',62,58],['Energy',62,57],['Stress',41,44,1],['Focus',64,59],['Sleep',63,63]]},
+         macro:{n:'214 people',r:[['Mood',58,57],['Energy',52,56],['Stress',44,43,1],['Focus',55,57],['Sleep',58,63]]}};
+  var cmp=document.getElementById('r-cmp'),cap=document.getElementById('r-cmp-cap');
+  function drawC(k){var c=C[k];cmp.innerHTML='';c.r.forEach(function(r){var diff=r[1]-r[2],good=r[3]?diff<0:diff>0;var row=document.createElement('div');row.className='cmp-row';
+    row.innerHTML='<b>'+r[0]+'</b><span class="cmp-bars"><i class="a" style="width:'+r[1]+'%"></i><i class="b" style="width:'+r[2]+'%"></i></span><span class="d'+(diff!==0&&!good?' neg':'')+'">'+(diff>0?'+':'')+diff+'</span>';cmp.appendChild(row)});
+    var key=document.createElement('div');key.className='cmp-key';key.innerHTML='<span style="--k:#E8C46B">'+(k==='practice'?'Practice days':k==='micro'?'Microdose days':'Macrodose days')+'</span><span style="--k:rgba(255,255,255,.28)">Their other days</span>';cmp.appendChild(key);
+    cap.textContent='Evening readings, 0–100 · '+c.n+' · lower stress is better.'}
+  if(cmp){drawC('practice');document.querySelectorAll('.rchip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.rchip').forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});drawC(b.dataset.s)})})}
+  // researcher change from start (pretend)
+  var rc=document.getElementById('r-chart');
+  if(rc){var G=[{l:'Practice + microdose',n:'812',c:'#E8C46B',v:[0,4,7,9,11]},{l:'Practice only',n:'1,406',c:'#B58BF0',v:[0,3,5,7,8]},{l:'Microdose only',n:'377',c:'#6FB7E8',v:[0,2,3,3,4]},{l:'Neither',n:'645',c:'#9B90AE',v:[0,1,1,2,2]}];
+    line(rc,G.map(function(g){return{v:g.v,c:g.c,dot:1}}),{n:5,h:220,ymin:-2,ymax:13,ticks:[0,5,10],sign:1,xl:[[0,'Start'],[1,'Wk 5–8'],[2,'Wk 9–12'],[3,'Wk 13–26'],[4,'Wk 27–52']],base:0,anim:true});
+    document.getElementById('r-legend').innerHTML=G.map(function(g){return'<span><i style="--k:'+g.c+'"></i>'+g.l+' · '+g.n+'</span>'}).join('')}
+})();
+</script>
 <script>
 (function(){
   var d=document.getElementById('ben-therapy');if(!d)return;
