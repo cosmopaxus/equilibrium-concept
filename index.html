@@ -660,19 +660,16 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
       <article class="vpanel member-v">
         <header class="vhead"><span class="vtag mem">Member view</span><h3>One member, over months</h3><p>Private to her. Synced across her devices.</p></header>
 
-        <div class="vcard compasscard">
-          <div class="vcard-h"><b>Compass</b><span id="cx-title">Pointing to Earth</span></div>
-          <div class="cx-grid">
-            <svg id="cx" viewBox="-44 -32 408 390" role="img" aria-label="Compass dial: four elements with this week's evening readings, the three weeks before as gold outlines, and a needle pointing to the element that needs her most."></svg>
-            <div class="cx-side" aria-live="polite">
-              <p class="cx-week" id="cx-week">This week · 5 evening check-ins</p>
-              <p><b>Why:</b> <span id="cx-why"></span></p>
-              <p><b>Practice to match:</b> <span id="cx-prac"></span></p>
-              <p class="pastnote">Gold outlines: the 3 weeks before. Tap a week to see how the needle moved.</p>
+        <div class="vcard realcard">
+          <div class="vcard-h"><b>Compass</b><span>the real screen</span></div>
+          <div class="realgrid">
+            <a href="img/alpha-compass.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass.jpg" alt="The Compass in the working alpha: pointing to Earth this week, with fire, air, water and earth readings from the last 7 days of evening check-ins." width="760" height="893" loading="lazy"></a>
+            <div class="realside">
+              <p><b>Reads her evening check-ins.</b> No extra questions.</p>
+              <p><b>Points to the element that needs her most</b>, says why, and offers a practice to match.</p>
+              <p class="pastnote">Gold rings show the 3 weeks before, so change over time stays visible.</p>
             </div>
           </div>
-          <div class="cx-weeks" role="group" aria-label="Week" id="cx-weeks"></div>
-          <div class="cx-foot"><button type="button" class="mchip" id="cx-play">Play 8 weeks</button><span class="cap">Pretend member. Same reading rules as the app: mood → Water, energy → Fire, focus → Air, sleep → Earth.</span></div>
         </div>
 
         <div class="vcard">
@@ -686,8 +683,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <p class="cap">Pretend member, 6 months. Weekly score, 0–100. Dashed line: her starting point. Dips are normal.</p>
         </div>
 
-        <div class="strip three">
-          <figure><a href="img/alpha-compass.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass.jpg" alt="The Compass in the working alpha: pointing to Earth this week." width="760" height="893" loading="lazy"></a><figcaption><b>Compass</b>This week's pull</figcaption></figure>
+        <div class="strip">
           <figure><a href="img/alpha-compass-over-time.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass-over-time.jpg" alt="Compass over time in the alpha: where the needle pointed each of the last 8 weeks, with a week-by-week strip." width="760" height="1193" loading="lazy"></a><figcaption><b>Compass over time</b>Where the needle pointed, week by week</figcaption></figure>
           <figure><a href="img/alpha-then-vs-now.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-then-vs-now.jpg" alt="Then vs now in the alpha: starting point beside the last 4 weeks, well-being +14.7, with a trend line." width="760" height="1343" loading="lazy"></a><figcaption><b>Then vs now</b>Her start beside her recent weeks</figcaption></figure>
         </div>
