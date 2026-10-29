@@ -398,6 +398,47 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .member.touched .reset{visibility:visible}
 .member small{white-space:nowrap}
 @media(max-width:1000px){.members.three-up{grid-template-columns:1fr}}
+
+/* interactive compass */
+.cx-grid{display:grid;grid-template-columns:minmax(200px,1fr) 1fr;gap:16px;align-items:center}
+#cx{width:100%;height:auto;max-width:360px;justify-self:center}
+.cx-face{fill:#1B1236;stroke:#3A2A5C;stroke-width:1.5}
+.cx-tick{stroke:#4A3A6E;stroke-width:1.2}
+.cx-past{fill:none;stroke:#E8C46B;stroke-width:2;stroke-dasharray:4 3;opacity:.75}
+.cx-now{opacity:.92;transition:d .5s}
+.cx-val{font:800 14px var(--body);fill:#F3EEFA}
+.cx-name{font:800 15px var(--body)}
+.cx-read{font:700 12px var(--body);fill:#B5A9CA}
+.cx-hubring{fill:#22174A;stroke:#C8A25A;stroke-width:1.5}
+.cx-hub{fill:#E8C46B}
+.cx-nn{fill:#E8C46B}.cx-ns{fill:#6D5F92}
+.cx-needle{transform-origin:160px 160px;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.cx-side{display:grid;gap:10px;font-size:14.5px}.cx-side b{font-weight:800}
+.cx-week{font-weight:800;color:var(--plum)}
+.cx-weeks{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.cx-wk{font:700 12px var(--body);padding:5px 10px;border-radius:999px;border:1.5px solid var(--line);background:var(--plate);color:var(--ink);cursor:pointer}
+.cx-wk.on{background:var(--plum);border-color:var(--plum);color:var(--plate)}
+.cx-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+.cx-foot .cap{margin:0}
+.strip.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+/* researcher tabs */
+.rtabs button{font:800 12.5px var(--body);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#BFB2D3;background:transparent;cursor:pointer}
+.rtabs button:hover{border-color:#E8C46B;color:#F3D88E}
+.rtabs button.on{background:rgba(232,196,107,.18);border-color:#E8C46B;color:#F3D88E}
+.rtabs button:focus-visible{outline:3px solid #E8C46B;outline-offset:2px}
+.rpane[hidden]{display:none}
+.ov-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.ov-stats div{background:rgba(255,255,255,.06);border-radius:12px;padding:10px 12px}
+.ov-stats b{display:block;font-family:var(--display);font-size:22px;color:#F3D88E;font-weight:600}
+.ov-stats span{font-size:12px;color:#BFB2D3}
+.pat{display:grid;gap:10px}
+.pat-row{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;font-size:13.5px}
+.pat-row b{text-align:right;font-weight:800;color:#F3EEFA}
+.pat-bar{height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.pat-bar i{display:block;height:100%;border-radius:999px;transition:width .5s cubic-bezier(.22,1,.36,1)}
+.rep{margin:0 0 14px;padding-left:20px;display:grid;gap:8px;font-size:14px;color:#E7DDF2}.rep b{color:#fff}
+@media(max-width:560px){.cx-grid{grid-template-columns:1fr}.strip.three{grid-template-columns:1fr 1fr}.pat-row{grid-template-columns:110px 1fr 40px}}
+@media (prefers-reduced-motion:reduce){.cx-needle,.pat-bar i{transition:none}}
 </style>
 </head>
 <body>
@@ -604,16 +645,19 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
       <article class="vpanel member-v">
         <header class="vhead"><span class="vtag mem">Member view</span><h3>One member, over months</h3><p>Private to her. Synced across her devices.</p></header>
 
-        <div class="vcard realcard">
-          <div class="vcard-h"><b>Compass</b><span>the real screen</span></div>
-          <div class="realgrid">
-            <a href="img/alpha-compass.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass.jpg" alt="The Compass in the working alpha: pointing to Earth this week, with fire, air, water and earth readings from the last 7 days of evening check-ins." width="760" height="893" loading="lazy"></a>
-            <div class="realside">
-              <p><b>Reads her evening check-ins.</b> No extra questions.</p>
-              <p><b>Points to the element that needs her most</b>, says why, and offers a practice to match.</p>
-              <p class="pastnote">Gold rings show the 3 weeks before, so change over time stays visible.</p>
+        <div class="vcard compasscard">
+          <div class="vcard-h"><b>Compass</b><span id="cx-title">Pointing to Earth</span></div>
+          <div class="cx-grid">
+            <svg id="cx" viewBox="-44 -32 408 390" role="img" aria-label="Compass dial: four elements with this week's evening readings, the three weeks before as gold outlines, and a needle pointing to the element that needs her most."></svg>
+            <div class="cx-side" aria-live="polite">
+              <p class="cx-week" id="cx-week">This week · 5 evening check-ins</p>
+              <p><b>Why:</b> <span id="cx-why"></span></p>
+              <p><b>Practice to match:</b> <span id="cx-prac"></span></p>
+              <p class="pastnote">Gold outlines: the 3 weeks before. Tap a week to see how the needle moved.</p>
             </div>
           </div>
+          <div class="cx-weeks" role="group" aria-label="Week" id="cx-weeks"></div>
+          <div class="cx-foot"><button type="button" class="mchip" id="cx-play">Play 8 weeks</button><span class="cap">Pretend member. Same reading rules as the app: mood → Water, energy → Fire, focus → Air, sleep → Earth.</span></div>
         </div>
 
         <div class="vcard">
@@ -627,7 +671,8 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <p class="cap">Pretend member, 6 months. Weekly score, 0–100. Dashed line: her starting point. Dips are normal.</p>
         </div>
 
-        <div class="strip">
+        <div class="strip three">
+          <figure><a href="img/alpha-compass.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass.jpg" alt="The Compass in the working alpha: pointing to Earth this week." width="760" height="893" loading="lazy"></a><figcaption><b>Compass</b>This week's pull</figcaption></figure>
           <figure><a href="img/alpha-compass-over-time.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-compass-over-time.jpg" alt="Compass over time in the alpha: where the needle pointed each of the last 8 weeks, with a week-by-week strip." width="760" height="1193" loading="lazy"></a><figcaption><b>Compass over time</b>Where the needle pointed, week by week</figcaption></figure>
           <figure><a href="img/alpha-then-vs-now.jpg" class="zoom" target="_blank" rel="noopener" aria-label="Open full size"><img src="img/alpha-then-vs-now.jpg" alt="Then vs now in the alpha: starting point beside the last 4 weeks, well-being +14.7, with a trend line." width="760" height="1343" loading="lazy"></a><figcaption><b>Then vs now</b>Her start beside her recent weeks</figcaption></figure>
         </div>
@@ -638,9 +683,27 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
       <article class="vpanel research-v">
         <header class="vhead"><span class="vtag res">Researcher view</span><h3>3,240 members · 26 weeks</h3><p>For approved partners. Groups of 10+ only.</p></header>
 
-        <div class="rtabs" aria-hidden="true"><span>Overview</span><span class="on">Compare</span><span>Change</span><span>Patterns</span><span>Report</span></div>
+        <div class="rtabs" role="tablist" aria-label="Researcher view">
+          <button type="button" role="tab" data-t="overview" aria-selected="false">Overview</button>
+          <button type="button" role="tab" data-t="compare" aria-selected="true" class="on">Compare</button>
+          <button type="button" role="tab" data-t="change" aria-selected="false">Change</button>
+          <button type="button" role="tab" data-t="patterns" aria-selected="false">Patterns</button>
+          <button type="button" role="tab" data-t="report" aria-selected="false">Report</button>
+        </div>
 
-        <div class="vcard">
+        <div class="vcard rpane" data-p="overview" hidden>
+          <div class="vcard-h"><b>Weekly averages</b><span>everyone who shared</span></div>
+          <div class="ov-stats"><div><b>3,240</b><span>people who shared</span></div><div><b>26</b><span>weeks with data</span></div><div><b>61k</b><span>evening check-ins</span></div></div>
+          <div class="chips-row" role="group" aria-label="Reading">
+            <button type="button" class="rchip ochip on" data-o="mood" aria-pressed="true">Mood</button>
+            <button type="button" class="rchip ochip" data-o="sleep" aria-pressed="false">Sleep</button>
+            <button type="button" class="rchip ochip" data-o="stress" aria-pressed="false">Stress</button>
+          </div>
+          <svg class="linechart" id="r-ov" viewBox="0 0 520 200" role="img" aria-label="Weekly average across all members who shared, over 26 weeks."></svg>
+          <p class="cap">Evening reading, 0–100, averaged each week.</p>
+        </div>
+
+        <div class="vcard rpane" data-p="compare">
           <div class="vcard-h"><b>Compare days</b><span>each person vs themselves</span></div>
           <div class="chips-row" role="group" aria-label="Compare">
             <button type="button" class="rchip on" data-s="practice" aria-pressed="true">Practice days</button>
@@ -651,10 +714,40 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <p class="cap" id="r-cmp-cap">Evening readings, 0–100, vs the same people's other days.</p>
         </div>
 
-        <div class="vcard">
-          <div class="vcard-h"><b>Change from each person's start</b><span>WHO-5 well-being</span></div>
-          <svg class="linechart" id="r-chart" viewBox="0 0 520 220" role="img" aria-label="Average change in WHO-5 well-being from each person's start, by weeks since starting, for four groups."></svg>
+        <div class="vcard rpane" data-p="change" hidden>
+          <div class="vcard-h"><b>Change from each person's start</b><span id="r-ch-label">WHO-5 well-being</span></div>
+          <div class="chips-row" role="group" aria-label="Scale">
+            <button type="button" class="rchip cchip on" data-c="who5" aria-pressed="true">WHO-5</button>
+            <button type="button" class="rchip cchip" data-c="phq2" aria-pressed="false">PHQ-2</button>
+            <button type="button" class="rchip cchip" data-c="gad2" aria-pressed="false">GAD-2</button>
+            <button type="button" class="rchip cchip" data-c="sleep" aria-pressed="false">Sleep</button>
+          </div>
+          <svg class="linechart" id="r-chart" viewBox="0 0 520 220" role="img" aria-label="Average change from each person's start, by weeks since starting, for four groups."></svg>
           <div class="legend" id="r-legend"></div>
+          <p class="cap" id="r-ch-cap"></p>
+        </div>
+
+        <div class="vcard rpane" data-p="patterns" hidden>
+          <div class="vcard-h"><b>What pairs with success</b><span>per person, per week</span></div>
+          <div class="chips-row" role="group" aria-label="Measure">
+            <button type="button" class="rchip pchip on" data-q="steps" aria-pressed="true">Steps done</button>
+            <button type="button" class="rchip pchip" data-q="wins" aria-pressed="false">Wins</button>
+            <button type="button" class="rchip pchip" data-q="goals" aria-pressed="false">Goals reached</button>
+          </div>
+          <div class="pat" id="r-pat"></div>
+          <p class="cap">Average per person in each kind of week. Practice week = 3+ practice days.</p>
+        </div>
+
+        <div class="vcard rpane" data-p="report" hidden>
+          <div class="vcard-h"><b>Report</b><span>printable · CSV</span></div>
+          <ol class="rep">
+            <li><b>Practice days:</b> evening mood +7 vs the same people's other days (2,910 people).</li>
+            <li><b>Well-being:</b> WHO-5 +11 by weeks 27–52 for practice + microdose, +8 for practice only.</li>
+            <li><b>Steps and wins:</b> highest in weeks with steady practice.</li>
+            <li><b>Read with care:</b> patterns, not proof. Groups of 10+ only.</li>
+          </ol>
+          <button type="button" class="btn gold sm" id="r-csv"><svg aria-hidden="true"><use href="#i-file"/></svg>Download a sample CSV</button>
+          <p class="cap">The sample file holds the pretend aggregates shown here, never rows or people.</p>
         </div>
 
         <div class="strip dark">
@@ -668,7 +761,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <li><svg aria-hidden="true"><use href="#i-shield"/></svg>No names, rows or journal text</li>
           <li><svg aria-hidden="true"><use href="#i-file"/></svg>Printable report and summary CSV</li>
         </ul>
-        <p class="built">Built into the alpha: Overview, Compare, Change, Patterns and Report tabs, answered inside the database. The charts above show how it reads at a few thousand people.</p>
+        <p class="built">Built into the alpha: Overview, Compare, Change, Patterns and Report tabs, answered inside the database. Tap the tabs above to see each one at a few thousand people.</p>
       </article>
     </div>
   </div>
@@ -826,12 +919,75 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
     row.innerHTML='<b>'+r[0]+'</b><span class="cmp-bars"><i class="a" style="width:'+r[1]+'%"></i><i class="b" style="width:'+r[2]+'%"></i></span><span class="d'+(diff!==0&&!good?' neg':'')+'">'+(diff>0?'+':'')+diff+'</span>';cmp.appendChild(row)});
     var key=document.createElement('div');key.className='cmp-key';key.innerHTML='<span style="--k:#E8C46B">'+(k==='practice'?'Practice days':k==='micro'?'Microdose days':'Macrodose days')+'</span><span style="--k:rgba(255,255,255,.28)">Their other days</span>';cmp.appendChild(key);
     cap.textContent='Evening readings, 0–100 · '+c.n+' · lower stress is better.'}
-  if(cmp){drawC('practice');document.querySelectorAll('.rchip').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.rchip').forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});drawC(b.dataset.s)})})}
-  // researcher change from start (pretend)
+  if(cmp){drawC('practice');document.querySelectorAll('.rchip[data-s]').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.rchip[data-s]').forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});drawC(b.dataset.s)})})}
+  // researcher: change from start, by scale (pretend)
   var rc=document.getElementById('r-chart');
-  if(rc){var G=[{l:'Practice + microdose',n:'812',c:'#E8C46B',v:[0,4,7,9,11]},{l:'Practice only',n:'1,406',c:'#B58BF0',v:[0,3,5,7,8]},{l:'Microdose only',n:'377',c:'#6FB7E8',v:[0,2,3,3,4]},{l:'Neither',n:'645',c:'#9B90AE',v:[0,1,1,2,2]}];
-    line(rc,G.map(function(g){return{v:g.v,c:g.c,dot:1}}),{n:5,h:220,ymin:-2,ymax:13,ticks:[0,5,10],sign:1,xl:[[0,'Start'],[1,'Wk 5–8'],[2,'Wk 9–12'],[3,'Wk 13–26'],[4,'Wk 27–52']],base:0,anim:true});
-    document.getElementById('r-legend').innerHTML=G.map(function(g){return'<span><i style="--k:'+g.c+'"></i>'+g.l+' · '+g.n+'</span>'}).join('')}
+  var CH={who5:{label:'WHO-5 well-being',cap:'Higher is better. Average change from each person’s own start.',lo:-2,hi:13,t:[0,5,10],g:[[0,4,7,9,11],[0,3,5,7,8],[0,2,3,3,4],[0,1,1,2,2]]},
+          phq2:{label:'PHQ-2 low mood',cap:'Lower is better. Average change from each person’s own start.',lo:-1.6,hi:.4,t:[0,-.5,-1],g:[[0,-.4,-.8,-1.1,-1.3],[0,-.3,-.6,-.8,-.9],[0,-.2,-.3,-.4,-.4],[0,-.1,-.1,-.2,-.2]]},
+          gad2:{label:'GAD-2 worry',cap:'Lower is better. Average change from each person’s own start.',lo:-1.6,hi:.4,t:[0,-.5,-1],g:[[0,-.3,-.7,-.9,-1.1],[0,-.3,-.6,-.8,-.9],[0,-.1,-.2,-.3,-.3],[0,0,-.1,-.1,-.2]]},
+          sleep:{label:'Sleep',cap:'Higher is better. Weekly sleep score, change from each person’s own start.',lo:-2,hi:10,t:[0,4,8],g:[[0,3,5,6,7],[0,2,4,5,6],[0,1,1,2,2],[0,0,1,1,1]]}};
+  var GR=[{l:'Practice + microdose',n:'812',c:'#E8C46B'},{l:'Practice only',n:'1,406',c:'#B58BF0'},{l:'Microdose only',n:'377',c:'#6FB7E8'},{l:'Neither',n:'645',c:'#9B90AE'}];
+  function drawCh(k){var c=CH[k];line(rc,c.g.map(function(v,i){return{v:v,c:GR[i].c,dot:1}}),{n:5,h:220,ymin:c.lo,ymax:c.hi,ticks:c.t,sign:1,xl:[[0,'Start'],[1,'Wk 5–8'],[2,'Wk 9–12'],[3,'Wk 13–26'],[4,'Wk 27–52']],base:0,anim:true});
+    document.getElementById('r-ch-label').textContent=c.label;document.getElementById('r-ch-cap').textContent=c.cap}
+  if(rc){document.getElementById('r-legend').innerHTML=GR.map(function(g){return'<span><i style="--k:'+g.c+'"></i>'+g.l+' · '+g.n+'</span>'}).join('');drawCh('who5');
+    chipGroup('.cchip',function(b){drawCh(b.dataset.c)})}
+  function chipGroup(sel,fn){var bs=document.querySelectorAll(sel);bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(o){o.classList.toggle('on',o===b);o.setAttribute('aria-pressed',o===b)});fn(b)})})}
+  // overview (pretend)
+  var ov=document.getElementById('r-ov');
+  var OV={mood:series(55,7,5,3),sleep:series(58,5,9,3),stress:series(47,-6,13,3)};
+  function drawOv(k){line(ov,[{v:OV[k],c:'#E8C46B',area:1,dot:1}],{n:26,ymin:30,ymax:75,ticks:[40,50,60,70],xl:[[0,'May'],[8,'Jul'],[17,'Sep'],[25,'Oct']],anim:true})}
+  if(ov){drawOv('mood');chipGroup('.ochip',function(b){drawOv(b.dataset.o)})}
+  // patterns (pretend)
+  var PT={steps:{u:'steps',v:[4.6,3.8,2.1,1.6]},wins:{u:'wins',v:[2.4,2.1,1.2,0.9]},goals:{u:'goals',v:[0.42,0.36,0.18,0.12]}};
+  var PL=['Practice + dose week','Practice week','Dose-only week','Neither'],PC=['#E8C46B','#B58BF0','#6FB7E8','#9B90AE'];
+  var pat=document.getElementById('r-pat');
+  function drawPat(k){var d=PT[k],mx=Math.max.apply(null,d.v);pat.innerHTML=d.v.map(function(v,i){return'<div class="pat-row"><span>'+PL[i]+'</span><span class="pat-bar"><i style="width:'+(v/mx*100).toFixed(1)+'%;background:'+PC[i]+'"></i></span><b>'+v+'</b></div>'}).join('')}
+  if(pat){drawPat('steps');chipGroup('.pchip',function(b){drawPat(b.dataset.q)})}
+  // report CSV (pretend aggregates)
+  var csvb=document.getElementById('r-csv');
+  if(csvb)csvb.addEventListener('click',function(){var rows=[['view','group','reading','value','people'],['compare','practice days','mood',64,2910],['compare','other days','mood',57,2910],['change wk 27-52','practice + microdose','who5',11,812],['change wk 27-52','practice only','who5',8,1406],['change wk 27-52','microdose only','who5',4,377],['change wk 27-52','neither','who5',2,645],['patterns','practice week','steps',3.8,'10+']];
+    var t='# Equilibrium sample report: PRETEND data for illustration only\n'+rows.map(function(r){return r.join(',')}).join('\n');var u=URL.createObjectURL(new Blob([t],{type:'text/csv'}));var a=document.createElement('a');a.href=u;a.download='equilibrium-sample-report.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)});
+  // tabs
+  var tabs=document.querySelectorAll('.rtabs [role=tab]'),panes=document.querySelectorAll('.rpane');
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(o){var on=o===t;o.classList.toggle('on',on);o.setAttribute('aria-selected',on)});panes.forEach(function(p){p.hidden=p.dataset.p!==t.dataset.t});
+    if(t.dataset.t==='change'){var c=document.querySelector('.cchip.on');drawCh(c?c.dataset.c:'who5')}if(t.dataset.t==='overview'){var o=document.querySelector('.ochip.on');drawOv(o?o.dataset.o:'mood')}})});
+  // compass dial (pretend 8 weeks, app's mapping: energy→Fire, focus→Air, mood→Water, sleep→Earth)
+  var cx=document.getElementById('cx');
+  if(cx){
+    var EL=[{k:'Fire',r:'energy',a:0,c:'#E8955A',p:'Energizing breath, 5 minutes'},{k:'Air',r:'focus',a:90,c:'#B9A6E8',p:'Listening, 5 minutes'},{k:'Water',r:'mood',a:180,c:'#7FB3E0',p:'Three thanks'},{k:'Earth',r:'sleep',a:270,c:'#8FC27A',p:'A mindful walk, 10 minutes'}];
+    var W=[[5.2,6.0,6.4,5.6],[5.5,5.8,6.1,5.0],[6.0,6.2,5.4,5.8],[5.1,6.4,6.6,6.0],[6.2,6.0,5.6,6.1],[5.8,5.4,6.8,6.3],[6.4,6.1,7.0,5.6],[6.5,6.0,7.5,5.3]];
+    var labels=['Sep 4','Sep 11','Sep 18','Sep 25','Oct 2','Oct 9','Oct 16','This week'];
+    var CC=160,R0=46,K=10;
+    function pol(r,deg){var t=(deg-90)*Math.PI/180;return[CC+r*Math.cos(t),CC+r*Math.sin(t)]}
+    function wedge(r1,r2,a0,a1){var p1=pol(r1,a0),p2=pol(r2,a0),p3=pol(r2,a1),p4=pol(r1,a1);return'M'+p1+' L'+p2+' A'+r2+' '+r2+' 0 0 1 '+p3+' L'+p4+' A'+r1+' '+r1+' 0 0 0 '+p1+' Z'}
+    function arc(r,a0,a1){var p1=pol(r,a0),p2=pol(r,a1);return'M'+p1+' A'+r+' '+r+' 0 0 1 '+p2}
+    el('circle',{cx:CC,cy:CC,r:150,'class':'cx-face'},cx);
+    for(var i=0;i<72;i++){var a=i*5,o=pol(150,a),n=pol(i%18===0?138:144,a);el('line',{x1:o[0],y1:o[1],x2:n[0],y2:n[1],'class':'cx-tick'},cx)}
+    var gPast=el('g',{},cx),gNow=el('g',{},cx),gLab=el('g',{},cx);
+    EL.forEach(function(e){var lp=pol(e.a===0||e.a===180?132:128,e.a);var t=el('text',{x:lp[0],y:lp[1]+(e.a===0?-2:e.a===180?10:4),'class':'cx-lab','text-anchor':e.a===90?'start':e.a===270?'end':'middle'},gLab);t.textContent='';});
+    var needle=el('g',{'class':'cx-needle'},cx);el('path',{d:'M160 160 L153 153 L160 62 L167 153 Z','class':'cx-nn'},needle);el('path',{d:'M160 160 L153 167 L160 230 L167 167 Z','class':'cx-ns'},needle);
+    el('circle',{cx:CC,cy:CC,r:R0-4,'class':'cx-hubring'},cx);el('circle',{cx:CC,cy:CC,r:7,'class':'cx-hub'},cx);
+    var wk=document.getElementById('cx-weeks'),cur=7,timer=null;
+    labels.forEach(function(l,i){var b=document.createElement('button');b.type='button';b.className='cx-wk';b.textContent=l;b.addEventListener('click',function(){stop();show(i)});wk.appendChild(b)});
+    function show(w){cur=w;var v=W[w];while(gPast.firstChild)gPast.removeChild(gPast.firstChild);while(gNow.firstChild)gNow.removeChild(gNow.firstChild);while(gLab.firstChild)gLab.removeChild(gLab.firstChild);
+      EL.forEach(function(e,j){for(var q=Math.max(0,w-3);q<w;q++){el('path',{d:arc(R0+W[q][j]*K,e.a-24,e.a+24),'class':'cx-past'},gPast)}
+        el('path',{d:wedge(R0+2,R0+v[j]*K,e.a-24,e.a+24),fill:e.c,'class':'cx-now'},gNow);
+        var lp=pol(R0+v[j]*K+12,e.a);var t=el('text',{x:lp[0],y:lp[1]+4,'class':'cx-val','text-anchor':'middle'},gLab);t.textContent=v[j].toFixed(1);
+        var P={0:[160,-12,'middle'],90:[316,152,'start'],180:[160,340,'middle'],270:[4,152,'end']}[e.a];
+        var nm=el('text',{x:P[0],y:P[1],'class':'cx-name','text-anchor':P[2],fill:e.c},gLab);nm.textContent=e.k;
+        var rd=el('text',{x:P[0],y:P[1]+13,'class':'cx-read','text-anchor':P[2]},gLab);rd.textContent=e.r});
+      var lo=0;v.forEach(function(x,j){if(x<v[lo])lo=j});var e=EL[lo];
+      needle.style.transform='rotate('+e.a+'deg)';
+      document.getElementById('cx-title').textContent='Pointing to '+e.k;
+      document.getElementById('cx-why').textContent=e.r.charAt(0).toUpperCase()+e.r.slice(1)+' '+v[lo].toFixed(1)+' of 10, her lowest '+(w===7?'this week':'that week')+'.';
+      document.getElementById('cx-prac').textContent=e.p+'.';
+      document.getElementById('cx-week').textContent=(w===7?'This week':'Week of '+labels[w])+' · '+(4+(w%3))+' evening check-ins';
+      wk.querySelectorAll('.cx-wk').forEach(function(b,i){b.classList.toggle('on',i===w);b.setAttribute('aria-pressed',i===w)})}
+    var play=document.getElementById('cx-play');
+    function stop(){if(timer){clearInterval(timer);timer=null;play.textContent='Play 8 weeks'}}
+    play.addEventListener('click',function(){if(timer){stop();return}var i=0;show(0);play.textContent='Pause';timer=setInterval(function(){i++;if(i>7){stop();return}show(i)},900)});
+    show(7);
+  }
 })();
 </script>
 <script>
