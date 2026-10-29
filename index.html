@@ -439,6 +439,21 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .rep{margin:0 0 14px;padding-left:20px;display:grid;gap:8px;font-size:14px;color:#E7DDF2}.rep b{color:#fff}
 @media(max-width:560px){.cx-grid{grid-template-columns:1fr}.strip.three{grid-template-columns:1fr 1fr}.pat-row{grid-template-columns:110px 1fr 40px}}
 @media (prefers-reduced-motion:reduce){.cx-needle,.pat-bar i{transition:none}}
+
+.ins{border-color:#E8C46B !important;background:linear-gradient(140deg,rgba(104,53,154,.55),rgba(42,26,76,.85)) !important}
+.ins-ey{text-transform:uppercase;letter-spacing:.13em;font-size:10.5px;font-weight:800;color:#F3D88E}
+.ins h4{font-family:var(--display);font-weight:600;font-size:clamp(20px,2.1vw,24px);margin:6px 0 8px;color:#fff;line-height:1.15}
+.ins-lead{color:#CFC4DA;font-size:14px;margin-bottom:12px}
+.ins-row{display:grid;grid-template-columns:minmax(120px,190px) 1fr 40px;gap:10px;align-items:center;font-size:13.5px;margin:8px 0;color:#EEE7F8}
+.ins-row b{text-align:right;font-weight:800;font-size:16px;color:#fff}
+.ins-bar{height:14px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.ins-bar i{display:block;height:100%;width:var(--w);border-radius:999px}
+@media (prefers-reduced-motion:no-preference){.ins-slide.in .ins-bar i{animation:grow .8s cubic-bezier(.22,1,.36,1) both}@keyframes grow{from{width:0}to{width:var(--w)}}}
+.ins-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:10px}
+.ins-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#F3D88E;font-size:22px;line-height:1;cursor:pointer}
+.ins-btn:hover{border-color:#E8C46B}
+.ins-dots{display:flex;gap:8px}.ins-dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer}.ins-dots i.on{background:#E8C46B}
+.ins-slide[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -684,11 +699,44 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
         <header class="vhead"><span class="vtag res">Researcher view</span><h3>3,240 members · 26 weeks</h3><p>For approved partners. Groups of 10+ only.</p></header>
 
         <div class="rtabs" role="tablist" aria-label="Researcher view">
+          <button type="button" role="tab" data-t="insights" aria-selected="true" class="on">Insights</button>
           <button type="button" role="tab" data-t="overview" aria-selected="false">Overview</button>
-          <button type="button" role="tab" data-t="compare" aria-selected="true" class="on">Compare</button>
+          <button type="button" role="tab" data-t="compare" aria-selected="false">Compare</button>
           <button type="button" role="tab" data-t="change" aria-selected="false">Change</button>
           <button type="button" role="tab" data-t="patterns" aria-selected="false">Patterns</button>
           <button type="button" role="tab" data-t="report" aria-selected="false">Report</button>
+        </div>
+
+        <div class="vcard rpane ins" data-p="insights">
+          <div class="vcard-h"><b>Insights</b><span>patterns, not proof</span></div>
+          <div class="ins-track" aria-live="polite">
+            <div class="ins-slide" data-i="0" role="group" aria-roledescription="slide" aria-label="1 of 3">
+              <p class="ins-ey">Insight 1 of 3 · The lock, at scale</p>
+              <h4>Non-responders who added one dial caught up</h4>
+              <p class="ins-lead">Microdose-only members with no change by week 12 (215 people):</p>
+              <div class="ins-row"><span>Added breath or therapy</span><span class="ins-bar"><i style="--w:90%;background:#E8C46B"></i></span><b>+6</b></div><div class="ins-row"><span>Kept the same mix</span><span class="ins-bar"><i style="--w:15%;background:#9B90AE"></i></span><b>+1</b></div>
+              <p class="cap">WHO-5 change over the next 12 weeks · pretend data, an example of what the research could show</p>
+            </div>
+            <div class="ins-slide" data-i="1" hidden role="group" aria-roledescription="slide" aria-label="2 of 3">
+              <p class="ins-ey">Insight 2 of 3 · Timing</p>
+              <h4>The day after a dose matters most</h4>
+              <p class="ins-lead">Practice on the day after a dose vs practice on other days (1,040 people):</p>
+              <div class="ins-row"><span>Practice the day after</span><span class="ins-bar"><i style="--w:80%;background:#E8C46B"></i></span><b>+9</b></div><div class="ins-row"><span>Practice other days</span><span class="ins-bar"><i style="--w:45%;background:#B58BF0"></i></span><b>+5</b></div>
+              <p class="cap">Next-week mood vs each person’s own average · pretend data, an example of what the research could show</p>
+            </div>
+            <div class="ins-slide" data-i="2" hidden role="group" aria-roledescription="slide" aria-label="3 of 3">
+              <p class="ins-ey">Insight 3 of 3 · More isn’t better</p>
+              <h4>Consistency beat dose frequency</h4>
+              <p class="ins-lead">WHO-5 change at 6 months:</p>
+              <div class="ins-row"><span>Micro 2×/wk + steady practice</span><span class="ins-bar"><i style="--w:85%;background:#E8C46B"></i></span><b>+10</b></div><div class="ins-row"><span>Practice only</span><span class="ins-bar"><i style="--w:65%;background:#B58BF0"></i></span><b>+8</b></div><div class="ins-row"><span>Micro 4×/wk, little practice</span><span class="ins-bar"><i style="--w:35%;background:#6FB7E8"></i></span><b>+4</b></div>
+              <p class="cap">Groups of 10+ · pretend data, an example of what the research could show</p>
+            </div>
+          </div>
+          <div class="ins-nav">
+            <button type="button" class="ins-btn" data-d="-1" aria-label="Previous insight">‹</button>
+            <span class="ins-dots"><i class="on"></i><i></i><i></i></span>
+            <button type="button" class="ins-btn" data-d="1" aria-label="Next insight">›</button>
+          </div>
         </div>
 
         <div class="vcard rpane" data-p="overview" hidden>
@@ -703,7 +751,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
           <p class="cap">Evening reading, 0–100, averaged each week.</p>
         </div>
 
-        <div class="vcard rpane" data-p="compare">
+        <div class="vcard rpane" data-p="compare" hidden>
           <div class="vcard-h"><b>Compare days</b><span>each person vs themselves</span></div>
           <div class="chips-row" role="group" aria-label="Compare">
             <button type="button" class="rchip on" data-s="practice" aria-pressed="true">Practice days</button>
@@ -947,6 +995,11 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   var csvb=document.getElementById('r-csv');
   if(csvb)csvb.addEventListener('click',function(){var rows=[['view','group','reading','value','people'],['compare','practice days','mood',64,2910],['compare','other days','mood',57,2910],['change wk 27-52','practice + microdose','who5',11,812],['change wk 27-52','practice only','who5',8,1406],['change wk 27-52','microdose only','who5',4,377],['change wk 27-52','neither','who5',2,645],['patterns','practice week','steps',3.8,'10+']];
     var t='# Equilibrium sample report: PRETEND data for illustration only\n'+rows.map(function(r){return r.join(',')}).join('\n');var u=URL.createObjectURL(new Blob([t],{type:'text/csv'}));var a=document.createElement('a');a.href=u;a.download='equilibrium-sample-report.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},1000)});
+  // insights carousel
+  (function(){var sl=document.querySelectorAll('.ins-slide'),dots=document.querySelectorAll('.ins-dots i'),i=0;if(!sl.length)return;
+    function go(n){i=(n+sl.length)%sl.length;sl.forEach(function(x,k){x.hidden=k!==i;if(k===i){x.classList.remove('in');void x.offsetWidth;x.classList.add('in')}});dots.forEach(function(d,k){d.classList.toggle('on',k===i)})}
+    document.querySelectorAll('.ins-btn').forEach(function(b){b.addEventListener('click',function(){go(i+ +b.dataset.d)})});
+    dots.forEach(function(d,k){d.addEventListener('click',function(){go(k)})});go(0)})();
   // tabs
   var tabs=document.querySelectorAll('.rtabs [role=tab]'),panes=document.querySelectorAll('.rpane');
   tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(o){var on=o===t;o.classList.toggle('on',on);o.setAttribute('aria-selected',on)});panes.forEach(function(p){p.hidden=p.dataset.p!==t.dataset.t});
