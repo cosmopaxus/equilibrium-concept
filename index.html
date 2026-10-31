@@ -468,6 +468,21 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 .knob .ptr{transform-box:view-box;transform-origin:32px 32px}
 .knob .arc{will-change:stroke-dasharray}
 .vhead .vtag{margin:0 6px 6px 0}.vtag.ex{background:rgba(237,178,90,.18);color:#F3C27A}.vtag.ex2{background:var(--warn-t);color:var(--warn)}
+
+/* system map video */
+.mapband{background:radial-gradient(circle at 50% 0%,rgba(128,68,187,.35),transparent 55%),linear-gradient(145deg,#120A26,#1E1240 60%,#2A1654);color:#EEE7F8}
+.mapband .eyebrow{color:#F3D88E}
+.mapband h2 em{color:#E8C46B}
+.mapband .sublead{color:#CFC4DA;margin-bottom:28px}
+.mapfig{position:relative;margin:0;display:grid;gap:12px}
+.mapfig video{display:block;width:100%;height:auto;border-radius:18px;border:1px solid rgba(255,255,255,.14);box-shadow:0 24px 60px rgba(8,3,24,.45);background:#120A26}
+.mapfig figcaption{font-size:13.5px;color:#B9ACCB;max-width:900px;margin:0 auto;text-align:center}
+.mapfig figcaption a{color:#F3D88E;font-weight:700;white-space:nowrap}
+.mapvid{position:relative;display:grid}
+@media(max-width:600px){.mapplay{position:static;justify-self:end;margin-top:8px}}
+.mapplay{position:absolute;bottom:12px;right:12px;font:800 12px var(--body);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(18,10,38,.6);color:#F3EEFA;cursor:pointer;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.mapplay:hover{border-color:#E8C46B}
+.mapplay:focus-visible{outline:3px solid #E8C46B;outline-offset:2px}
 </style>
 </head>
 <body>
@@ -527,7 +542,7 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 <header class="eqbar">
   <a class="brand" href="./" aria-label="Equilibrium home"><img src="icon.svg" alt="" width="34" height="34"><span><b>EQUILIBRIUM</b><small>Balance in motion</small></span></a>
   <nav aria-label="Site">
-    <a href="#lock">The model</a><a href="#views">Metrics</a><a href="#why">Why now</a><a href="#app">Working alpha</a><a href="states/">State fit</a><a href="full/">Full concept</a>
+    <a href="#lock">The model</a><a href="#views">Metrics</a><a href="#map">How it fits</a><a href="#why">Why now</a><a href="#app">Working alpha</a><a href="states/">State fit</a><a href="full/">Full concept</a>
     <a class="go" href="#connect">Get involved</a>
   </nav>
 </header>
@@ -825,6 +840,22 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   </div>
 </section>
 
+<!-- How it fits together -->
+<section class="band mapband" id="map" aria-labelledby="h-map">
+  <div class="inner">
+    <p class="eyebrow center">How it fits together</p>
+    <h2 id="h-map" class="center">One private record. <em>Many safe views.</em></h2>
+    <p class="sublead center">Organizations, studies, states and individuals all come in through their own consent pack. Everything lands in the member's private vault. Only a clear yes sends a de-identified copy on to research.</p>
+    <figure class="mapfig">
+      <div class="mapvid"><video id="map-video" muted loop playsinline preload="metadata" poster="media/system-map-poster.jpg" aria-describedby="map-desc" width="1280" height="720">
+        <source src="media/system-map.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="mapplay" id="map-play" aria-label="Pause the animation">Pause</button></div>
+      <figcaption id="map-desc">Four ways in (organizations, partner studies, states, anyone) → consent and study packs → the member's private vault (check-ins, goals, practice, dose tracker; synced, never sold) → a clear yes → a de-identified research copy (random ID, week only, numbers) → her own Then vs now, a partner's view of one study, and state reports in groups of 10 or more. <a href="media/system-map.mp4" target="_blank" rel="noopener">Open full size</a></figcaption>
+    </figure>
+  </div>
+</section>
+
 <!-- Why now -->
 <section class="band whyband" id="why" aria-labelledby="h-why">
   <div class="inner split">
@@ -1095,6 +1126,17 @@ button.dial:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
   var ready=false;setTimeout(function(){ready=true},14300);
   function again(){if(!ready)return;ready=false;m.classList.remove('again');void m.offsetWidth;m.classList.add('again');setTimeout(function(){ready=true},8000)}
   c.addEventListener('pointerenter',again);c.addEventListener('click',again);
+})();
+</script>
+<script>
+(function(){
+  var v=document.getElementById('map-video'),b=document.getElementById('map-play');if(!v||!b)return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches,userPaused=reduce;
+  function label(){var p=v.paused;b.textContent=p?'Play':'Pause';b.setAttribute('aria-label',p?'Play the animation':'Pause the animation')}
+  b.addEventListener('click',function(){if(v.paused){userPaused=false;v.play()}else{userPaused=true;v.pause()}});
+  v.addEventListener('play',label);v.addEventListener('pause',label);label();
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!userPaused){var p=v.play();if(p&&p.catch)p.catch(function(){})}}else v.pause()})},{threshold:.25}).observe(v)}
+  else if(!reduce){v.play()}
 })();
 </script>
 </body>
